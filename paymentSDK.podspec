@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'paymentSDK'
-  s.version          = '2.0.0-simulator'
+  s.version          = '2.0.1'
   s.summary          = 'Wirecard paymentSDK - online payments'
   s.description      = <<-DESC
                        The library allows online payments processing.
@@ -11,8 +11,8 @@ Pod::Spec.new do |s|
                        - SEPA processing
                        Fully integrated with licensed Wirecard Payment infrastructure.
                        DESC
-  s.homepage         = 'https://github.com/mposSVK/paymentSDK-iOS'
-  s.documentation_url= 'http://paymentsdk.github.io'
+  s.homepage         = 'https://github.com/wirecard/paymentSDK-iOS'
+  s.documentation_url= 'https://paymentsdk.github.io'
   s.license          = { :type => 'MIT' }
   s.authors          = { 'Radoslav Danko' => 'radoslav.danko@wirecard.com', 'Stefan Sedlak' => 'stefan.sedlak@wirecard.com' }
   s.source           = { :git => 'https://github.com/wirecard/paymentSDK-iOS.git', :tag => s.version }
