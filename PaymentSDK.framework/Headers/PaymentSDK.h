@@ -18,6 +18,8 @@ FOUNDATION_EXPORT double PaymentSDKVersionNumber;
 //! Project version string for PaymentSDK.
 FOUNDATION_EXPORT const unsigned char PaymentSDKVersionString[];
 
+#import "PaymentSDKVersion.h"
+
 #import "NSError+WDUtils.h"
 
 #import "WDClient.h"
@@ -25,6 +27,7 @@ FOUNDATION_EXPORT const unsigned char PaymentSDKVersionString[];
 #import "WDApplePayManagedPayment.h"
 #import "WDApplePayPayment.h"
 
+#import "WDCardField.h"
 #import "WDCardPayment.h"
 #import "WDCardStyle.h"
 
