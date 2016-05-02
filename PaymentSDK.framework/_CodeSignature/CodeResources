@@ -34,11 +34,11 @@
 		</data>
 		<key>Headers/WDCardBrand.h</key>
 		<data>
-		RFqqd60jQRqGJLPiTEik2gl9Hkk=
+		ZE0543k296Wm8aqgxqakS9dX63E=
 		</data>
 		<key>Headers/WDCardField.h</key>
 		<data>
-		B2Z+GPAiBMc0mPgQryKp5fmu76k=
+		+WEM/oqxEN9/XmWlbsnkPeVhV/U=
 		</data>
 		<key>Headers/WDCardPayment.h</key>
 		<data>
@@ -102,7 +102,7 @@
 		</data>
 		<key>Headers/WDPayment.h</key>
 		<data>
-		wJbCJ3ufkeVGvcwPjbXa2VtrMn4=
+		zLkG1TW7ozqbihRLVKrPSYknoKc=
 		</data>
 		<key>Headers/WDPaymentResponse.h</key>
 		<data>
@@ -142,7 +142,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		nLmS0vagqdWY0wfRODZ7t8noif8=
+		ZjW8bXvhvry8DVI8180Um+ZmTNA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -232,22 +232,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			RFqqd60jQRqGJLPiTEik2gl9Hkk=
+			ZE0543k296Wm8aqgxqakS9dX63E=
 			</data>
 			<key>hash2</key>
 			<data>
-			NpxJ4Lrn2inVs5XqHsWMcNEqiwQgHc7Kdq+F+NK1S4I=
+			gNwcHx3+jEAAOEe9mudyHUE0Cz47HPDl81fztvjyvlE=
 			</data>
 		</dict>
 		<key>Headers/WDCardField.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			B2Z+GPAiBMc0mPgQryKp5fmu76k=
+			+WEM/oqxEN9/XmWlbsnkPeVhV/U=
 			</data>
 			<key>hash2</key>
 			<data>
-			MR88yRQX7ZgboP3jEzlEsVRR2NPpjbnrsGUhABh8pGM=
+			e7mFKUI5S9OMEl/PPRgajTtzqoiMumXjMWvYNV9iADo=
 			</data>
 		</dict>
 		<key>Headers/WDCardPayment.h</key>
@@ -419,11 +419,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			wJbCJ3ufkeVGvcwPjbXa2VtrMn4=
+			zLkG1TW7ozqbihRLVKrPSYknoKc=
 			</data>
 			<key>hash2</key>
 			<data>
-			JOUB0zFPSK0tFgHiiMMiDL3voYudLlO3cdBQo4+7I+s=
+			OZROf92ybkV0zeVOBjNDUlGkiE3+pkfBr2DxY1oLHAM=
 			</data>
 		</dict>
 		<key>Headers/WDPaymentResponse.h</key>

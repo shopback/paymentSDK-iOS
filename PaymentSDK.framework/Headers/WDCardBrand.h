@@ -8,6 +8,10 @@
 
 #import <Foundation/NSObjCRuntime.h>
 
+/** @addtogroup ios_sdk
+ *  @{
+ */
+
 typedef NS_ENUM(NSUInteger, WDCardBrand) {
     WDCardBrandUndefined = 0,
     
@@ -30,3 +34,5 @@ typedef NS_ENUM(NSUInteger, WDCardBrand) {
     
     WDCardBrandTotalNumber
 };
+
+/** @} */

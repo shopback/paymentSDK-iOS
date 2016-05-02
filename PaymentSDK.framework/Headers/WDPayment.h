@@ -27,7 +27,7 @@
 
 /**
  *  @brief Authorize client to process the transaction.
- *  @details TODO: describe process how to generate signature. It is mandatory.
+ *  @details It is mandatory.
  */
 @property (strong, nonatomic, nonnull) NSString *requestSignature;
 /**
