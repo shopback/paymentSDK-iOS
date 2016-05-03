@@ -38,7 +38,7 @@
 		</data>
 		<key>Headers/WDCardField.h</key>
 		<data>
-		+WEM/oqxEN9/XmWlbsnkPeVhV/U=
+		itZ8TFAX2JQBopEjdXhD6jdsajY=
 		</data>
 		<key>Headers/WDCardPayment.h</key>
 		<data>
@@ -142,7 +142,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		nU8c5vMmA2VQz9dHu78H5g1OmbI=
+		udIrCNqcCUphAS27YhI/ZWThEC8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -243,11 +243,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+WEM/oqxEN9/XmWlbsnkPeVhV/U=
+			itZ8TFAX2JQBopEjdXhD6jdsajY=
 			</data>
 			<key>hash2</key>
 			<data>
-			e7mFKUI5S9OMEl/PPRgajTtzqoiMumXjMWvYNV9iADo=
+			QqVuWORD0P4KlWWCgutZ4ivvZegs0SUDtkSQv85UTKA=
 			</data>
 		</dict>
 		<key>Headers/WDCardPayment.h</key>

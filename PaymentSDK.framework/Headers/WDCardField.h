@@ -125,8 +125,8 @@ typedef NS_ENUM(NSUInteger, WDCardFieldState) {
 @property(nonatomic, getter=isEnabled) BOOL enabled;
 
 /**
- *  @brief The font used in each UITextField.
- *  @details Default is [UIFont systemFontOfSize:18]. Set this property to nil to reset to the default.
+ *  @brief The font used in each UITextField and number format UILabel
+ *  @details Default is [UIFont fontWithName:@"Menlo-Regular" size:15.0]. Set this property to nil to reset to the default. Monospace fonts are preferred as during number typing number format does not change width.
  */
 @property(nonatomic, copy, null_resettable) UIFont *font UI_APPEARANCE_SELECTOR;
 
@@ -150,7 +150,7 @@ typedef NS_ENUM(NSUInteger, WDCardFieldState) {
 
 /**
  *  @brief The placeholder for the card number field.
- *  @details Default is localized @"Card number".
+ *  @details Default is localized @"Credit Card number".
  */
 @property(nonatomic, copy, null_resettable) NSString *numberPlaceholder;
 
