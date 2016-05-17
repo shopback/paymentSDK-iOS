@@ -27,14 +27,8 @@
 @property (assign, nonatomic) BOOL attemptThreeD;
 
 /**
- *  @brief transaction identifier of previous transaction gathered by [WDPaymentResponse transactionIdentifier]
- *  @details It is used with referenced transactions: WDTransactionTypeCaptureAuthorization, WDTransactionTypeReferencedAuthorization and WDTransactionTypeReferencedPurchase
- */
-@property (strong, nonatomic, nullable) NSString *parentTransactionID;
-
-/**
- *  @brief      Mark payment as recurring
- *  @details Default value is nil.
+ *  @brief Mark payment as recurring
+ *  @details Default value is NO.
  */
 @property (assign, nonatomic, getter=isRecurring) BOOL recurring;
 
@@ -61,7 +55,8 @@
  */
 - (nullable instancetype)initWithAmount:(nonnull NSDecimalNumber *)amount
                          amountCurrency:(WDCurrency)amountCurrency
-                        transactionType:(WDTransactionType)transactionType;
+                        transactionType:(WDTransactionType)transactionType NS_DESIGNATED_INITIALIZER;
+- (nullable instancetype)init NS_UNAVAILABLE;
 
 @end
 

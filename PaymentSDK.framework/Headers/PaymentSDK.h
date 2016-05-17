@@ -27,6 +27,7 @@ FOUNDATION_EXPORT const unsigned char PaymentSDKVersionString[];
 #import "WDApplePayManagedPayment.h"
 #import "WDApplePayPayment.h"
 
+#import "WDCard.h"
 #import "WDCardField.h"
 #import "WDCardPayment.h"
 #import "WDCardStyle.h"

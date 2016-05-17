@@ -21,7 +21,7 @@
 /**
  @brief Apple Merchant ID
  */
-@property (strong, nonatomic, nonnull) NSString *appleMerchantID;
+@property (copy, nonatomic, nonnull) NSString *appleMerchantID;
 /**
  @brief Merchant's Country
  */
@@ -49,7 +49,10 @@
 
 - (nullable instancetype)initWithPayment:(nonnull PKPayment *)payment
                             summaryItems:(nonnull NSArray<PKPaymentSummaryItem *> *)summaryItems
-                                currency:(WDCurrency)currency NS_UNAVAILABLE;
+                                currency:(WDCurrency)currency
+                         transactionType:(WDTransactionType)transactionType NS_UNAVAILABLE;
+
+- (nullable instancetype)init NS_UNAVAILABLE;
 
 @end
 

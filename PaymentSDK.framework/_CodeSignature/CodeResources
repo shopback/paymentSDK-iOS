@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/PaymentSDK.h</key>
 		<data>
-		z1zVtCLJGk0EggZBzO8lclEBvTk=
+		zj3foqa9S1l6pcoCcJqaEHGoeTk=
 		</data>
 		<key>Headers/PaymentSDKVersion.h</key>
 		<data>
@@ -22,27 +22,31 @@
 		</data>
 		<key>Headers/WDApplePayManagedPayment.h</key>
 		<data>
-		pjOUMzrgH7rMfE11JH+fLAHYTbA=
+		TnzxSOHY4fkunh1dQj7Y6NMSTLQ=
 		</data>
 		<key>Headers/WDApplePayPayment.h</key>
 		<data>
-		cgaUM2zKsLYSrwJfSYQy3FtmWbc=
+		WBEGRRYAcbLm0Y+HCq+UtgxRjb8=
 		</data>
 		<key>Headers/WDBaseStyle.h</key>
 		<data>
 		zhIQRp+E8jbW4vRYJqxA2bY3CvY=
 		</data>
+		<key>Headers/WDCard.h</key>
+		<data>
+		Wr8TH2484FmYtVm/gI2gY914VuQ=
+		</data>
 		<key>Headers/WDCardBrand.h</key>
 		<data>
-		ZE0543k296Wm8aqgxqakS9dX63E=
+		LKaYBkrT+WDkAC6iGML0zB/oaMI=
 		</data>
 		<key>Headers/WDCardField.h</key>
 		<data>
-		itZ8TFAX2JQBopEjdXhD6jdsajY=
+		MN57YkzjAmwezRn+1xHcRo88JOM=
 		</data>
 		<key>Headers/WDCardPayment.h</key>
 		<data>
-		8BKkBZnagtxaXEo4E/pWfohtEaU=
+		L9lqur7yxNECuoWVcyJWRqNe4J4=
 		</data>
 		<key>Headers/WDCardStyle.h</key>
 		<data>
@@ -98,11 +102,11 @@
 		</data>
 		<key>Headers/WDPayPalPayment.h</key>
 		<data>
-		B3GOKZb2yFi2yYNKflFxUP/gC1Q=
+		pm9Yp7gIv0xc1Y3yYBNSM/M2SPk=
 		</data>
 		<key>Headers/WDPayment.h</key>
 		<data>
-		zLkG1TW7ozqbihRLVKrPSYknoKc=
+		JgYRU4a5PJX7KJYBN5Y11tIl3tk=
 		</data>
 		<key>Headers/WDPaymentResponse.h</key>
 		<data>
@@ -118,7 +122,7 @@
 		</data>
 		<key>Headers/WDSEPAPayment.h</key>
 		<data>
-		wr4bBOVi+HcS1SKxi5t45/ZC8SA=
+		w0FjkasfTJ+9NbOINJ4KUEEAh5I=
 		</data>
 		<key>Headers/WDSEPAStyle.h</key>
 		<data>
@@ -138,11 +142,11 @@
 		</data>
 		<key>Headers/WDTransactionType.h</key>
 		<data>
-		xUpFJyrcUZwMmopgN4JF2CoVico=
+		SaBUKfzKb0MYgUAnPCISmVY9YjA=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		udIrCNqcCUphAS27YhI/ZWThEC8=
+		y/auuZZO7VTN3LDH4UyAslFbDQY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -166,11 +170,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			z1zVtCLJGk0EggZBzO8lclEBvTk=
+			zj3foqa9S1l6pcoCcJqaEHGoeTk=
 			</data>
 			<key>hash2</key>
 			<data>
-			K4VxUjvzYDzecyrM3rFCrbUGBIfLoVuozbfhEckl1Bk=
+			3Swsqs0U9DizDGxEYJ3cA/i84yQKgtbJBFB924aiij8=
 			</data>
 		</dict>
 		<key>Headers/PaymentSDKVersion.h</key>
@@ -199,22 +203,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			pjOUMzrgH7rMfE11JH+fLAHYTbA=
+			TnzxSOHY4fkunh1dQj7Y6NMSTLQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			wWWQF+523W3kLbu9VHtLLYMIIQb3bqe5XJwP+HEKW/Q=
+			rs9FFXbJRuSUcB8fQ+7X8ujDD/062N1MLPE9CJKy7Tk=
 			</data>
 		</dict>
 		<key>Headers/WDApplePayPayment.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			cgaUM2zKsLYSrwJfSYQy3FtmWbc=
+			WBEGRRYAcbLm0Y+HCq+UtgxRjb8=
 			</data>
 			<key>hash2</key>
 			<data>
-			xK2pIJrsoVbJwIQwvgxAOx5mKkCoyGzqhuuVN7W1LZ0=
+			sRdkzD54FoCrC/75YsR5qENADxGqI1bf0Z6TlWBDxtE=
 			</data>
 		</dict>
 		<key>Headers/WDBaseStyle.h</key>
@@ -228,37 +232,48 @@
 			B/5mq3mVFyHp7V+FSmgmKpzIK6PetVwU0G6L/zV/ZEU=
 			</data>
 		</dict>
+		<key>Headers/WDCard.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Wr8TH2484FmYtVm/gI2gY914VuQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			EdGWQ+WKUZKZj3MVCOSnjFbgsuXR3dtIn0R4twHu1oQ=
+			</data>
+		</dict>
 		<key>Headers/WDCardBrand.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ZE0543k296Wm8aqgxqakS9dX63E=
+			LKaYBkrT+WDkAC6iGML0zB/oaMI=
 			</data>
 			<key>hash2</key>
 			<data>
-			gNwcHx3+jEAAOEe9mudyHUE0Cz47HPDl81fztvjyvlE=
+			WAA0sRexRfIdlWjL2V4oGIAlMtbk9MdQjv8gQk0P/64=
 			</data>
 		</dict>
 		<key>Headers/WDCardField.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			itZ8TFAX2JQBopEjdXhD6jdsajY=
+			MN57YkzjAmwezRn+1xHcRo88JOM=
 			</data>
 			<key>hash2</key>
 			<data>
-			QqVuWORD0P4KlWWCgutZ4ivvZegs0SUDtkSQv85UTKA=
+			XDgMn+lRMqr6n8AvgpAW7tZvSblfEYDXYnfnKMAMFMk=
 			</data>
 		</dict>
 		<key>Headers/WDCardPayment.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			8BKkBZnagtxaXEo4E/pWfohtEaU=
+			L9lqur7yxNECuoWVcyJWRqNe4J4=
 			</data>
 			<key>hash2</key>
 			<data>
-			M6doKIjhRVcF8AGsgTFtGuh3eVQQS+avXvc/9iieNJM=
+			O2JcdG5XJReLCIvHDsQx5aDJMJXoxgRhQ34xNHEXZuw=
 			</data>
 		</dict>
 		<key>Headers/WDCardStyle.h</key>
@@ -408,22 +423,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			B3GOKZb2yFi2yYNKflFxUP/gC1Q=
+			pm9Yp7gIv0xc1Y3yYBNSM/M2SPk=
 			</data>
 			<key>hash2</key>
 			<data>
-			Jo8/wBeCOXGmlKeffjYT6fyVUejkTWN32wE0cG8zUaU=
+			CDPT6Y/1CsgOBAbndHDmldhxlqGMoSZw9w1xtfqQKjM=
 			</data>
 		</dict>
 		<key>Headers/WDPayment.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			zLkG1TW7ozqbihRLVKrPSYknoKc=
+			JgYRU4a5PJX7KJYBN5Y11tIl3tk=
 			</data>
 			<key>hash2</key>
 			<data>
-			OZROf92ybkV0zeVOBjNDUlGkiE3+pkfBr2DxY1oLHAM=
+			nONn+ML311N9muB1VOfACqb3eiCo7iIGfK0M1cSThHk=
 			</data>
 		</dict>
 		<key>Headers/WDPaymentResponse.h</key>
@@ -463,11 +478,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			wr4bBOVi+HcS1SKxi5t45/ZC8SA=
+			w0FjkasfTJ+9NbOINJ4KUEEAh5I=
 			</data>
 			<key>hash2</key>
 			<data>
-			GWg2OGwKdyYCwAQIhrV9C6glFxTXkdnZBv7VbK98fss=
+			AC0GTU++kmsNi2h38xjgMaQdpdsNf0Tv/Jp92uMq++E=
 			</data>
 		</dict>
 		<key>Headers/WDSEPAStyle.h</key>
@@ -518,11 +533,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xUpFJyrcUZwMmopgN4JF2CoVico=
+			SaBUKfzKb0MYgUAnPCISmVY9YjA=
 			</data>
 			<key>hash2</key>
 			<data>
-			8ygfbAaS2OrxPlXDrpAfePdNGgGSA0qjANI+rhicc64=
+			B73GLiX2Ah+Ckp6MuxZSRv7c5Xd/VHVj9exSbb/t0SE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

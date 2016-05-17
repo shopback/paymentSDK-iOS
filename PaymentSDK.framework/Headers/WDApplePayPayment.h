@@ -11,7 +11,6 @@
 #import "WDPayment.h"
 
 @class PKPayment;
-@class PKPaymentToken;
 @class PKPaymentSummaryItem;
 
 /** @addtogroup ios_sdk
@@ -29,13 +28,14 @@
  
  @param payment      PKPayment object gathered via PKPaymentAuthorizationViewController
  @param summaryItems summaryItems gathered via PKPaymentAuthorizationViewController
- @param currency     currency code. Supported codes: @"EUR", @"USD"
+ @param currency     currency code. Supported codes: @"GBP", @"USD"
  
  @return initialized object with payment data
  */
 - (nullable instancetype)initWithPayment:(nonnull PKPayment *)payment
                             summaryItems:(nonnull NSArray<PKPaymentSummaryItem *> *)summaryItems
-                                currency:(WDCurrency)currency NS_DESIGNATED_INITIALIZER;
+                                currency:(WDCurrency)currency
+                         transactionType:(WDTransactionType)transactionType NS_DESIGNATED_INITIALIZER;
 
 @end
 

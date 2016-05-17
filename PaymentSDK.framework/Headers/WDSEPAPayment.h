@@ -40,10 +40,6 @@
 @property (strong, nonatomic, nullable) NSDate *dueDate;
 
 /**
- @brief transaction identifier of previous recurring transaction gathered by [WDPaymentResponse transactionIdentifier]
- */
-@property (strong, nonatomic, nullable) NSString *parentTransactionID;
-/**
  @brief It describes recurring transactions.
  */
 @property (strong, nonatomic, nullable) WDPeriodic *periodic;
@@ -51,6 +47,7 @@
 
 - (nullable instancetype)initWithCreditor:(nonnull NSString *)creditorID
                                andMandate:(nonnull NSString *)mandateID NS_DESIGNATED_INITIALIZER;
+- (nullable instancetype)init NS_UNAVAILABLE;
 
 @end
 

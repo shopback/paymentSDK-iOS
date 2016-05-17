@@ -52,18 +52,18 @@
  @details For transactionType WDTransactionTypeAuthorizationOnly the only valid value is [NSDecimalNumber zero].
  It is mandatory.
  */
-@property (strong, nonatomic, nonnull) NSDecimalNumber *amount;
+@property (strong, nonatomic, nullable) NSDecimalNumber *amount;
 /**
  @brief Currency in which the transaction is processed.
  @details It is mandatory.
  */
-@property (assign, nonatomic ) WDCurrency amountCurrency;
+@property (assign, nonatomic) WDCurrency amountCurrency;
 
 /**
  @brief Determines transaction processing behaviour.
  @details It is mandatory.
  */
-@property (assign, nonatomic ) WDTransactionType transactionType;
+@property (assign, nonatomic) WDTransactionType transactionType;
 
 /**
  @brief Customer's account information.
@@ -100,7 +100,11 @@
  */
 @property (assign, nonatomic ) WDLocale locale;
 
-- (nullable instancetype)init NS_UNAVAILABLE;
+/**
+ @brief transaction identifier of previous transaction gathered by [WDPaymentResponse transactionIdentifier]
+ @details It is used with referenced transactions: WDTransactionTypeCaptureAuthorization, WDTransactionTypeReferencedAuthorization, WDTransactionTypeReferencedPurchase, WDTransactionTypeRefundCapture, WDTransactionTypeRefundPurchase and WDTransactionTypeVoidAuthorization
+ */
+@property (strong, nonatomic, nullable) NSString *parentTransactionID;
 
 /**
  @brief Returns the notification for transaction state.

@@ -20,12 +20,6 @@
 @interface WDPayPalPayment : WDPayment
 
 /**
- @brief Transaction ID of the first transaction in the series.
- @details Mandatory for "recurring" and "final" transactions
- */
-@property (strong, nonatomic, nullable) NSString *parentTransactionID;
-
-/**
  @brief It describes recurring transactions.
  */
 @property (strong, nonatomic, nullable) WDPeriodic *periodic;
@@ -39,6 +33,7 @@
  @return a newly initialized object
  */
 - (nullable instancetype)initWithAmount:(nonnull NSDecimalNumber *)amount currency:(WDCurrency)currency NS_DESIGNATED_INITIALIZER;
+- (nullable instancetype)init NS_UNAVAILABLE;
 
 @end
 

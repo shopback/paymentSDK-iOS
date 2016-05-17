@@ -11,6 +11,7 @@
 #import "WDCardBrand.h"
 #import "WDLocale.h"
 
+@class WDCard;
 @class WDCardField;
 @class WDCardPayment;
 
@@ -92,20 +93,20 @@ typedef NS_ENUM(NSUInteger, WDCardFieldState) {
 
 /**
  *  @brief Payment object where card data are appended.
- *  @details It can be set before either after user interaction
+ *  @details If [WDCardPayment token] is set WDCardField collects only security code. It clears user input.
  */
 @property(nonatomic, strong, nonnull) WDCardPayment *cardPayment;
+
+/**
+ *  @brief Non-sensitive card data.
+ *  @details It is convenient to set the data if you collect security code only. According [WDCard brand] security code is validated.
+ */
+@property(nonatomic, copy, null_resettable) WDCard *card;
 
 /**
  *  @brief Whether or not the field currently contains a valid card number, expiration date and security code.
  */
 @property(nonatomic, readonly, getter=isValid) BOOL valid;
-
-/**
- *  @brief Card brand
- *  @details It set after user entered valid card number
- */
-@property(nonatomic, readonly) WDCardBrand brand;
 
 /**
  *  @brief WDLocale enum used to localize
@@ -118,11 +119,6 @@ typedef NS_ENUM(NSUInteger, WDCardFieldState) {
 
  */
 @property(nonatomic) WDLocale locale;
-
-/**
- *  @brief Enable/disable selecting or editing the field.
- */
-@property(nonatomic, getter=isEnabled) BOOL enabled;
 
 /**
  *  @brief The font used in each UITextField and number format UILabel
@@ -190,6 +186,21 @@ typedef NS_ENUM(NSUInteger, WDCardFieldState) {
 @property(nonatomic, copy, null_resettable) UIColor *cursorColor UI_APPEARANCE_SELECTOR;
 
 /**
+ *  @brief Resets all of the contents of all of the fields.
+ *  @details If the field is currently being edited, the number field will become selected.
+ */
+- (void)clear;
+
+#pragma mark - UIControl
+
+/**
+ *  @brief Enable/disable selecting or editing the field.
+ */
+@property(nonatomic, getter=isEnabled) BOOL enabled;
+
+#pragma mark - UIResponder
+
+/**
  *  @brief Causes the text field to begin editing. Presents the keyboard.
  *  @return Whether or not the text field successfully began editing.
  */
@@ -200,12 +211,6 @@ typedef NS_ENUM(NSUInteger, WDCardFieldState) {
  *  @return Whether or not the field successfully stopped editing.
  */
 - (BOOL)resignFirstResponder;
-
-/**
- *  @brief Resets all of the contents of all of the fields.
- *  @details If the field is currently being edited, the number field will become selected.
- */
-- (void)clear;
 
 @end
 
