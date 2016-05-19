@@ -10,7 +10,9 @@
 
 #import "WDCardBrand.h"
 
-/** @addtogroup ios_sdk @{ */
+/** @addtogroup ios_sdk
+ *  @{
+ */
 
 /**
  * @brief Non-sensitive card data

@@ -8,7 +8,9 @@
 
 #import <Foundation/NSObjCRuntime.h>
 
-/** @addtogroup ios_sdk @{ */
+/** @addtogroup ios_sdk
+ *  @{
+ */
 
 /** List of card brands */
 typedef NS_ENUM(NSUInteger, WDCardBrand) {
