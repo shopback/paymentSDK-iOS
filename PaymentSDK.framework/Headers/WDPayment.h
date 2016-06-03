@@ -30,6 +30,7 @@
  *  @details It is mandatory.
  */
 @property (strong, nonatomic, nonnull) NSString *requestSignature;
+
 /**
  *  @brief Date when requestSignature was generated
  *  @details It is mandatory.
@@ -41,6 +42,13 @@
  *  @details It is mandatory.
  */
 @property (strong, nonatomic, nonnull) NSString *merchantAccountID;
+
+/**
+ *  @brief Category used by frontend merchant to resolve internal merchant for processing payment.
+ *  @details It is optional.
+ */
+@property (strong, nonatomic, nullable) NSString *merchantAccountResolverCategory;
+
 /**
  *  @brief Unique identifier associated with the transaction, which is created by the merchant.
  *  @details It is mandatory.
@@ -53,6 +61,7 @@
  It is mandatory.
  */
 @property (strong, nonatomic, nullable) NSDecimalNumber *amount;
+
 /**
  @brief Currency in which the transaction is processed.
  @details It is mandatory.
@@ -70,6 +79,7 @@
  @details It is optional.
  */
 @property (strong, nonatomic, nullable) WDCustomerData *accountHolder;
+
 /**
  @brief Customer's shipping information
  @details It is optional.
@@ -81,6 +91,7 @@
  @details It is optional.
  */
 @property (strong, nonatomic, nullable) WDOrder *order;
+
 /**
  @brief Notifications configuration
  @details It is optional.

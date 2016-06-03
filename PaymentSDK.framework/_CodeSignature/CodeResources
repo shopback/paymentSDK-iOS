@@ -106,7 +106,7 @@
 		</data>
 		<key>Headers/WDPayment.h</key>
 		<data>
-		JgYRU4a5PJX7KJYBN5Y11tIl3tk=
+		taP5tYIRj0abOuiKXGKImwJm2TA=
 		</data>
 		<key>Headers/WDPaymentResponse.h</key>
 		<data>
@@ -146,7 +146,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		7INtJEGvR4L1S/fvr+gSOjkmHLA=
+		cDTEqC0CfojBKk4/HIt3biXG+PM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -434,11 +434,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			JgYRU4a5PJX7KJYBN5Y11tIl3tk=
+			taP5tYIRj0abOuiKXGKImwJm2TA=
 			</data>
 			<key>hash2</key>
 			<data>
-			nONn+ML311N9muB1VOfACqb3eiCo7iIGfK0M1cSThHk=
+			oVG9RLFHPwpE4iOqwjFyWpyXaZehFs/W7NkhtiFYdac=
 			</data>
 		</dict>
 		<key>Headers/WDPaymentResponse.h</key>
