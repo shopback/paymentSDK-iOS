@@ -14,9 +14,6 @@
 #import <libextobjc/EXTScope.h>
 #import <PaymentSDK/PaymentSDK.h>
 
-#import "NSDateFormatter+Utils.h"
-#import "NSString+Utils.h"
-
 #define AMOUNT [NSDecimalNumber decimalNumberWithMantissa:199 exponent:-2 isNegative:NO]
 
 NSString *const PMTitleApplePay = @"ApplePay";
@@ -27,7 +24,6 @@ NSString *const PMTitleSEPA     = @"SEPA";
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *payBtn;
-@property (strong, nonatomic) WDClient *client;
 
 @end
 
@@ -37,7 +33,6 @@ NSString *const PMTitleSEPA     = @"SEPA";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.client = [[WDClient alloc] initWithEnvironment:WDEnvironmentTEST];
     if (!self.client) {
         self.payBtn.enabled = NO;
     }
@@ -68,7 +63,7 @@ NSString *const PMTitleSEPA     = @"SEPA";
                                                                         message:alertMessage
                                                                  preferredStyle:UIAlertControllerStyleAlert];
             
-            [ac addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:handler]];
+            [ac addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
             [self presentViewController:ac animated:YES completion:nil];
         }];
     };
@@ -167,68 +162,6 @@ NSString *const PMTitleSEPA     = @"SEPA";
     static NSString *const WD_MERCHANT_SECRET_KEY = @"ecdf5990-0372-47cd-a55d-037dccfe9d25";
     [self merchant:WD_MERCHANT_ACCOUNT_ID signPayment:payment byMerchantSecretKey:WD_MERCHANT_SECRET_KEY];
     return payment;
-}
-
-- (void)merchant:(nonnull NSString *)merchantAccountID
-     signPayment:(nonnull WDPayment *)payment byMerchantSecretKey:(nonnull NSString *)merchantSecretKey
-{
-    if (!payment) {
-        return;
-    }
-
-    payment.merchantAccountID = merchantAccountID;
-    payment.requestID = [[NSUUID UUID] UUIDString];
-    payment.requestTimestamp = [NSDate date]; // UTC
-    
-    NSString *requestTimestampStr = [[NSDateFormatter requestTimestampDateFormatter] stringFromDate:payment.requestTimestamp];
-    NSString *requestIDStr = payment.requestID;
-    NSString *transactionTypeStr = WDTransactionTypeGetCode(payment.transactionType) ?: @"";
-    NSString *amountStr = [payment.amount stringValue];
-    NSString *currencyStr = WDCurrencyGetISOCode(payment.amountCurrency) ?: @"";
-    NSString *IPAddressStr = payment.IPAddress;
-    
-    payment.requestSignature = [self serverSideSignatureCalculation:requestTimestampStr
-                                                          requestID:requestIDStr
-                                                         merchantID:merchantAccountID
-                                                    transactionType:transactionTypeStr
-                                                             amount:amountStr
-                                                           currency:currencyStr
-                                                          IPAddress:IPAddressStr
-                                                          secretKey:merchantSecretKey];
-}
-
-- (NSString *)serverSideSignatureCalculation:(NSString *)requestTimestamp
-                                   requestID:(NSString *)requestID
-                                  merchantID:(NSString *)merchantID
-                             transactionType:(NSString *)transactionType
-                                      amount:(NSString *)amount
-                                    currency:(NSString *)currency
-                                   IPAddress:(NSString *)IPAddress
-                                   secretKey:(NSString *)secretKey
-{
-    // request-timestamp - UTC in format yyyyMMddHHmmss
-    // request-id
-    // merchant-account-id
-    // transaction-type
-    // amount
-    // currency
-    // redirect-url (optional) - not used for mobile payments
-    // ip-address (optional)
-    // secretkey
-    NSMutableString *signatureStr = [NSMutableString string];
-    [signatureStr appendString:requestTimestamp];
-    [signatureStr appendString:requestID];
-    [signatureStr appendString:merchantID];
-    [signatureStr appendString:transactionType];
-    [signatureStr appendString:amount];
-    [signatureStr appendString:currency];
-    if (IPAddress) {
-        [signatureStr appendString:IPAddress];
-    }
-    [signatureStr appendString:secretKey];
-    
-    NSString *signature = [signatureStr SHA256];
-    return signature;
 }
 
 @end

@@ -15,6 +15,7 @@
 		47501C971D41607800D0F1D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47501C951D41607800D0F1D2 /* Main.storyboard */; };
 		47501C991D41607800D0F1D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47501C981D41607800D0F1D2 /* Assets.xcassets */; };
 		47501C9C1D41607800D0F1D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47501C9A1D41607800D0F1D2 /* LaunchScreen.storyboard */; };
+		47EC73011D48E83500C0AE32 /* PaymentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EC73001D48E83500C0AE32 /* PaymentVC.m */; };
 		611455AC2EF4F9467F793359 /* libPods-Embedded.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E9F0A1A73D86DDCBDAEFA3 /* libPods-Embedded.a */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,8 @@
 		47501C981D41607800D0F1D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47501C9B1D41607800D0F1D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		47501C9D1D41607800D0F1D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47EC72FF1D48E83500C0AE32 /* PaymentVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentVC.h; sourceTree = "<group>"; };
+		47EC73001D48E83500C0AE32 /* PaymentVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +60,8 @@
 				4744221F1D41EAFD00F5CB1F /* NSDateFormatter+Utils.m */,
 				474422201D41EAFD00F5CB1F /* NSString+Utils.h */,
 				474422211D41EAFD00F5CB1F /* NSString+Utils.m */,
+				47EC72FF1D48E83500C0AE32 /* PaymentVC.h */,
+				47EC73001D48E83500C0AE32 /* PaymentVC.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47501C941D41607800D0F1D2 /* ViewController.m in Sources */,
+				47EC73011D48E83500C0AE32 /* PaymentVC.m in Sources */,
 				474422221D41EAFD00F5CB1F /* NSDateFormatter+Utils.m in Sources */,
 				474422231D41EAFD00F5CB1F /* NSString+Utils.m in Sources */,
 				47501C911D41607800D0F1D2 /* AppDelegate.m in Sources */,

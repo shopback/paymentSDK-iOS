@@ -6,10 +6,8 @@
 //  Copyright © 2016 Wirecard Technologies GmbH. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "PaymentVC.h"
 
-@interface ViewController : UIViewController
-
-
+@interface ViewController : PaymentVC
 @end
 
