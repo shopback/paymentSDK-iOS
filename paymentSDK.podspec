@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'paymentSDK'
-  s.version          = '2.1.6'
+  s.version          = '2.1.7'
   s.summary          = 'Wirecard paymentSDK - online payments'
   s.description      = <<-DESC
                        The library allows online payments processing.
@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
   s.dependency       'libextobjc/EXTScope', '~> 0.4.1'
 
   s.requires_arc     = true
-  s.frameworks       = 'Foundation', 'UIKit', 'PassKit'
+  s.frameworks       = 'AddressBook', 'Foundation', 'PassKit', 'Security', 'UIKit'
   s.libraries        = 'xml2'
   s.vendored_frameworks = 'PaymentSDK.framework'
   s.resource            = 'PaymentSDKResources.bundle'
