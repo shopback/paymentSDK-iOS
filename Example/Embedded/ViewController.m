@@ -73,6 +73,7 @@
     NSString *text = nil;
     switch (state) {
             SWITCH_CASE(WDCardFieldStateCardInitial)
+            SWITCH_CASE(WDCardFieldStateJailbrokenDevice)
             SWITCH_CASE(WDCardFieldStateCardValid)
             SWITCH_CASE(WDCardFieldStateCardUnsupported)
             SWITCH_CASE(WDCardFieldStateNumberEditting)
