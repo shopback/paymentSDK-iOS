@@ -29,6 +29,10 @@ typedef NS_ENUM(NSUInteger, WDEnvironment) {
      *  Singapore production environment
      */
     WDEnvironmentSingaporePROD,
+    /**
+     *  Toronto production environment
+     */
+    WDEnvironmentTorontoPROD,
 
     /**
      *  Test/Sandbox environment
@@ -38,6 +42,10 @@ typedef NS_ENUM(NSUInteger, WDEnvironment) {
      *  Singapore test/sandbox environment
      */
     WDEnvironmentSingaporeTEST,
+    /**
+     *  Toronto test/sandbox environment
+     */
+    WDEnvironmentTorontoTEST,
 
     /**
      *  Total number of environments. It is used for validation and handled as invalid value

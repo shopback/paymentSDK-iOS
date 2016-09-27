@@ -24,6 +24,9 @@
 typedef NS_ENUM(NSUInteger, WDCardFieldState) {
     /** Initial state and state after [-[WDCardField clear]](@ref WDCardField.clear) */
     WDCardFieldStateCardInitial = 0,
+    
+    /** User's device is jailbroken */
+    WDCardFieldStateJailbrokenDevice,
 
     /** User entered valid card data */
     WDCardFieldStateCardValid,
@@ -121,6 +124,15 @@ typedef NS_ENUM(NSUInteger, WDCardFieldState) {
 @property(nonatomic) WDLocale locale;
 
 /**
+ *  @brief Set of supported card brands.
+ *  @details If supportedCardBrands is set and does not contain recognized card brand of user card number the state changes to ::WDCardFieldStateCardUnsupported. Set can contain NSNumbers with ::WDCardBrand values. Example:
+ 
+ cardField.supportedCardBrands = [NSSet setWithObjects:@(WDCardBrandAmex), @(WDCardBrandMasterCard), @(WDCardBrandVisa), nil];
+ 
+ */
+@property(nonatomic, copy, nullable) NSSet<NSNumber *> *supportedCardBrands;
+
+/**
  *  @brief The font used in each UITextField and number format UILabel
  *  @details Default is [UIFont fontWithName:@"Menlo-Regular" size:15.0]. Set this property to nil to reset to the default. Monospace fonts are preferred as during number typing number format does not change width.
  */
@@ -146,7 +158,7 @@ typedef NS_ENUM(NSUInteger, WDCardFieldState) {
 
 /**
  *  @brief The placeholder for the card number field.
- *  @details Default is localized @"Credit Card number".
+ *  @details Default is localized @"Credit Card Number".
  */
 @property(nonatomic, copy, null_resettable) NSString *numberPlaceholder;
 
@@ -190,6 +202,9 @@ typedef NS_ENUM(NSUInteger, WDCardFieldState) {
  *  @details If the field is currently being edited, the number field will become selected.
  */
 - (void)clear;
+
+- (void)hideTextFieldsWithTokenEnabled;
+- (void)showTextFieldsWithTokenDisabled;
 
 #pragma mark - UIControl
 

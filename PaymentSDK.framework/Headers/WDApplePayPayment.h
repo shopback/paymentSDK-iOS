@@ -26,9 +26,10 @@
 /**
  @brief Initializes payment object with parameters gathered via PKPaymentAuthorizationViewController
  
- @param payment      PKPayment object gathered via PKPaymentAuthorizationViewController
- @param summaryItems summaryItems gathered via PKPaymentAuthorizationViewController
- @param currency     currency code. Supported codes: @"GBP", @"USD"
+ @param payment         PKPayment object gathered via PKPaymentAuthorizationViewController
+ @param summaryItems    summaryItems gathered via PKPaymentAuthorizationViewController
+ @param currency        currency code. Supported codes: @"GBP", "@"USD"
+ @param transactionType transaction type. Supported transaction types: WDTransactionTypeAuthorization, WDTransactionTypeCaptureAuthorization, WDTransactionTypePurchase, WDTransactionTypeReferencedAuthorization, WDTransactionTypeReferencedPurchase, WDTransactionTypeRefundCapture, WDTransactionTypeRefundPurchase, WDTransactionTypeVoidAuthorization
  
  @return initialized object with payment data
  */

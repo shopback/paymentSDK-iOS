@@ -55,5 +55,4 @@ WDCardBrand WDCardBrandFromCode(NSString *code);
  @return card brand string representation
  */
 NSString *WDCardBrandGetCode(WDCardBrand cardBrand);
-
 /** @} */

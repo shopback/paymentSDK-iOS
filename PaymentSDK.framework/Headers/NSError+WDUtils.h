@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WDLocale.h"
 
 /** @addtogroup ios_sdk
  *  @{
@@ -17,20 +18,25 @@ extern NSString *_Nonnull const WDPaymentSDKErrorDomain;
 /** Error codes */
 typedef NS_ENUM(NSInteger, WDErrorCode) {
     /** Uninitialized value or no error */
-    WDErrorCodeOK = 0,
-
-    /** General Error, always contains localized description */
-    WDErrorCodeGeneral = -1,
-    /** Payment method is not supported */
-    WDErrorCodeUnsupportedPaymentMethod = -2,
-    /** Invalid payment data */
-    WDErrorCodeInvalidPaymentData = -3,
-    /** User has canceled payment */
-    WDErrorCodeUserCanceled = -4,
-    /** Another payment is in progress */
-    WDErrorCodePaymentInProgress = -5,
+    WDErrorCodeOK                           = 0,
+    /** General Error, always contains english description */
+    WDErrorCodeGeneral                      = -1,
+    
+    /** Network related issue, SSL pinning issue, ATS, ...) */
+    WDErrorCodeNetworkIssue                 = -2,
     /** Transaction has failed */
-    WDErrorCodeTransactionFailure = -6
+    WDErrorCodeTransactionFailure           = -3,
+    
+    /** Payment method is not supported */
+    WDErrorCodeUnsupportedPaymentMethod     = -4,
+    /** Invalid payment data */
+    WDErrorCodeInvalidPaymentData           = -5,
+    /** User has canceled payment */
+    WDErrorCodeUserCanceled                 = -6,
+    /** Another payment is in progress */
+    WDErrorCodePaymentInProgress            = -7,
+    /** Device is jailbroken */
+    WDErrorCodeJailbrokenDevice             = -8
 };
 
 /**
@@ -38,9 +44,8 @@ typedef NS_ENUM(NSInteger, WDErrorCode) {
  */
 @interface NSError (WDUtils)
 
-+ (nullable instancetype)wd_errorWithCode:(WDErrorCode)code;
-+ (nullable instancetype)wd_errorWithCode:(WDErrorCode)code
-                  andLocalizedDescription:(nonnull NSString *)localizedDescription;
++ (nullable instancetype)wd_errorWithCode:(WDErrorCode)code andLocale:(WDLocale)locale;
++ (nullable instancetype)wd_errorWithCode:(WDErrorCode)code andLocalizedDescription:(nonnull NSString *)localizedDescription;
 
 @end
 

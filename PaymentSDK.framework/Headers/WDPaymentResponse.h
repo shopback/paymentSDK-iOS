@@ -8,6 +8,7 @@
 
 #import "WDPayment.h"
 
+#import "WDCard.h"
 #import "WDCardToken.h"
 
 /** @addtogroup ios_sdk
@@ -26,8 +27,12 @@
 /** A unique identifier assigned for every Transaction. */
 @property (strong, nonatomic, nullable) NSString *transactionIdentifier;
 
+/** Nonsensitive card data */
+@property (strong, nonatomic, nullable) WDCard *card;
+
 /** Tokenized sensitive card data */
 @property (strong, nonatomic, nullable) WDCardToken *cardToken;
+
 
 /**  */
 @property (strong, nonatomic, nullable) NSString *statusMessage;
