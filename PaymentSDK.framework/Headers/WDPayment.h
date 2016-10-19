@@ -31,9 +31,10 @@
  */
 @property (strong, nonatomic, nonnull) NSString *requestSignature;
 
+
 /**
  *  @brief Date when requestSignature was generated
- *  @details It is mandatory.
+ *  @details It is mandatory for requestSignature
  */
 @property (strong, nonatomic, nonnull) NSDate *requestTimestamp;
 

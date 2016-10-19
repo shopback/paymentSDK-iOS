@@ -63,12 +63,13 @@
  *  @details Payment method is defined by payment object. Each payment method is defined in separate subclass of WDPayment. Supported payment methods: WDApplePayManagedPayment, WDApplePayPayment, WDCardPayment, WDPayPalPayment, WDSEPAPayment
  *
  *  @param payment         defines payment process
- *  @param style           not used at the moment
+ *  @param style           can be defined by WDBaseStyle, WDCardStyle, WDSEPAStyle
  *  @param completionBlock will be called at the very end of payment flow. It provides payment response or a descriptive error with more details in the payment response
  */
 - (void)makePayment:(nonnull  WDPayment *)payment
           withStyle:(nullable WDStyle *)style
      withCompletion:(nonnull  WDCompletionBlock)completionBlock;
+
 
 @end
 

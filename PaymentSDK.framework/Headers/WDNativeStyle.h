@@ -10,6 +10,7 @@
 
 @class UILabel;
 @class UITextField;
+@class UIImageView;
 
 /** @addtogroup ios_sdk
  *  @{
@@ -21,27 +22,20 @@
 @interface WDNativeStyle : WDBaseStyle
 
 /**
- *  @brief Header UIView prototype.
- *  @details Following properties are used:
- */
-@property (strong, nonatomic) UIView *headerViewStyled;
-
-/**
- *  @brief Order Total UILabel prototype
+ *  @brief UILabel prototype
  *  @details Following properties are used: TODO
  */
-@property (strong, nonatomic) UILabel *orderTotalLabelStyled;
-
+@property (strong, nonatomic) UILabel *orderLabelStyled;
 /**
  *  @brief Order Total label value used by [UILabel text]
  */
-@property (copy,   nonatomic) NSString *orderTotalLabelText;
+@property (copy,   nonatomic) NSString *orderLabelText;
 
 /**
- *  @brief Amount UILabel prototype
+ *  @brief UILabel prototype
  *  @details Following properties are used: TODO
  */
-@property (strong, nonatomic) UILabel *amountLabelStyled;
+@property (strong, nonatomic) UILabel *labelStyled;
 
 /**
  *  @brief UITextField prototype
@@ -60,6 +54,12 @@
  *  @details Overrides default localized value.
  */
 @property (copy,   nonatomic) NSString *submitButtonTitle;
+
+/**
+ *  @brief security code underline UIView prototype.
+ *  @details Following properties are used: TODO
+ */
+@property (strong, nonatomic) UIView *underlineViewStyled;
 
 @end
 

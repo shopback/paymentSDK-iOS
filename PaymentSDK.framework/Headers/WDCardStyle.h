@@ -18,22 +18,10 @@
 @interface WDCardStyle : WDNativeStyle
 
 /**
- *  @brief First name text field used with [UITextField placeholder]
- *  @details Overrides default localized value.
- */
-@property (strong, nonatomic) NSString *firstNamePlaceholder;
-
-/**
- *  @brief Last name text field used with [UITextField placeholder]
- *  @details Overrides default localized value.
- */
-@property (strong, nonatomic) NSString *lastNamePlaceholder;
-
-/**
  *  @brief First name and last name text field used with [UITextField placeholder]
  *  @details Overrides default localized value.
  */
-@property (strong, nonatomic) NSString *firstNameAndLastNamePlaceholder;
+@property (strong, nonatomic) NSString *cardholderPlaceholder;
 
 /**
  *  @brief Card number text field used with [UITextField placeholder]
@@ -48,16 +36,16 @@
 @property (strong, nonatomic) NSString *expiryDatePlaceholder;
 
 /**
- *  @brief Scan title used with [UIBarButtonItem initWithTitle:style:target:action:]
- *  @details Overrides default localized value.
- */
-@property (strong, nonatomic) NSString *scanTitle;
-
-/**
  *  @brief Security code text field used with [UITextField placeholder]
  *  @details Overrides default localized value.
  */
 @property (strong, nonatomic) NSString *securityCodePlaceholder;
+
+/**
+ *  @brief Scan title used with [UIBarButtonItem initWithTitle:style:target:action:]
+ *  @details Overrides default localized value.
+ */
+@property (strong, nonatomic) NSString *scanTitle;
 
 /**
  *  @brief Set of supported card brands.

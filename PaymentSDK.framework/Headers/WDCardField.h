@@ -203,9 +203,6 @@ typedef NS_ENUM(NSUInteger, WDCardFieldState) {
  */
 - (void)clear;
 
-- (void)hideTextFieldsWithTokenEnabled;
-- (void)showTextFieldsWithTokenDisabled;
-
 #pragma mark - UIControl
 
 /**

@@ -10,6 +10,7 @@
 
 @class UISwitch;
 @class UITextView;
+@class UIImageView;
 
 /** @addtogroup ios_sdk
  *  @{
