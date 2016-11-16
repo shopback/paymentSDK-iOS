@@ -9,3 +9,4 @@
 #import <Foundation/NSString.h>
 
 extern NSString *const PaymentSDKVersion;
+extern NSString *const PaymentSDKVersionCommit;

@@ -70,7 +70,6 @@
           withStyle:(nullable WDStyle *)style
      withCompletion:(nonnull  WDCompletionBlock)completionBlock;
 
-
 @end
 
 /** @} */
