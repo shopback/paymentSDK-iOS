@@ -70,6 +70,9 @@
           withStyle:(nullable WDStyle *)style
      withCompletion:(nonnull  WDCompletionBlock)completionBlock;
 
+- (void)checkPayment:(nonnull WDPayment *)payment
+      withCompletion:(nonnull WDCompletionBlock)completionBlock;
+
 @end
 
 /** @} */

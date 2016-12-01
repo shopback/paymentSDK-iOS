@@ -17,12 +17,12 @@
 /**
  * @brief Non-sensitive card data
  */
-@interface WDCard : NSObject
+@interface WDCard : NSObject<NSCopying>
 
 /**
  @brief Card expiration date.
  */
-@property (copy, nonatomic) NSDate *expiryDate;
+@property (copy, nonatomic, nullable) NSDate *expiryDate;
 
 /**
  @brief Card brand

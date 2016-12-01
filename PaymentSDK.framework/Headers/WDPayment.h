@@ -39,6 +39,12 @@
 @property (strong, nonatomic, nonnull) NSDate *requestTimestamp;
 
 /**
+ *  @brief 2nd generation signature. Authorize client to process the transaction. checkPayment works only with this signature.
+ *  @details It is mandatory. It supersedes requestSignature and requestTimestamp.
+ */
+@property (copy, nonatomic, nonnull) NSString *signature;
+
+/**
  *  @brief Unique identifier assigned for every Merchant Account.
  *  @details It is mandatory.
  */
@@ -120,7 +126,6 @@
 
 /**
  @brief Returns the notification for transaction state.
- @details
  @param state The transaction state defined by WDTransactionState enumaration
  @return Returns notification or nil if no associated notification.
  */

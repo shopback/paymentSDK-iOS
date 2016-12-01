@@ -48,6 +48,11 @@
 @property (strong, nonatomic) NSString *scanTitle;
 
 /**
+ *  @brief Scan button visibility in toolbar
+ *  @details Setting this property to YES hides the scan option in the toolbar, default value is NO
+ */
+@property (nonatomic) BOOL scanButtonHidden;
+/**
  *  @brief Set of supported card brands.
  *  @details If supportedCardBrands is set and does not contain recognized card brand of user card number the state changes to ::WDCardFieldStateCardUnsupported. Set can contain NSNumbers with ::WDCardBrand values. Example:
  
