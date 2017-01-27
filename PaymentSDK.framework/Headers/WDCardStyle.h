@@ -11,7 +11,11 @@
 /** @addtogroup ios_sdk
  *  @{
  */
-
+typedef NS_ENUM(NSUInteger, WDCardStyleLayout) {
+    
+    WDCardStyleLayoutDefault = 0,
+    WDCardStyleLayoutAnimated,
+};
 /**
  *  @brief Style class for WDCardPayment method
  */
@@ -52,6 +56,13 @@
  *  @details Setting this property to YES hides the scan option in the toolbar, default value is NO
  */
 @property (nonatomic) BOOL scanButtonHidden;
+
+/**
+ *  @brief Animated card in full screen card payment
+ *  @details Setting this property to WDCardPaymentVCStyleAnimated shows the animated card in full screen card payment, default value is WDCardPaymentVCStyleDefault
+ */
+@property (assign, nonatomic) WDCardStyleLayout layout;
+
 /**
  *  @brief Set of supported card brands.
  *  @details If supportedCardBrands is set and does not contain recognized card brand of user card number the state changes to ::WDCardFieldStateCardUnsupported. Set can contain NSNumbers with ::WDCardBrand values. Example:

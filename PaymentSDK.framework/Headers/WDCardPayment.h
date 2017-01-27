@@ -10,6 +10,7 @@
 
 #import "WDCardToken.h"
 #import "WDPeriodic.h"
+#import "WDSubMerchantInfo.h"
 
 /** @addtogroup ios_sdk
  *  @{
@@ -43,6 +44,12 @@
  *  @details set [WDCardToken tokenID] if you want to use the same card as in previous transaction. In case of transaction referenced by parentTransactionID and security code is required set [WDCardToken maskedAccountNumber] to help user with security code typing
  */
 @property (strong, nonatomic, nullable) WDCardToken *token;
+
+/**
+ *  @brief Info about particular merchant.
+ *  @details It is optional.
+ */
+@property (strong, nonatomic, nullable) WDSubMerchantInfo *subMerchantInfo;
 
 /**
  *  @brief Initialize Car payment object

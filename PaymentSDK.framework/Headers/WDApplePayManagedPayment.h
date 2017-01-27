@@ -37,6 +37,15 @@
 @property (assign, nonatomic) BOOL requiredShippingAddress;
 
 /**
+ *  @brief Set of supported card brands.
+ *  @details If supportedCardBrands is set SDK call canMakePayment and returns error WDErrorCodeUnsupportedPaymentMethod if card is unavailable. Set can contain NSNumbers with ::WDCardBrand values. Example:
+ 
+ payment.supportedCardBrands = [NSSet setWithObjects:@(WDCardBrandAmex), @(WDCardBrandMasterCard), @(WDCardBrandVisa), nil];
+ 
+ */
+@property (copy, nonatomic, nullable) NSSet<NSNumber *> *supportedCardBrands;
+
+/**
  @brief initialize object
  
  @param appleMerchantID Apple Merchant ID

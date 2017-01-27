@@ -17,7 +17,7 @@
 /**
  * @brief Defines PayPal payment method.
  */
-@interface WDPayPalPayment : WDPayment
+@interface WDPayPalPayment : WDPayment 
 
 /**
  @brief It describes recurring transactions.
