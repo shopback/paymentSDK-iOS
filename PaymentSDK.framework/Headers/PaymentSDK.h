@@ -24,6 +24,8 @@ FOUNDATION_EXPORT const unsigned char PaymentSDKVersionString[];
 
 #import "WDClient.h"
 
+#import "WDAlipayPayment.h"
+
 #import "WDApplePayManagedPayment.h"
 #import "WDApplePayPayment.h"
 

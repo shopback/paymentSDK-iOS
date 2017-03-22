@@ -71,6 +71,8 @@ typedef NS_ENUM(NSUInteger, WDTransactionType) {
      */
     WDTransactionTypeRefundCapture,
     
+    WDTransactionTypeRefundDebit,
+    
     /** Gives funds to the [Card Holder]'s account, referring to an eligible [Purchase].
      
      String representation: refund-purchase

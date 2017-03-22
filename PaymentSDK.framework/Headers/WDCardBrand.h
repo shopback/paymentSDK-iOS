@@ -30,6 +30,7 @@ typedef NS_ENUM(NSUInteger, WDCardBrand) {
     WDCardBrandMaestro,
     WDCardBrandMaestroUK,
     WDCardBrandMasterCard,
+    WDCardBrandMir,
     WDCardBrandSorocred,
     WDCardBrandUATP,
     WDCardBrandVisa,

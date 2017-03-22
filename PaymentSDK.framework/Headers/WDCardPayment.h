@@ -11,6 +11,7 @@
 #import "WDCardToken.h"
 #import "WDPeriodic.h"
 #import "WDSubMerchantInfo.h"
+#import "WDAttempt.h"
 
 /** @addtogroup ios_sdk
  *  @{
@@ -25,7 +26,7 @@
  *  @brief Indicates that the Transaction Request should proceed with the 3D Secure workflow if the [Card Holder] is enrolled. Otherwise, the transaction proceeds without 3D Secure
  *  @details Default value is YES. In case of referenced transactions (WDTransactionTypeCaptureAuthorization, WDTransactionTypeReferencedAuthorization, WDTransactionTypeReferencedPurchase), it is ignored.
  */
-@property (assign, nonatomic) BOOL attemptThreeD;
+@property (assign, nonatomic) WDAttempt attemptThreeD;
 
 /**
  *  @brief Mark payment as recurring
