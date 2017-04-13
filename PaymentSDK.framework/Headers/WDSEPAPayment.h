@@ -8,6 +8,7 @@
 
 #import "WDPayment.h"
 #import "WDPeriodic.h"
+#import "WDBool.h"
 
 /** @addtogroup ios_sdk
  *  @{
@@ -17,6 +18,11 @@
  * @brief Defines SEPA payment method.
  */
 @interface WDSEPAPayment : WDPayment
+
+/**
+ @brief Setting this value to WDBoolYes means services and products are only available to businesses, the payer cannot be a private individual.
+ */
+@property (assign, nonatomic) WDBool B2B;
 
 /**
  @brief The Creditor Id for the Merchant Account SEPA.

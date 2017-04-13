@@ -79,6 +79,12 @@ typedef NS_ENUM(NSUInteger, WDTransactionType) {
      */
     WDTransactionTypeRefundPurchase,
     
+    /** Simply converts credit card information into a token that can be used in subsequent Payment Transactions, instead of the actual credit card information.
+     
+     String representation: tokenize
+     */
+    WDTransactionTypeTokenize,
+    
     /** Frees reserved funds from the [Card Holder]'s account due to an [Authorization].
      
      String representation: void-authorization

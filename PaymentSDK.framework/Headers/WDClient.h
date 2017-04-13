@@ -49,7 +49,7 @@
 /**
  *  @brief Trigger payment process
  *
- *  @details Payment method is defined by payment object. Each payment method is defined in separate subclass of WDPayment. Supported payment methods: WDApplePayManagedPayment, WDApplePayPayment, WDCardPayment, WDPayPalPayment, WDSEPAPayment
+ *  @details Payment method is defined by payment object. Each payment method is defined in separate subclass of WDPayment. Supported payment methods: WDAlipayPayment, WDApplePayManagedPayment, WDApplePayPayment, WDCardPayment, WDPayPalPayment, WDSEPAPayment
  *
  *  @param payment         defines payment process
  *  @param completionBlock will be called at the very end of payment flow. It provides payment response or a descriptive error with more details in the payment response
@@ -60,7 +60,7 @@
 /**
  *  @brief Trigger payment process
  *
- *  @details Payment method is defined by payment object. Each payment method is defined in separate subclass of WDPayment. Supported payment methods: WDApplePayManagedPayment, WDApplePayPayment, WDCardPayment, WDPayPalPayment, WDSEPAPayment
+ *  @details Payment method is defined by payment object. Each payment method is defined in separate subclass of WDPayment. Supported payment methods: WDAlipayPayment, WDApplePayManagedPayment, WDApplePayPayment, WDCardPayment, WDPayPalPayment, WDSEPAPayment
  *
  *  @param payment         defines payment process
  *  @param style           can be defined by WDBaseStyle, WDCardStyle, WDSEPAStyle
@@ -70,6 +70,14 @@
           withStyle:(nullable WDStyle *)style
      withCompletion:(nonnull  WDCompletionBlock)completionBlock;
 
+/**
+ *  @brief Check payment result
+ *
+ *  @details Payment method is defined by payment object. Each payment method is defined in separate subclass of WDPayment. Supported payment methods: WDAlipayPayment, WDApplePayManagedPayment, WDApplePayPayment, WDCardPayment, WDPayPalPayment, WDSEPAPayment
+ *
+ *  @param payment         defines payment process
+ *  @param completionBlock It provides payment response or a descriptive error with more details in the payment response
+ */
 - (void)checkPayment:(nonnull WDPayment *)payment
       withCompletion:(nonnull WDCompletionBlock)completionBlock;
 

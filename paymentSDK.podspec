@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'paymentSDK'
-  s.version          = '2.7.0'
+  s.version          = '2.8.0'
   s.summary          = 'Wirecard paymentSDK - online payments'
   s.description      = <<-DESC
                        The library allows online payments processing.
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/wirecard/paymentSDK-iOS'
   s.documentation_url= 'https://paymentsdk.github.io'
   s.license          = { :type => 'MIT' }
-  s.authors          = { 'Radoslav Danko' => 'radoslav.danko@wirecard.com', 'Stefan Sedlak' => 'stefan.sedlak@wirecard.com', 'Jozef Vrana' => 'jozef.vrana@wirecard.com' }
+  s.authors          = { 'Stefan Sedlak' => 'stefan.sedlak@wirecard.com', 'Jozef Vrana' => 'jozef.vrana@wirecard.com' }
   s.source           = { :git => 'https://github.com/wirecard/paymentSDK-iOS.git', :tag => s.version }
   s.platform         = :ios
   s.ios.deployment_target = '8.0'

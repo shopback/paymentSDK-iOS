@@ -53,7 +53,7 @@
 @property (strong, nonatomic, nullable) WDSubMerchantInfo *subMerchantInfo;
 
 /**
- *  @brief Initialize Car payment object
+ *  @brief Initialize Card payment object
  *
  *  @param amount          Amount that accompanies the transaction
  *  @param amountCurrency  Currency in which the transaction is processed

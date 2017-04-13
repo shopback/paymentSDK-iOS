@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>16D32</string>
+	<string>16E195</string>
 	<key>CFBundleExecutable</key>
 	<string>PaymentSDK</string>
 	<key>CFBundleIdentifier</key>
@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>FMWK</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0589c92</string>
+	<string>88d59ff</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleSupportedPlatforms</key>
@@ -23,7 +23,7 @@
 		<string>iPhoneOS</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>931</string>
+	<string>967</string>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
