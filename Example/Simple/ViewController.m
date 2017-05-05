@@ -122,8 +122,8 @@ NSString *const PMTitleSEPA     = @"SEPA";
     WDCardPayment *payment = [[WDCardPayment alloc] initWithAmount:AMOUNT
                                                     amountCurrency:WDCurrencyUSD
                                                    transactionType:WDTransactionTypePurchase];
-    static NSString *const WD_MERCHANT_ACCOUNT_ID = @"be18e3e8-eb9c-4e79-85f0-e2d0a4dcbad3";
-    static NSString *const WD_MERCHANT_SECRET_KEY = @"753991c0-d703-486f-ad44-2491135909b5";
+    static NSString *const WD_MERCHANT_ACCOUNT_ID = @"33f6d473-3036-4ca5-acb5-8c64dac862d1";
+    static NSString *const WD_MERCHANT_SECRET_KEY = @"9e0130f6-2e1e-4185-b0d5-dc69079c75cc";
     [self merchant:WD_MERCHANT_ACCOUNT_ID signPayment:payment byMerchantSecretKey:WD_MERCHANT_SECRET_KEY];
     return payment;
 }
