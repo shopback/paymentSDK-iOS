@@ -109,6 +109,12 @@ IB_DESIGNABLE
 @property (nonatomic, getter=isCardBrandHidden) IBInspectable BOOL cardBrandHidden;
 
 /**
+ *  @brief Scan button visibility in toolbar
+ *  @details Setting this property to YES hides the scan option in the toolbar, default value is NO
+ */
+@property (nonatomic) BOOL scanButtonHidden;
+
+/**
  *  @brief Payment object where card data are appended.
  *  @details If [WDCardPayment token] is set WDCardField collects only security code. It clears user input.
  */

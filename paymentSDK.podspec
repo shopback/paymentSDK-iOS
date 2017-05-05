@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'paymentSDK'
-  s.version          = '2.8.0'
+  s.version          = '2.9.0'
   s.summary          = 'Wirecard paymentSDK - online payments'
   s.description      = <<-DESC
                        The library allows online payments processing.
@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.dependency       'AFNetworking', '~> 3.1.0'
   s.dependency       'CardIO', '~> 5.4.1'
   s.dependency       'CMPopTipView', '~> 2.3.0'
-  s.dependency       'CocoaLumberjack', '~> 3.1.0'
+  s.dependency       'CocoaLumberjack', '~> 3.2.0'
   s.ios.dependency   'Lockbox', '~> 3.0.3'
   s.dependency       'Mantle', '~> 2.1.0'
   s.ios.dependency   'MBProgressHUD', '~> 1.0.0'
