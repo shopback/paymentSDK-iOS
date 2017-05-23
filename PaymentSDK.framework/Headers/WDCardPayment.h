@@ -64,6 +64,20 @@
 - (nullable instancetype)initWithAmount:(nonnull NSDecimalNumber *)amount
                          amountCurrency:(WDCurrency)amountCurrency
                         transactionType:(WDTransactionType)transactionType NS_DESIGNATED_INITIALIZER;
+
+/**
+ *  @brief Initialize Card payment object
+ *
+ *  @param amount          Amount that accompanies the transaction
+ *  @param currency        Currency in which the transaction is processed
+ *  @param transactionType WDTransactionType transaction type
+ *
+ *  @return initialized object or nil
+ */
+- (nullable instancetype)initWithAmount:(nonnull NSDecimalNumber *)amount
+                               currencyString:(nonnull NSString *)currency
+                        transactionType:(WDTransactionType)transactionType NS_DESIGNATED_INITIALIZER;
+
 - (nullable instancetype)init NS_UNAVAILABLE;
 
 @end

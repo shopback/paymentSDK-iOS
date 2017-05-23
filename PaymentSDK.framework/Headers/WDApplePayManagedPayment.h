@@ -61,6 +61,11 @@
                                 currency:(WDCurrency)currency
                          transactionType:(WDTransactionType)transactionType NS_UNAVAILABLE;
 
+- (nullable instancetype)initWithPayment:(nonnull PKPayment *)payment
+                   summaryItems:(nonnull NSArray<PKPaymentSummaryItem *> *)summaryItems
+                 currencyString:(nonnull NSString *)currency
+                transactionType:(WDTransactionType)transactionType NS_UNAVAILABLE;
+
 - (nullable instancetype)init NS_UNAVAILABLE;
 
 @end

@@ -71,9 +71,15 @@
 
 /**
  @brief Currency in which the transaction is processed.
+ @details This property is deprecated, use NSString *currency instead.
+ */
+@property (assign, nonatomic) WDCurrency amountCurrency DEPRECATED_ATTRIBUTE;
+
+/**
+ @brief Currency in which the transaction is processed.
  @details It is mandatory.
  */
-@property (assign, nonatomic) WDCurrency amountCurrency;
+@property (strong, nonatomic, nonnull) NSString *currency;
 
 /**
  @brief Determines transaction processing behaviour.

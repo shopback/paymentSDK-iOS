@@ -19,7 +19,7 @@
 @interface WDAlipayPayment : WDPayment
 
 /**
- *  @brief Initialize Card payment object
+ *  @brief Initialize payment object
  *
  *  @param amount          Amount that accompanies the transaction
  *  @param amountCurrency  Currency in which the transaction is processed
@@ -29,6 +29,19 @@
  */
 - (nullable instancetype)initWithAmount:(nonnull NSDecimalNumber *)amount
                                currency:(WDCurrency)currency NS_DESIGNATED_INITIALIZER;
+
+/**
+ *  @brief Initialize payment object
+ *
+ *  @param amount          Amount that accompanies the transaction
+ *  @param amountCurrency  Currency in which the transaction is processed
+ *  @param transactionType WDTransactionType transaction type
+ *
+ *  @return initialized object or nil
+ */
+- (nullable instancetype)initWithAmount:(nonnull NSDecimalNumber *)amount
+                               currencyString:(nonnull NSString *)currency NS_DESIGNATED_INITIALIZER;
+
 - (nullable instancetype)init NS_UNAVAILABLE;
 
 @end
