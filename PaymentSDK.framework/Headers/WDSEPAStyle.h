@@ -9,7 +9,6 @@
 #import "WDNativeStyle.h"
 
 @class UISwitch;
-@class UITextView;
 @class UIImageView;
 
 /** @addtogroup ios_sdk
@@ -38,12 +37,6 @@
  *  @details Overrides default localized value.
  */
 @property (strong, nonatomic) NSString *IBANPlaceholder;
-
-/**
- *  @brief SEPA legal info UITextView prototype.
- *  @details Following properties are used: TODO
- */
-@property (strong, nonatomic) UITextView *textViewStyled;
 
 /**
  *  @brief Merchant name to fill in SEPA legal info UITextView.

@@ -11,6 +11,7 @@
 @class UILabel;
 @class UITextField;
 @class UIImageView;
+@class UITextView;
 
 /** @addtogroup ios_sdk
  *  @{
@@ -42,6 +43,12 @@
  *  @details Following properties are used: TODO
  */
 @property (strong, nonatomic) UITextField *textFieldStyled;
+
+/**
+ *  @brief legal info UITextView prototype.
+ *  @details Following properties are used: TODO
+ */
+@property (strong, nonatomic) UITextView *textViewStyled;
 
 /**
  *  @brief Submit button prototype.
