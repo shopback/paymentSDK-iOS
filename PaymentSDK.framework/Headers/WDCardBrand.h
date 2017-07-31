@@ -26,6 +26,7 @@ typedef NS_ENUM(NSUInteger, WDCardBrand) {
     WDCardBrandMasterCard,
     WDCardBrandMir,
     WDCardBrandUATP,
+    WDCardBrandUzCard,
     WDCardBrandVisa,
     
     /** Total number of values. It is used for validation and handled as invalid value */
