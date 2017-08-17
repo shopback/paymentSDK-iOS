@@ -16,35 +16,31 @@ PODS:
     - AFNetworking/NSURLSession
   - CardIO (5.4.1)
   - CMPopTipView (2.3.0)
-  - CocoaLumberjack (2.4.0):
-    - CocoaLumberjack/Default (= 2.4.0)
-    - CocoaLumberjack/Extensions (= 2.4.0)
-  - CocoaLumberjack/Core (2.4.0)
-  - CocoaLumberjack/Default (2.4.0):
-    - CocoaLumberjack/Core
-  - CocoaLumberjack/Extensions (2.4.0):
+  - CocoaLumberjack (3.2.0):
+    - CocoaLumberjack/Default (= 3.2.0)
+    - CocoaLumberjack/Extensions (= 3.2.0)
+  - CocoaLumberjack/Default (3.2.0)
+  - CocoaLumberjack/Extensions (3.2.0):
     - CocoaLumberjack/Default
-  - GDataXML-HTML (1.3.0)
   - libextobjc/EXTScope (0.4.1):
     - libextobjc/RuntimeExtensions
   - libextobjc/RuntimeExtensions (0.4.1)
-  - Lockbox (3.0.2)
-  - Mantle (2.0.7):
-    - Mantle/extobjc (= 2.0.7)
-  - Mantle/extobjc (2.0.7)
+  - Lockbox (3.0.3)
+  - Mantle (2.1.0):
+    - Mantle/extobjc (= 2.1.0)
+  - Mantle/extobjc (2.1.0)
   - MBProgressHUD (1.0.0)
-  - paymentSDK (2.2.0):
+  - paymentSDK (2.13.0):
     - AFNetworking (~> 3.1.0)
     - CardIO (~> 5.4.1)
     - CMPopTipView (~> 2.3.0)
-    - CocoaLumberjack (~> 2.4.0)
-    - GDataXML-HTML (~> 1.3.0)
+    - CocoaLumberjack (~> 3.2.0)
     - libextobjc/EXTScope (~> 0.4.1)
-    - Lockbox (~> 3.0.2)
-    - Mantle (~> 2.0.7)
+    - Lockbox (~> 3.0.3)
+    - Mantle (~> 2.1.0)
     - MBProgressHUD (~> 1.0.0)
-    - TPKeyboardAvoiding (~> 1.3)
-  - TPKeyboardAvoiding (1.3)
+    - TPKeyboardAvoiding (~> 1.3.1)
+  - TPKeyboardAvoiding (1.3.1)
 
 DEPENDENCIES:
   - paymentSDK (from `..`)
@@ -57,15 +53,14 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
   CMPopTipView: 774e0230b5c73abb3c39051da6d8a383373c4f7f
-  CocoaLumberjack: aa9dcab71bdf9eaf2a63bbd9ddc87863efe45457
-  GDataXML-HTML: 7adc03668cab35c288f1dbb8929a179f0fece898
+  CocoaLumberjack: 9b4aed7073d242f29cc2f62068d995faf67f703a
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
-  Lockbox: bfc91deef886f9c0302e809a4d11e171c92c341b
-  Mantle: bc40bb061d8c2c6fb48d5083e04d928c3b7f73d9
+  Lockbox: 7bc46733434e89900924d53a08bd9d0e5ca12d46
+  Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  paymentSDK: 3824cea4a1a921f6df6a3d6b140f5b1c2a9363b7
-  TPKeyboardAvoiding: a5138f318c06fb3e151f886e18ce4a72695d9cbe
+  paymentSDK: 91fc357c434a4af6a4806a297ef39a7cda9359f8
+  TPKeyboardAvoiding: 0d6af20e95e2850f4c621841225b59ec7d8dd852
 
 PODFILE CHECKSUM: bd903a405ee12cacf8d40e31f21226236077ffa6
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.2.1
