@@ -44,8 +44,19 @@
  *  @return An initialized object, or nil if an object could not be created for some reason that would not result in an exception
  */
 - (nullable instancetype)initWithEnvironment:(WDEnvironment)environment
-                                       error:(NSError *_Nullable __autoreleasing *_Nullable)error NS_DESIGNATED_INITIALIZER;
+                                       error:(NSError *_Nullable __autoreleasing *_Nullable)error;
 
+/**
+ *  @brief It initilizes client for processing payments.
+ *
+ *  @param hostName Hostname of the environment for processing payments
+ *
+ *  @param error Error contains code WDErrorCode
+ *
+ *  @return An initialized object, or nil if an object could not be created for some reason that would not result in an exception
+ */
+- (nullable instancetype)initWithHostname:(nonnull NSString *)hostname
+                                    error:(NSError *_Nullable __autoreleasing *_Nullable)error NS_DESIGNATED_INITIALIZER;
 /**
  *  @brief Trigger payment process
  *

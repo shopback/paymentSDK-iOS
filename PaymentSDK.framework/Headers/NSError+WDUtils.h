@@ -36,7 +36,9 @@ typedef NS_ENUM(NSInteger, WDErrorCode) {
     /** Another payment is in progress */
     WDErrorCodePaymentInProgress            = -7,
     /** Device is jailbroken */
-    WDErrorCodeJailbrokenDevice             = -8
+    WDErrorCodeJailbrokenDevice             = -8,
+    /** Unsupported payment gateway */
+    WDErrorCodeUnsupportedGateway           = -9
 };
 
 /**
