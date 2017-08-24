@@ -1,14 +1,14 @@
 Pod::Spec.new do |s|
   s.name             = 'paymentSDK'
-  s.version          = '2.13.0'
+  s.version          = '2.13.1'
   s.summary          = 'Wirecard paymentSDK - online payments'
   s.description      = <<-DESC
                        The library allows online payments processing.
                        Supported payment methods:
-                       - Apple Pay purchase
+                       - Apple Pay
                        - Card payments (Mastercard, Visa, American Express)
-                       - PayPal payments
-                       - SEPA processing
+                       - PayPal
+                       - SEPA Direct Debit
                        Fully integrated with licensed Wirecard Payment infrastructure.
                        DESC
   s.homepage         = 'https://github.com/wirecard/paymentSDK-iOS'
