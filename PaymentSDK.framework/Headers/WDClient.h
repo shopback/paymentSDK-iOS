@@ -57,6 +57,12 @@
  */
 - (nullable instancetype)initWithHostname:(nonnull NSString *)hostname
                                     error:(NSError *_Nullable __autoreleasing *_Nullable)error NS_DESIGNATED_INITIALIZER;
+
+/**
+ * @brief Handle redirect from payment apps or web pages to merchant app.
+ */
+- (BOOL)openURL:(NSURL *_Nonnull)url;
+
 /**
  *  @brief Trigger payment process
  *

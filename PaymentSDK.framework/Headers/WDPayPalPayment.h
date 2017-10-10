@@ -25,6 +25,11 @@
 @property (strong, nonatomic, nullable) WDPeriodic *periodic;
 
 /**
+ @brief It is used by risk library. The data collected by the Magnes library is used to complement the data that is obtained from the PayPal hosted pages.
+ */
+@property (strong, nonatomic, nullable) NSString *riskReferenceId;
+
+/**
  @brief Initialize WDPayPalPayment object
  
  @param amount   amount that accompanies the transaction

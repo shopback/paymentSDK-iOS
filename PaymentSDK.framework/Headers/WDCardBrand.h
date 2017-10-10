@@ -18,6 +18,7 @@ typedef NS_ENUM(NSUInteger, WDCardBrand) {
     WDCardBrandUndefined = 0,
     
     WDCardBrandAmex,
+    WDCardBrandArCa,
     WDCardBrandCUP,
     WDCardBrandDiners,
     WDCardBrandDiscover,
