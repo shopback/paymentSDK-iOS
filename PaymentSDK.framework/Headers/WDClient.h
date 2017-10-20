@@ -13,6 +13,7 @@
 
 @class WDPayment;
 @class WDStyle;
+@class WDClientParameters;
 
 /** @addtogroup ios_sdk
  *  @{
@@ -56,6 +57,21 @@
  *  @return An initialized object, or nil if an object could not be created for some reason that would not result in an exception
  */
 - (nullable instancetype)initWithHostname:(nonnull NSString *)hostname
+                                    error:(NSError *_Nullable __autoreleasing *_Nullable)error;
+
+/**
+ *  @brief It initilizes client for processing payments.
+ *
+ *  @param hostName Hostname of the environment for processing payments
+ *
+ *  @param parameters Parameters for the client properties
+ *
+ *  @param error Error contains code WDErrorCode
+ *
+ *  @return An initialized object, or nil if an object could not be created for some reason that would not result in an exception
+ */
+- (nullable instancetype)initWithHostname:(nonnull NSString *)hostname
+                               parameters:(nullable WDClientParameters *)clientParameters
                                     error:(NSError *_Nullable __autoreleasing *_Nullable)error NS_DESIGNATED_INITIALIZER;
 
 /**

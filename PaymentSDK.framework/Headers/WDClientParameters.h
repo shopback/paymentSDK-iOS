@@ -12,15 +12,16 @@
 
 @interface WDClientParameters : NSObject
 
+/**
+ *  @brief Timeout interval for the payment request.
+ *  @details Default value is 60 seconds.
+ */
 @property (assign, nonatomic) NSTimeInterval timeoutInterval;
-@property (assign, nonatomic) WDEnvironment  environment;
-@property (strong, nonatomic) NSString *     hostname;
-@property (strong, nonatomic) WDTracker *    tracker;
 
-- (instancetype)initWithTimeoutInterval:(NSTimeInterval)timeoutInterval
-                            environment:(WDEnvironment)environment
-                               hostname:(NSString *)hostName
-                                tracker:(WDTracker *)tracker;
-
+/**
+ *  @brief Tracker for sending app analytics to a server.
+ *  @details It is optional.
+ */
+@property (strong, nonatomic) WDTracker *tracker;
 
 @end

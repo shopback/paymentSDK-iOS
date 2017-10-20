@@ -33,7 +33,7 @@ FOUNDATION_EXPORT const unsigned char PaymentSDKVersionString[];
 #import "WDCardField.h"
 #import "WDCardPayment.h"
 #import "WDCardStyle.h"
-
+#import "WDClientParameters.h"
 #import "WDPayPalPayment.h"
 #import "WDPBBAPayment.h"
 
