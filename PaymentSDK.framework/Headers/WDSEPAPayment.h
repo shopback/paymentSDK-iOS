@@ -53,7 +53,7 @@
 
 - (nullable instancetype)initWithCreditor:(nonnull NSString *)creditorID
                                andMandate:(nonnull NSString *)mandateID NS_DESIGNATED_INITIALIZER;
-- (nullable instancetype)init NS_UNAVAILABLE;
+- (nonnull instancetype)init NS_UNAVAILABLE;
 
 @end
 

@@ -49,7 +49,7 @@
  */
 - (nullable instancetype)initWithAmount:(nonnull NSDecimalNumber *)amount currencyString:(nonnull NSString *)currency NS_DESIGNATED_INITIALIZER;
 
-- (nullable instancetype)init NS_UNAVAILABLE;
+- (nonnull instancetype)init NS_UNAVAILABLE;
 
 @end
 

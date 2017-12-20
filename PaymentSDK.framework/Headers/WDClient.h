@@ -24,7 +24,7 @@
  */
 @interface WDClient : NSObject
 
-- (nullable instancetype)init NS_UNAVAILABLE;
+- (nonnull instancetype)init NS_UNAVAILABLE;
 
 /**
  *  @brief It initilizes client for processing payments.

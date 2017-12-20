@@ -66,7 +66,7 @@
                  currencyString:(nonnull NSString *)currency
                 transactionType:(WDTransactionType)transactionType NS_UNAVAILABLE;
 
-- (nullable instancetype)init NS_UNAVAILABLE;
+- (nonnull instancetype)init NS_UNAVAILABLE;
 
 @end
 
