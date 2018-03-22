@@ -30,6 +30,11 @@
 @property (strong, nonatomic, nullable) NSString *riskReferenceId;
 
 /**
+ @brief It is used by risk library. For merchants using an Advertising ID (IDFA), this parameter should be populated with the IDFA.
+ */
+@property (strong, nonatomic, nullable) NSString *advertisingIdentifier;
+
+/**
  @brief Initialize WDPayPalPayment object
  
  @param amount   amount that accompanies the transaction
