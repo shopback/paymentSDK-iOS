@@ -102,7 +102,17 @@
     static NSString *const WD_MERCHANT_ACCOUNT_ID = @"33f6d473-3036-4ca5-acb5-8c64dac862d1";
     static NSString *const WD_MERCHANT_SECRET_KEY = @"9e0130f6-2e1e-4185-b0d5-dc69079c75cc";
     [self merchant:WD_MERCHANT_ACCOUNT_ID signPayment:payment byMerchantSecretKey:WD_MERCHANT_SECRET_KEY];
+    payment.accountHolder = [self accountHolder];
+    
     return payment;
+}
+
+- (WDCustomerData *)accountHolder {
+    WDCustomerData *accountHolder = nil;
+    accountHolder = [WDCustomerData new];
+    accountHolder.lastName = @"Doe";
+    
+    return accountHolder;
 }
 
 @end

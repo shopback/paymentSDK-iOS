@@ -10,6 +10,6 @@
 
 @interface NSString (SHA)
 
-- (NSString *)SHA256;
+- (nullable NSString *)HMAC256WithKey:(nonnull NSString *)key;
 
 @end

@@ -10,6 +10,6 @@
 
 @interface NSDateFormatter (Utils)
 
-+ (NSDateFormatter *)requestTimestampDateFormatter;
++ (NSDateFormatter *)timestampDateFormatter;
 
 @end

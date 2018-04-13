@@ -31,54 +31,50 @@
     payment.requestID = [[NSUUID UUID] UUIDString];
     payment.requestTimestamp = [NSDate date]; // UTC
     
-    NSString *requestTimestampStr = [[NSDateFormatter requestTimestampDateFormatter] stringFromDate:payment.requestTimestamp];
     NSString *requestIDStr = payment.requestID;
     NSString *transactionTypeStr = WDTransactionTypeGetCode(payment.transactionType) ?: @"";
     NSString *amountStr = [payment.amount stringValue];
-    NSString *currencyStr = WDCurrencyGetISOCode(payment.amountCurrency) ?: @"";
+    NSString *currencyStr = payment.currency ?: @"";
     NSString *IPAddressStr = payment.IPAddress;
-    
-    payment.requestSignature = [self serverSideSignatureCalculation:requestTimestampStr
-                                                          requestID:requestIDStr
-                                                         merchantID:merchantAccountID
-                                                    transactionType:transactionTypeStr
-                                                             amount:amountStr
-                                                           currency:currencyStr
-                                                          IPAddress:IPAddressStr
-                                                          secretKey:merchantSecretKey];
+    NSDate *requestTimestamp = [NSDate date]; // UTC
+    NSString *requestTimestampStr = [[NSDateFormatter timestampDateFormatter] stringFromDate:requestTimestamp];
+    NSString *signature = [self serverSideSignatureCalculationV2:requestTimestampStr
+                                                       requestID:requestIDStr
+                                                      merchantID:merchantAccountID
+                                                 transactionType:transactionTypeStr
+                                                          amount:amountStr
+                                                        currency:currencyStr
+                                                       IPAddress:IPAddressStr
+                                                       secretKey:merchantSecretKey];
+    payment.signature = signature;
 }
 
-- (NSString *)serverSideSignatureCalculation:(NSString *)requestTimestamp
-                                   requestID:(NSString *)requestID
-                                  merchantID:(NSString *)merchantID
-                             transactionType:(NSString *)transactionType
-                                      amount:(NSString *)amount
-                                    currency:(NSString *)currency
-                                   IPAddress:(NSString *)IPAddress
-                                   secretKey:(NSString *)secretKey
+- (NSString *)serverSideSignatureCalculationV2:(NSString *)requestTimestamp
+                                     requestID:(NSString *)requestID
+                                    merchantID:(NSString *)merchantID
+                               transactionType:(NSString *)transactionType
+                                        amount:(NSString *)amount
+                                      currency:(NSString *)currency
+                                     IPAddress:(NSString *)IPAddress
+                                     secretKey:(NSString *)secretKey
 {
-    // request-timestamp - UTC in format yyyyMMddHHmmss
-    // request-id
-    // merchant-account-id
-    // transaction-type
-    // amount
-    // currency
-    // redirect-url (optional) - not used for mobile payments
-    // ip-address (optional)
-    // secretkey
-    NSMutableString *signatureStr = [NSMutableString string];
-    [signatureStr appendString:requestTimestamp];
-    [signatureStr appendString:requestID];
-    [signatureStr appendString:merchantID];
-    [signatureStr appendString:transactionType];
-    [signatureStr appendString:amount];
-    [signatureStr appendString:currency];
+    NSMutableArray<NSString *> *params = [NSMutableArray arrayWithCapacity:9];
+    [params addObject:@"HS256"];
+    [params addObject:[NSString stringWithFormat:@"request_time_stamp=%@", requestTimestamp]];
+    [params addObject:[NSString stringWithFormat:@"merchant_account_id=%@", merchantID]];
+    [params addObject:[NSString stringWithFormat:@"request_id=%@", requestID]];
+    [params addObject:[NSString stringWithFormat:@"transaction_type=%@", transactionType]];
+    [params addObject:[NSString stringWithFormat:@"requested_amount=%@", amount]];
+    [params addObject:[NSString stringWithFormat:@"requested_amount_currency=%@", currency]];
     if (IPAddress) {
-        [signatureStr appendString:IPAddress];
+        [params addObject:[NSString stringWithFormat:@"ip_address=%@", requestTimestamp]];
     }
-    [signatureStr appendString:secretKey];
+    NSString *payload = [params componentsJoinedByString:@"\n"];
     
-    NSString *signature = [signatureStr SHA256];
+    NSString *payloadBase64 = [[payload dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:0];
+    NSString *hmacBase64    = [payload HMAC256WithKey:secretKey];
+    
+    NSString *signature = [@[payloadBase64, hmacBase64] componentsJoinedByString:@"."];
     return signature;
 }
 

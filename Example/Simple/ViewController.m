@@ -148,6 +148,8 @@ NSString *const PMTitleSEPA     = @"SEPA";
     static NSString *const WD_MERCHANT_ACCOUNT_ID = @"9abf05c1-c266-46ae-8eac-7f87ca97af28";
     static NSString *const WD_MERCHANT_SECRET_KEY = @"5fca2a83-89ca-4f9e-8cf7-4ca74a02773f";
     [self merchant:WD_MERCHANT_ACCOUNT_ID signPayment:payment byMerchantSecretKey:WD_MERCHANT_SECRET_KEY];
+    payment.accountHolder = [self accountHolder];
+    
     return payment;
 }
 
@@ -162,6 +164,14 @@ NSString *const PMTitleSEPA     = @"SEPA";
     static NSString *const WD_MERCHANT_SECRET_KEY = @"ecdf5990-0372-47cd-a55d-037dccfe9d25";
     [self merchant:WD_MERCHANT_ACCOUNT_ID signPayment:payment byMerchantSecretKey:WD_MERCHANT_SECRET_KEY];
     return payment;
+}
+
+- (WDCustomerData *)accountHolder {
+    WDCustomerData *accountHolder = nil;
+    accountHolder = [WDCustomerData new];
+    accountHolder.lastName = @"Doe";
+    
+    return accountHolder;
 }
 
 @end

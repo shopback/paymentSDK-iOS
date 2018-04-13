@@ -7,26 +7,27 @@
 //
 
 #import "NSString+Utils.h"
-#import <CommonCrypto/CommonDigest.h>
+#import <CommonCrypto/CommonHMAC.h>
 
+@implementation NSString (HMAC)
 
-@implementation NSString (SHA)
-
-- (NSString *)SHA256
-{
-    NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
-
-    uint8_t digest[CC_SHA256_DIGEST_LENGTH];
-    CC_SHA256(data.bytes, (CC_LONG)data.length, digest);
+- (nullable NSString *)HMAC256WithKey:(nonnull NSString *)key {
+    if (!key) {
+        return nil;
+    }
     
-    NSData *hashData = [NSData dataWithBytes:digest length:CC_SHA256_DIGEST_LENGTH];
-
-    NSString *hash = [hashData description];
-    hash = [hash stringByReplacingOccurrencesOfString:@" " withString:@""];
-    hash = [hash stringByReplacingOccurrencesOfString:@"<" withString:@""];
-    hash = [hash stringByReplacingOccurrencesOfString:@">" withString:@""];
+    NSData *rawData = [self dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *rawKey  = [key  dataUsingEncoding:NSUTF8StringEncoding];
     
-    return hash;
+    NSMutableData *hash = [NSMutableData dataWithLength:CC_SHA256_DIGEST_LENGTH ];
+    CCHmac(kCCHmacAlgSHA256, rawKey.bytes, rawKey.length, rawData.bytes, rawData.length, hash.mutableBytes);
+
+    NSData *rawHMAC = [NSData dataWithData:hash];
+    
+    NSString *HMAC  = [rawHMAC base64EncodedStringWithOptions:0];
+    return HMAC;
 }
 
 @end
+
+

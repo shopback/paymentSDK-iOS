@@ -10,16 +10,17 @@
 
 @implementation NSDateFormatter (Utils)
 
-+ (NSDateFormatter *)requestTimestampDateFormatter
-{
++ (NSDateFormatter *)timestampDateFormatter {
     static dispatch_once_t onceToken;
     static NSDateFormatter *formatter;
     dispatch_once(&onceToken, ^{
-        formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"yyyyMMddHHmmss"];
-        [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
+        formatter = [NSDateFormatter new];
+        NSLocale *enUSPOSIXLocale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
+        formatter.locale = enUSPOSIXLocale;
+        formatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ssZZZZZ";
+        formatter.timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
     });
-    return formatter;
+    return [formatter copy];
 }
 
 @end
