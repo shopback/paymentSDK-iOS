@@ -29,16 +29,26 @@
 @property (assign, nonatomic) WDAttempt attemptThreeD;
 
 /**
- *  @brief Mark payment as recurring
- *  @details Default value is NO.
+ @brief It describes recurring transactions.
  */
-@property (assign, nonatomic, getter=isRecurring) BOOL recurring;
+@property (strong, nonatomic, nullable) WDPeriodic *periodic;
 
 /**
  *  @brief Prompt [Card Holder] for security code, in case of referenced transactions.
  *  @details Default value is NO.
  */
 @property (assign, nonatomic, getter=isSecurityCodeRequired) BOOL requireSecurityCode;
+
+/**
+ *  @brief Prompt Card Holder
+ *  @details Default value is YES.
+ */
+@property (assign, nonatomic, getter=isCardholderRequired) BOOL requireCardholder;
+
+/**
+@Used to signalize card token usage
+*/
+@property (assign, nonatomic, getter=istokenIndicatorUsed) BOOL tokenUsageIndicator;
 
 /**
  *  @brief Tokenized card data gathered by previous transaction [WDPaymentResponse cardToken].

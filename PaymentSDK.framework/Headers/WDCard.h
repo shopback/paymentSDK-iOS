@@ -29,6 +29,7 @@
  */
 @property (assign, nonatomic) WDCardBrand brand;
 
+@property (assign, nonatomic, getter=istokenIndicatorUsed) BOOL tokenUsageIndicator;
 @end
 
 /** @} */
