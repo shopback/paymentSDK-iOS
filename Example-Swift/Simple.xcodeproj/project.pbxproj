@@ -186,13 +186,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Simple/Pods-Simple-resources.sh",
-				"${PODS_ROOT}/TestFairy/upload-dsym.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ZappMerchantLib/ZappMerchantLibResources.bundle",
-				"${PODS_ROOT}/paymentSDK/PaymentSDKResources.bundle",
+				"${PODS_ROOT}/../../PaymentSDKResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/upload-dsym.sh",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZappMerchantLibResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/PaymentSDKResources.bundle",
 			);
