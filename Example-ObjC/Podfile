@@ -1,15 +1,15 @@
 source 'https://github.com/CocoaPods/Specs.git'
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 
-platform :ios, '8.0'
+platform :ios, '9.0'
 workspace 'Example'
 
 target 'Embedded' do
-    project 'Embedded.xcodeproj'
-    pod 'paymentSDK', :path => '..'
+    project 'Embedded.xcodeproj'    
+    pod 'paymentSDK/All', :path => '..'
 end
 
 target 'Simple' do
     project 'Simple.xcodeproj'
-    pod 'paymentSDK', :path => '..'
+    pod 'paymentSDK/All', :path => '..'
 end

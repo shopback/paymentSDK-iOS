@@ -8,7 +8,11 @@
 
 import UIKit
 import PassKit
-import PaymentSDK
+import WDeComApplePay
+import WDeCom
+import WDeComCard
+import WDeComPayPal
+import WDeComSEPA
 
 let AMOUNT = NSDecimalNumber.init(mantissa: 199, exponent: -2, isNegative: false)
 
@@ -44,7 +48,7 @@ class ViewController: PaymemtVC, UIActionSheetDelegate {
                 return
             }
            
-            self.client!.make(payment, withCompletion:{(response: WDPaymentResponse?,error: Error?) in
+            self.client!.make(payment, withCompletion:{(response: WDECPaymentResponse?,error: Error?) in
                 let alertTitle = error != nil ? "Error" : "Success"
                 let alertMessage = error != nil ? error!.localizedDescription : "Item(s) has been purchased."
                 let ac = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .actionSheet)
@@ -71,78 +75,87 @@ class ViewController: PaymemtVC, UIActionSheetDelegate {
         return result;
     }
     
-    func createPayment(title:String) -> WDPayment {
-        var result : WDPayment
+    func createPayment(title:String) -> WDECPayment {
+        var result : WDECPayment
         
         switch title {
         case PMTitleApplePay : result = self.createPaymentApplePay()
         case PMTitleCard : result = self.createPaymentCard()
         case PMTitlePayPal : result = self.createPaymentPayPal()
         case PMTitleSEPA : result = self.createPaymentSEPA()
-        default : result = WDPayment()
+        default : result = WDECPayment()
         }
         return result
     }
     
-    func createPaymentApplePay() -> WDPayment {
+    func createPaymentApplePay() -> WDECPayment {
         
         let APPLE_MERCHANT_ID = "merchant.com.wirecard.paymentsdk.example.Simple"
-        let payment = WDApplePayManagedPayment.init(merchant: APPLE_MERCHANT_ID, andCountry:WDCountry.US)
-        payment?.amount = AMOUNT
-        payment?.currency = "USD"
-        payment?.transactionType = WDTransactionType.purchase
+        let payment = WDECApplePayManagedPayment()
+        payment.appleMerchantID = APPLE_MERCHANT_ID
+        payment.appleMerchantCountry = .US
+        payment.amount = AMOUNT
+        payment.currency = WDECCurrencyGetISOCode(WDECCurrency.USD)
+        payment.transactionType = .purchase
         
         let WD_MERCHANT_ACCOUNT_ID = "";
         let WD_MERCHANT_SECRET_KEY = "";
         self.merchantSignedPaymentByMerchantSecretKey(merchantAccountID: WD_MERCHANT_ACCOUNT_ID, payment: payment, merchantSecretKey: WD_MERCHANT_SECRET_KEY)
         
-        return payment!
+        return payment
     }
     
-    func createPaymentCard() -> WDPayment {
-        let payment = WDCardPayment.init(amount: AMOUNT, amountCurrency: WDCurrency.USD, transactionType: WDTransactionType.purchase)
+    func createPaymentCard() -> WDECPayment {
+        let payment = WDECCardPayment()
+        payment.amount = AMOUNT
+        payment.currency = "USD"
+        payment.transactionType = .purchase
         let WD_MERCHANT_ACCOUNT_ID = "33f6d473-3036-4ca5-acb5-8c64dac862d1"
         let WD_MERCHANT_SECRET_KEY = "9e0130f6-2e1e-4185-b0d5-dc69079c75cc"
         self.merchantSignedPaymentByMerchantSecretKey(merchantAccountID: WD_MERCHANT_ACCOUNT_ID, payment: payment, merchantSecretKey: WD_MERCHANT_SECRET_KEY)
         
-        return payment!
+        return payment
     }
     
-    func createPaymentPayPal() -> WDPayment {
-        let orderItem = WDOrderItem()
+    func createPaymentPayPal() -> WDECPayment {
+        let orderItem = WDECOrderItem()
         orderItem.name = "The Watch"
         orderItem.amount = AMOUNT;
-        orderItem.amountCurrency = WDCurrency.EUR;
+        orderItem.amountCurrency = .EUR;
         
-        let order = WDOrder()
+        let order = WDECOrder()
         order.descriptor = "DEMO DESCRIPTOR"
         order.number = NSUUID.init().uuidString
         order.detail = "DEMO ORDER DETAIL"
         order.items = [orderItem]
         
-        let payment = WDPayPalPayment.init(amount: AMOUNT, currency: WDCurrency.EUR)
-        payment?.transactionType = WDTransactionType.debit
-        payment?.order = order;
+        let payment = WDECPayPalPayment()
+        payment.amount = AMOUNT
+        payment.currency = "EUR"
+        payment.transactionType = .debit
+        payment.order = order;
         
         let WD_MERCHANT_ACCOUNT_ID = "9abf05c1-c266-46ae-8eac-7f87ca97af28"
         let WD_MERCHANT_SECRET_KEY = "5fca2a83-89ca-4f9e-8cf7-4ca74a02773f"
         self.merchantSignedPaymentByMerchantSecretKey(merchantAccountID: WD_MERCHANT_ACCOUNT_ID, payment: payment, merchantSecretKey: WD_MERCHANT_SECRET_KEY)
         
-        return payment!
+        return payment
     }
     
-    func createPaymentSEPA() -> WDPayment {
-        let payment = WDSEPAPayment.init(creditor:"DE98ZZZ09999999999", andMandate:"12345678")
-        payment?.amount = AMOUNT
-        payment?.currency = "EUR"
-        payment?.transactionType = WDTransactionType.pendingDebit
-        
+    func createPaymentSEPA() -> WDECPayment {
+        let payment = WDECSEPAPayment()
+        payment.creditorID = "DE98ZZZ09999999999"
+        payment.mandateID = "12345678"
+        payment.amount = AMOUNT
+        payment.currency = "EUR"
+        payment.transactionType = .pendingDebit
+                
         let WD_MERCHANT_ACCOUNT_ID = "4c901196-eff7-411e-82a3-5ef6b6860d64"
         let WD_MERCHANT_SECRET_KEY = "ecdf5990-0372-47cd-a55d-037dccfe9d25"
         
         self.merchantSignedPaymentByMerchantSecretKey(merchantAccountID: WD_MERCHANT_ACCOUNT_ID, payment: payment, merchantSecretKey: WD_MERCHANT_SECRET_KEY)
         
-        return payment!
+        return payment
     }
 }
 

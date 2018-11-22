@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48874F4E8DBA59D2367C4803 /* Pods_Embedded.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5865F7B6C9586DD8DA528BF /* Pods_Embedded.framework */; };
 		AC2CA1921E6DA4B00034E765 /* NSDateFormatter+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2CA18F1E6DA4B00034E765 /* NSDateFormatter+Utils.swift */; };
 		AC2CA1931E6DA4B00034E765 /* NSString+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2CA1901E6DA4B00034E765 /* NSString+Utils.swift */; };
 		AC2CA1941E6DA4B00034E765 /* PaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2CA1911E6DA4B00034E765 /* PaymentVC.swift */; };
@@ -15,13 +16,11 @@
 		ACADC13E1E6D884200DB078F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACADC13C1E6D884200DB078F /* Main.storyboard */; };
 		ACADC1401E6D884200DB078F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACADC13F1E6D884200DB078F /* Assets.xcassets */; };
 		ACADC1431E6D884200DB078F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACADC1411E6D884200DB078F /* LaunchScreen.storyboard */; };
-		D9632DD572C74A6E6DCCA147 /* libPods-Embedded.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 948C351DBFE2351F8C91C1FF /* libPods-Embedded.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3CEFF042F078B4EE46F2D97C /* Pods-Embedded.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Embedded.release.xcconfig"; path = "Pods/Target Support Files/Pods-Embedded/Pods-Embedded.release.xcconfig"; sourceTree = "<group>"; };
 		82FB4DF1FB3BDBF1F4B502AB /* Pods-Embedded.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Embedded.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Embedded/Pods-Embedded.debug.xcconfig"; sourceTree = "<group>"; };
-		948C351DBFE2351F8C91C1FF /* libPods-Embedded.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Embedded.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC2CA18F1E6DA4B00034E765 /* NSDateFormatter+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSDateFormatter+Utils.swift"; path = "Common/NSDateFormatter+Utils.swift"; sourceTree = "<group>"; };
 		AC2CA1901E6DA4B00034E765 /* NSString+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSString+Utils.swift"; path = "Common/NSString+Utils.swift"; sourceTree = "<group>"; };
 		AC2CA1911E6DA4B00034E765 /* PaymentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaymentVC.swift; path = Common/PaymentVC.swift; sourceTree = "<group>"; };
@@ -33,6 +32,7 @@
 		ACADC13F1E6D884200DB078F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACADC1421E6D884200DB078F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACADC1441E6D884200DB078F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5865F7B6C9586DD8DA528BF /* Pods_Embedded.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Embedded.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9632DD572C74A6E6DCCA147 /* libPods-Embedded.a in Frameworks */,
+				48874F4E8DBA59D2367C4803 /* Pods_Embedded.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,7 +102,7 @@
 		FB50741EA038D278B3B83850 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				948C351DBFE2351F8C91C1FF /* libPods-Embedded.a */,
+				F5865F7B6C9586DD8DA528BF /* Pods_Embedded.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -119,6 +119,7 @@
 				ACADC1321E6D884200DB078F /* Frameworks */,
 				ACADC1331E6D884200DB078F /* Resources */,
 				ED4C8418846E0B4344575425 /* [CP] Copy Pods Resources */,
+				FD6911E1E753A5B05126926A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -204,17 +205,67 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Embedded/Pods-Embedded-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/ZappMerchantLib/ZappMerchantLibResources.bundle",
-				"${PODS_ROOT}/../../PaymentSDKResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleMobileVision/GoogleMVTextDetectorResources.bundle",
+				"${PODS_ROOT}/../../WDeComCard.framework/WDeComCard.bundle",
+				"${PODS_ROOT}/../../WDeComCardScanner.framework/WDeComCardScanner.bundle",
+				"${PODS_ROOT}/../../WDeCom.framework/WDeCom.bundle",
+				"${PODS_ROOT}/../../WDeComIBANScanner.framework/WDeComIBANScanner.bundle",
+				"${PODS_ROOT}/../../WDeComSEPA.framework/WDeComSEPA.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZappMerchantLibResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/PaymentSDKResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMVTextDetectorResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WDeComCard.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WDeComCardScanner.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WDeCom.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WDeComIBANScanner.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WDeComSEPA.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Embedded/Pods-Embedded-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD6911E1E753A5B05126926A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Embedded/Pods-Embedded-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/CMPopTipView/CMPopTipView.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IBAN/IBAN.framework",
+				"${BUILT_PRODUCTS_DIR}/Lockbox/Lockbox.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Mantle/Mantle.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
+				"${BUILT_PRODUCTS_DIR}/ZappMerchantLib/ZappMerchantLib.framework",
+				"${BUILT_PRODUCTS_DIR}/libextobjc/libextobjc.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CMPopTipView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBAN.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lockbox.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mantle.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZappMerchantLib.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libextobjc.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Embedded/Pods-Embedded-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -368,6 +419,7 @@
 			baseConfigurationReference = 82FB4DF1FB3BDBF1F4B502AB /* Pods-Embedded.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				DEVELOPMENT_TEAM = G947PFP5Z6;
 				INFOPLIST_FILE = Embedded/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -384,6 +436,7 @@
 			baseConfigurationReference = 3CEFF042F078B4EE46F2D97C /* Pods-Embedded.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				DEVELOPMENT_TEAM = G947PFP5Z6;
 				INFOPLIST_FILE = Embedded/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

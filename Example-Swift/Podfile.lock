@@ -14,7 +14,6 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - CardIO (5.4.1)
   - CMPopTipView (2.3.2)
   - CocoaLumberjack (3.4.2):
     - CocoaLumberjack/Default (= 3.4.2)
@@ -22,6 +21,20 @@ PODS:
   - CocoaLumberjack/Default (3.4.2)
   - CocoaLumberjack/Extensions (3.4.2):
     - CocoaLumberjack/Default
+  - GoogleMobileVision/Detector (1.5.0):
+    - GoogleToolboxForMac/Logger (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+    - GTMSessionFetcher/Core (~> 1.1)
+    - Protobuf (~> 3.1)
+  - GoogleMobileVision/TextDetector (1.5.0):
+    - GoogleMobileVision/Detector (~> 1.5)
+  - GoogleToolboxForMac/Defines (2.1.4)
+  - GoogleToolboxForMac/Logger (2.1.4):
+    - GoogleToolboxForMac/Defines (= 2.1.4)
+  - "GoogleToolboxForMac/NSData+zlib (2.1.4)":
+    - GoogleToolboxForMac/Defines (= 2.1.4)
+  - GTMSessionFetcher/Core (1.2.1)
+  - IBAN (1.0.0)
   - libextobjc/EXTScope (0.4.1):
     - libextobjc/RuntimeExtensions
   - libextobjc/RuntimeExtensions (0.4.1)
@@ -30,9 +43,28 @@ PODS:
     - Mantle/extobjc (= 2.1.0)
   - Mantle/extobjc (2.1.0)
   - MBProgressHUD (1.1.0)
-  - paymentSDK (2.17.5):
+  - paymentSDK/Alipay (3.0.0):
+    - paymentSDK/Core
+  - paymentSDK/All (3.0.0):
+    - paymentSDK/Alipay
+    - paymentSDK/ApplePay
+    - paymentSDK/Card
+    - paymentSDK/CardScanner
+    - paymentSDK/Core
+    - paymentSDK/CoreCard
+    - paymentSDK/IBANScanner
+    - paymentSDK/PayPal
+    - paymentSDK/SEPA
+    - paymentSDK/ZAPP
+  - paymentSDK/ApplePay (3.0.0):
+    - paymentSDK/CoreCard
+  - paymentSDK/Card (3.0.0):
+    - paymentSDK/CoreCard
+  - paymentSDK/CardScanner (3.0.0):
+    - GoogleMobileVision/TextDetector (~> 1.5.0)
+    - paymentSDK/Card
+  - paymentSDK/Core (3.0.0):
     - AFNetworking (~> 3.2.1)
-    - CardIO (~> 5.4.1)
     - CMPopTipView (~> 2.3.2)
     - CocoaLumberjack (~> 3.4.2)
     - libextobjc/EXTScope (~> 0.4.1)
@@ -40,23 +72,40 @@ PODS:
     - Mantle (~> 2.1.0)
     - MBProgressHUD (~> 1.1.0)
     - TPKeyboardAvoiding (~> 1.3.2)
+  - paymentSDK/CoreCard (3.0.0):
+    - paymentSDK/Core
+  - paymentSDK/IBANScanner (3.0.0):
+    - GoogleMobileVision/TextDetector (~> 1.5.0)
+    - paymentSDK/SEPA
+  - paymentSDK/PayPal (3.0.0):
+    - paymentSDK/Core
+  - paymentSDK/SEPA (3.0.0):
+    - IBAN (~> 1.0.0)
+    - paymentSDK/Core
+  - paymentSDK/ZAPP (3.0.0):
+    - paymentSDK/Core
     - ZappMerchantLib (~> 1.1.2)
+  - Protobuf (3.6.1)
   - TPKeyboardAvoiding (1.3.2)
   - ZappMerchantLib (1.1.2)
 
 DEPENDENCIES:
-  - paymentSDK (from `..`)
+  - paymentSDK/All (from `..`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
-    - CardIO
     - CMPopTipView
     - CocoaLumberjack
+    - GoogleMobileVision
+    - GoogleToolboxForMac
+    - GTMSessionFetcher
+    - IBAN
     - libextobjc
     - Lockbox
     - Mantle
     - MBProgressHUD
+    - Protobuf
     - TPKeyboardAvoiding
     - ZappMerchantLib
 
@@ -66,17 +115,21 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
   CMPopTipView: 2d56ef53e8e739c4e63ad97a5a88b97712b46c7b
   CocoaLumberjack: db7cc9e464771f12054c22ff6947c5a58d43a0fd
+  GoogleMobileVision: a1f93108b3527d67339e2de80e1db76645f9e8b9
+  GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
+  GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
+  IBAN: 76b56f687c86323802ca6bddb2035e6c6ea3d9c9
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
   Lockbox: 4291a0b8b1aed35474881c4e592961dec3ca695e
   Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
-  paymentSDK: 0bb92baa70cfdc46d66acffcd08bc46ede6669d4
+  paymentSDK: c6e4c4a6c92ba950419b12ac2ef17235d4bedb92
+  Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
   ZappMerchantLib: 92ea0dde1a253f36211a7b7a655335ba19a4da74
 
-PODFILE CHECKSUM: 65b7f364c7a6a2a4c04f83220a64912dc7d1c5e4
+PODFILE CHECKSUM: e19dfc25081f9901092ce9a81429a3802b69da9d
 
 COCOAPODS: 1.5.3

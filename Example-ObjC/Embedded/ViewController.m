@@ -9,16 +9,16 @@
 #import "ViewController.h"
 
 #import <libextobjc/EXTScope.h>
-#import <PaymentSDK/PaymentSDK.h>
+#import <WDeComCard/WDeComCard.h>
 
 #define NSStringize_helper(x) #x
 #define NSStringize(x) @NSStringize_helper(x)
 
 #define AMOUNT [NSDecimalNumber decimalNumberWithMantissa:199 exponent:-2 isNegative:NO]
 
-@interface ViewController () <WDCardFieldDelegate>
+@interface ViewController () <WDECCardFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet WDCardField *cardField;
+@property (weak, nonatomic) IBOutlet WDECCardField *cardField;
 @property (weak, nonatomic) IBOutlet UILabel *cardFieldStateLabel;
 @property (weak, nonatomic) IBOutlet UIButton *payBtn;
 
@@ -37,7 +37,7 @@
 
 - (IBAction)onPay:(UIButton *)sender {
     // if you create payment object just before calling makePayment you are sure that timestamp is correct
-    WDCardPayment *payment = [self createCardPayment];
+    WDECCardPayment *payment = [self createCardPayment];
     self.cardField.cardPayment = payment; // append card data
 
     payment = self.cardField.cardPayment;
@@ -47,7 +47,7 @@
     }
     sender.enabled = NO;
     @weakify(self, sender);
-    [self.client makePayment:payment withCompletion:^(WDPaymentResponse * _Nullable response, NSError * _Nullable error) {
+    [self.client makePayment:payment withCompletion:^(WDECPaymentResponse * _Nullable response, NSError * _Nullable error) {
         @strongify(self, sender);
         sender.enabled = YES;
         
@@ -64,41 +64,42 @@
         self.cardField.cardPayment = [self createCardPayment];
     }];
 }
-#pragma mark - WDCardFieldDelegate
+#pragma mark - WDECCardFieldDelegate
 
-- (void)cardField:(nonnull WDCardField *)cardField didChangeState:(WDCardFieldState)state {
+- (void)cardField:(nonnull WDECCardField *)cardField didChangeState:(WDECCardFieldState)state {
     self.payBtn.enabled = cardField.valid;
     
 #define SWITCH_CASE(value) case value: { text = NSStringize(value); break; }
     NSString *text = nil;
     switch (state) {
-            SWITCH_CASE(WDCardFieldStateCardInitial)
-            SWITCH_CASE(WDCardFieldStateJailbrokenDevice)
-            SWITCH_CASE(WDCardFieldStateCardValid)
-            SWITCH_CASE(WDCardFieldStateCardUnsupported)
-            SWITCH_CASE(WDCardFieldStateNumberEditting)
-            SWITCH_CASE(WDCardFieldStateNumberIncomplete)
-            SWITCH_CASE(WDCardFieldStateNumberInvalid)
-            SWITCH_CASE(WDCardFieldStateNumberValid)
-            SWITCH_CASE(WDCardFieldStateMonthEditting)
-            SWITCH_CASE(WDCardFieldStateYearEditting)
-            SWITCH_CASE(WDCardFieldStateExpirationDateIncomplete)
-            SWITCH_CASE(WDCardFieldStateExpirationDateInvalid)
-            SWITCH_CASE(WDCardFieldStateExpirationDateValid)
-            SWITCH_CASE(WDCardFieldStateSecurityCodeEditting)
-            SWITCH_CASE(WDCardFieldStateSecurityCodeIncomplete)
-            SWITCH_CASE(WDCardFieldStateSecurityCodeInvalid)
-            SWITCH_CASE(WDCardFieldStateSecurityCodeValid)
+            SWITCH_CASE(WDECCardFieldStateCardInitial)
+            SWITCH_CASE(WDECCardFieldStateJailbrokenDevice)
+            SWITCH_CASE(WDECCardFieldStateCardValid)
+            SWITCH_CASE(WDECCardFieldStateCardUnsupported)
+            SWITCH_CASE(WDECCardFieldStateNumberEditting)
+            SWITCH_CASE(WDECCardFieldStateNumberIncomplete)
+            SWITCH_CASE(WDECCardFieldStateNumberInvalid)
+            SWITCH_CASE(WDECCardFieldStateNumberValid)
+            SWITCH_CASE(WDECCardFieldStateMonthEditting)
+            SWITCH_CASE(WDECCardFieldStateYearEditting)
+            SWITCH_CASE(WDECCardFieldStateExpirationDateIncomplete)
+            SWITCH_CASE(WDECCardFieldStateExpirationDateInvalid)
+            SWITCH_CASE(WDECCardFieldStateExpirationDateValid)
+            SWITCH_CASE(WDECCardFieldStateSecurityCodeEditting)
+            SWITCH_CASE(WDECCardFieldStateSecurityCodeIncomplete)
+            SWITCH_CASE(WDECCardFieldStateSecurityCodeInvalid)
+            SWITCH_CASE(WDECCardFieldStateSecurityCodeValid)
     }
 #undef SWITCH_CASE
     
     self.cardFieldStateLabel.text = text;
 }
 
-- (WDCardPayment *)createCardPayment {
-    WDCardPayment *payment = [[WDCardPayment alloc] initWithAmount:AMOUNT
-                                                    amountCurrency:WDCurrencyUSD
-                                                   transactionType:WDTransactionTypePurchase];
+- (WDECCardPayment *)createCardPayment {
+    WDECCardPayment *payment = [WDECCardPayment new];
+    payment.amount = AMOUNT;
+    payment.currency = @"USD";
+    payment.transactionType = WDECTransactionTypePurchase;
     static NSString *const WD_MERCHANT_ACCOUNT_ID = @"33f6d473-3036-4ca5-acb5-8c64dac862d1";
     static NSString *const WD_MERCHANT_SECRET_KEY = @"9e0130f6-2e1e-4185-b0d5-dc69079c75cc";
     [self merchant:WD_MERCHANT_ACCOUNT_ID signPayment:payment byMerchantSecretKey:WD_MERCHANT_SECRET_KEY];
@@ -107,9 +108,9 @@
     return payment;
 }
 
-- (WDCustomerData *)accountHolder {
-    WDCustomerData *accountHolder = nil;
-    accountHolder = [WDCustomerData new];
+- (WDECCustomerData *)accountHolder {
+    WDECCustomerData *accountHolder = nil;
+    accountHolder = [WDECCustomerData new];
     accountHolder.lastName = @"Doe";
     
     return accountHolder;

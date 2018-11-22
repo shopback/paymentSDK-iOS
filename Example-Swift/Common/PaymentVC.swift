@@ -7,18 +7,18 @@
 //
 
 import UIKit
-import PaymentSDK
+import WDeCom
 
 class PaymemtVC: UIViewController {
     
-    public var client : WDClient?
+    public var client : WDECClient?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         self.client = WDClient.init(environment: WDEnvironment.TEST)!
+         self.client = WDECClient.init(environment: WDECEnvironment.TEST)!
     }
     
-    public func merchantSignedPaymentByMerchantSecretKey(merchantAccountID:String, payment:WDPayment?,merchantSecretKey:String) {
+    public func merchantSignedPaymentByMerchantSecretKey(merchantAccountID:String, payment:WDECPayment?,merchantSecretKey:String) {
         
         if let payment = payment {
             payment.merchantAccountID = merchantAccountID
@@ -26,7 +26,7 @@ class PaymemtVC: UIViewController {
             payment.requestTimestamp = Date.init()
             
             let requestIDStr : String = payment.requestID
-            let transactionTypeStr : String = WDTransactionTypeGetCode(payment.transactionType)
+            let transactionTypeStr : String = WDECTransactionTypeGetCode(payment.transactionType)
             let amountStr : String = (payment.amount?.stringValue)!
             let currencyStr : String = payment.currency
             let IPAddressStr : String = (payment.ipAddress) ?? ""

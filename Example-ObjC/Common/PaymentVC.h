@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@class WDClient;
-@class WDPayment;
+@class WDECClient;
+@class WDECPayment;
 
 @interface PaymentVC : UIViewController
 
-@property (strong, nullable, nonatomic) WDClient *client;
+@property (strong, nullable, nonatomic) WDECClient *client;
 
 - (void)merchant:(nonnull NSString *)merchantAccountID
-     signPayment:(nonnull WDPayment *)payment byMerchantSecretKey:(nonnull NSString *)merchantSecretKey;
+     signPayment:(nonnull WDECPayment *)payment byMerchantSecretKey:(nonnull NSString *)merchantSecretKey;
 
 @end

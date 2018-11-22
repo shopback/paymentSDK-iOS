@@ -8,7 +8,7 @@
 
 #import "PaymentVC.h"
 
-#import <PaymentSDK/PaymentSDK.h>
+#import <WDeCom/WDeCom.h>
 
 #import "NSDateFormatter+Utils.h"
 #import "NSString+Utils.h"
@@ -17,11 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.client = [[WDClient alloc] initWithEnvironment:WDEnvironmentTEST];
+    self.client = [[WDECClient alloc] initWithEnvironment:WDECEnvironmentTEST];
 }
 
 - (void)merchant:(nonnull NSString *)merchantAccountID
-     signPayment:(nonnull WDPayment *)payment byMerchantSecretKey:(nonnull NSString *)merchantSecretKey
+     signPayment:(nonnull WDECPayment *)payment byMerchantSecretKey:(nonnull NSString *)merchantSecretKey
 {
     if (!payment) {
         return;
@@ -32,7 +32,7 @@
     payment.requestTimestamp = [NSDate date]; // UTC
     
     NSString *requestIDStr = payment.requestID;
-    NSString *transactionTypeStr = WDTransactionTypeGetCode(payment.transactionType) ?: @"";
+    NSString *transactionTypeStr = WDECTransactionTypeGetCode(payment.transactionType) ?: @"";
     NSString *amountStr = [payment.amount stringValue];
     NSString *currencyStr = payment.currency ?: @"";
     NSString *IPAddressStr = payment.IPAddress;

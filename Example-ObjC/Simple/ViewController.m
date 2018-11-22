@@ -12,7 +12,11 @@
 #import <PassKit/PKPaymentAuthorizationViewController.h>
 
 #import <libextobjc/EXTScope.h>
-#import <PaymentSDK/PaymentSDK.h>
+#import <WDeCom/WDeCom.h>
+#import <WDeComApplePay/WDeComApplePay.h>
+#import <WDeComCard/WDeComCard.h>
+#import <WDeComPayPal/WDeComPayPal.h>
+#import <WDeComSEPA/WDeComSEPA.h>
 
 #define AMOUNT [NSDecimalNumber decimalNumberWithMantissa:199 exponent:-2 isNegative:NO]
 
@@ -47,13 +51,13 @@ NSString *const PMTitleSEPA     = @"SEPA";
     
     void (^handler)(UIAlertAction *action) = ^(UIAlertAction * _Nonnull action) {
         NSString *title = action.title;
-        WDPayment *payment = [self createPayment:title];
+        WDECPayment *payment = [self createPayment:title];
         if (!payment) {
             return;
         }
         sender.enabled = NO;
         @weakify(self, sender);
-        [self.client makePayment:payment withCompletion:^(WDPaymentResponse * _Nullable response, NSError * _Nullable error) {
+        [self.client makePayment:payment withCompletion:^(WDECPaymentResponse * _Nullable response, NSError * _Nullable error) {
             @strongify(self, sender);
             sender.enabled = YES;
             
@@ -88,9 +92,9 @@ NSString *const PMTitleSEPA     = @"SEPA";
     return result;
 }
 
-- (WDPayment *)createPayment:(nonnull NSString *)title
+- (WDECPayment *)createPayment:(nonnull NSString *)title
 {
-    WDPayment *result = nil;
+    WDECPayment *result = nil;
     if ([title isEqualToString:PMTitleApplePay]) {
         result = [self createPaymentApplePay];
     } else if ([title isEqualToString:PMTitleCard]) {
@@ -103,13 +107,15 @@ NSString *const PMTitleSEPA     = @"SEPA";
     return result;
 }
 
-- (WDPayment *)createPaymentApplePay
+- (WDECPayment *)createPaymentApplePay
 {
     static NSString *const APPLE_MERCHANT_ID = @"merchant.com.wirecard.paymentsdk.example.Simple";
-    WDApplePayManagedPayment *payment = [[WDApplePayManagedPayment alloc] initWithMerchant:APPLE_MERCHANT_ID andCountry:WDCountryUS];
+    WDECApplePayManagedPayment *payment = [WDECApplePayManagedPayment new];
+    payment.appleMerchantID = APPLE_MERCHANT_ID;
+    payment.appleMerchantCountry = WDECCountryUS;
     payment.amount = AMOUNT;
-    payment.amountCurrency = WDCurrencyUSD;
-    payment.transactionType = WDTransactionTypePurchase;
+    payment.currency = @"USD";
+    payment.transactionType = WDECTransactionTypePurchase;
     
     static NSString *const WD_MERCHANT_ACCOUNT_ID = @"";
     static NSString *const WD_MERCHANT_SECRET_KEY = @"";
@@ -117,32 +123,35 @@ NSString *const PMTitleSEPA     = @"SEPA";
     return payment;
 }
 
-- (WDPayment *)createPaymentCard
+- (WDECPayment *)createPaymentCard
 {
-    WDCardPayment *payment = [[WDCardPayment alloc] initWithAmount:AMOUNT
-                                                    amountCurrency:WDCurrencyUSD
-                                                   transactionType:WDTransactionTypePurchase];
+    WDECCardPayment *payment = [WDECCardPayment new];
+    payment.amount = AMOUNT;
+    payment.currency = @"USD";
+    payment.transactionType = WDECTransactionTypePurchase;
     static NSString *const WD_MERCHANT_ACCOUNT_ID = @"33f6d473-3036-4ca5-acb5-8c64dac862d1";
     static NSString *const WD_MERCHANT_SECRET_KEY = @"9e0130f6-2e1e-4185-b0d5-dc69079c75cc";
     [self merchant:WD_MERCHANT_ACCOUNT_ID signPayment:payment byMerchantSecretKey:WD_MERCHANT_SECRET_KEY];
     return payment;
 }
 
-- (WDPayment *)createPaymentPayPal
+- (WDECPayment *)createPaymentPayPal
 {
-    WDOrderItem *orderItem = [WDOrderItem new];
+    WDECOrderItem *orderItem = [WDECOrderItem new];
     orderItem.name = @"The Watch";
     orderItem.amount = AMOUNT;
-    orderItem.amountCurrency = WDCurrencyEUR;
+    orderItem.amountCurrency = WDECCurrencyEUR;
     
-    WDOrder *order = [WDOrder new];
+    WDECOrder *order = [WDECOrder new];
     order.descriptor = @"DEMO DESCRIPTOR";
     order.number = [[NSUUID UUID] UUIDString];
     order.detail = @"DEMO ORDER DETAIL";
     order.items = @[orderItem];
     
-    WDPayPalPayment *payment = [[WDPayPalPayment alloc] initWithAmount:AMOUNT currency:WDCurrencyEUR];
-    payment.transactionType = WDTransactionTypeDebit;
+    WDECPayPalPayment *payment = [WDECPayPalPayment new];
+    payment.amount = AMOUNT;
+    payment.currency = @"EUR";
+    payment.transactionType = WDECTransactionTypeDebit;
     payment.order = order;
     
     static NSString *const WD_MERCHANT_ACCOUNT_ID = @"9abf05c1-c266-46ae-8eac-7f87ca97af28";
@@ -153,12 +162,14 @@ NSString *const PMTitleSEPA     = @"SEPA";
     return payment;
 }
 
-- (WDPayment *)createPaymentSEPA
+- (WDECPayment *)createPaymentSEPA
 {
-    WDSEPAPayment *payment = [[WDSEPAPayment alloc] initWithCreditor:@"DE98ZZZ09999999999" andMandate:@"12345678"];
+    WDECSEPAPayment *payment = [WDECSEPAPayment new];
+    payment.creditorID = @"DE98ZZZ09999999999";
+    payment.mandateID = @"12345678";
     payment.amount = AMOUNT;
-    payment.amountCurrency = WDCurrencyEUR;
-    payment.transactionType = WDTransactionTypePendingDebit;
+    payment.currency = @"EUR";
+    payment.transactionType = WDECTransactionTypePendingDebit;
     
     static NSString *const WD_MERCHANT_ACCOUNT_ID = @"4c901196-eff7-411e-82a3-5ef6b6860d64";
     static NSString *const WD_MERCHANT_SECRET_KEY = @"ecdf5990-0372-47cd-a55d-037dccfe9d25";
@@ -166,9 +177,9 @@ NSString *const PMTitleSEPA     = @"SEPA";
     return payment;
 }
 
-- (WDCustomerData *)accountHolder {
-    WDCustomerData *accountHolder = nil;
-    accountHolder = [WDCustomerData new];
+- (WDECCustomerData *)accountHolder {
+    WDECCustomerData *accountHolder = nil;
+    accountHolder = [WDECCustomerData new];
     accountHolder.lastName = @"Doe";
     
     return accountHolder;

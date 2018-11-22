@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		249136B824E9F25D2F28516A /* libPods-Simple.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52314BCC61838B9C17C5CE39 /* libPods-Simple.a */; };
 		ACD032231E5C45AB003702D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD032221E5C45AB003702D0 /* AppDelegate.swift */; };
 		ACD032251E5C45AB003702D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD032241E5C45AB003702D0 /* ViewController.swift */; };
 		ACD032281E5C45AB003702D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACD032261E5C45AB003702D0 /* Main.storyboard */; };
@@ -16,11 +15,12 @@
 		ACE7A4912091DEE8009E50C7 /* NSDateFormatter+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7A48D2091DEE8009E50C7 /* NSDateFormatter+Utils.swift */; };
 		ACE7A4922091DEE8009E50C7 /* NSString+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7A48E2091DEE8009E50C7 /* NSString+Utils.swift */; };
 		ACE7A4932091DEE8009E50C7 /* PaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7A4902091DEE8009E50C7 /* PaymentVC.swift */; };
+		F51CC9139E24BB2FC020CFCB /* Pods_Simple.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A53A8ECDB54C2E3DA6871BA7 /* Pods_Simple.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		52314BCC61838B9C17C5CE39 /* libPods-Simple.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Simple.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		747D48E498BB999A30BA0E70 /* Pods-Simple.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simple.release.xcconfig"; path = "Pods/Target Support Files/Pods-Simple/Pods-Simple.release.xcconfig"; sourceTree = "<group>"; };
+		A53A8ECDB54C2E3DA6871BA7 /* Pods_Simple.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Simple.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACD0321F1E5C45AB003702D0 /* Simple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Simple.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACD032221E5C45AB003702D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Simple/AppDelegate.swift; sourceTree = "<group>"; };
 		ACD032241E5C45AB003702D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Simple/ViewController.swift; sourceTree = "<group>"; };
@@ -40,7 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				249136B824E9F25D2F28516A /* libPods-Simple.a in Frameworks */,
+				F51CC9139E24BB2FC020CFCB /* Pods_Simple.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,7 +102,7 @@
 		C94C1275BB1736930E29D1CB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				52314BCC61838B9C17C5CE39 /* libPods-Simple.a */,
+				A53A8ECDB54C2E3DA6871BA7 /* Pods_Simple.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -119,6 +119,7 @@
 				ACD0321C1E5C45AB003702D0 /* Frameworks */,
 				ACD0321D1E5C45AB003702D0 /* Resources */,
 				2CC57A0A322DFA89A79DC6AF /* [CP] Copy Pods Resources */,
+				AE0DDCF37F10EF55416E1844 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -186,17 +187,67 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Simple/Pods-Simple-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/ZappMerchantLib/ZappMerchantLibResources.bundle",
-				"${PODS_ROOT}/../../PaymentSDKResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleMobileVision/GoogleMVTextDetectorResources.bundle",
+				"${PODS_ROOT}/../../WDeComCard.framework/WDeComCard.bundle",
+				"${PODS_ROOT}/../../WDeComCardScanner.framework/WDeComCardScanner.bundle",
+				"${PODS_ROOT}/../../WDeCom.framework/WDeCom.bundle",
+				"${PODS_ROOT}/../../WDeComIBANScanner.framework/WDeComIBANScanner.bundle",
+				"${PODS_ROOT}/../../WDeComSEPA.framework/WDeComSEPA.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZappMerchantLibResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/PaymentSDKResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMVTextDetectorResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WDeComCard.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WDeComCardScanner.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WDeCom.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WDeComIBANScanner.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WDeComSEPA.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Simple/Pods-Simple-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE0DDCF37F10EF55416E1844 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Simple/Pods-Simple-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/CMPopTipView/CMPopTipView.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IBAN/IBAN.framework",
+				"${BUILT_PRODUCTS_DIR}/Lockbox/Lockbox.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Mantle/Mantle.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
+				"${BUILT_PRODUCTS_DIR}/ZappMerchantLib/ZappMerchantLib.framework",
+				"${BUILT_PRODUCTS_DIR}/libextobjc/libextobjc.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CMPopTipView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBAN.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lockbox.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mantle.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZappMerchantLib.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libextobjc.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Simple/Pods-Simple-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EC303BF6C75542CCC05C8C4C /* [CP] Check Pods Manifest.lock */ = {
@@ -374,6 +425,7 @@
 			baseConfigurationReference = C506849090E56A32BC1F216E /* Pods-Simple.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = G947PFP5Z6;
 				INFOPLIST_FILE = Simple/Info.plist;
@@ -391,6 +443,7 @@
 			baseConfigurationReference = 747D48E498BB999A30BA0E70 /* Pods-Simple.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = G947PFP5Z6;
 				INFOPLIST_FILE = Simple/Info.plist;
