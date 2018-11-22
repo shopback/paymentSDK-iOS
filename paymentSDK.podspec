@@ -73,7 +73,7 @@ Pod::Spec.new do |s|
       ss.vendored_frameworks = 'WDeComCard.framework'
       ss.resource            = 'WDeComCard.framework/WDeComCard.bundle'
 
-      ss.dependency            'paymentSDK/Core'
+      ss.dependency            'paymentSDK/CoreCard'
 
     end
     s.subspec 'CardScanner' do |ss|
