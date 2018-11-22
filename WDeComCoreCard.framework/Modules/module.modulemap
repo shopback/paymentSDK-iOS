@@ -1,0 +1,6 @@
+framework module WDeComCoreCard {
+  umbrella header "WDeComCoreCard.h"
+
+  export *
+  module * { export * }
+}

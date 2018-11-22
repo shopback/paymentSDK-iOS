@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'paymentSDK'
-  s.version          = '2.17.6'
+  s.version          = '3.0.0'
   s.summary          = 'Wirecard paymentSDK - online payments'
   s.description      = <<-DESC
                        The library allows online payments processing.
@@ -17,22 +17,100 @@ Pod::Spec.new do |s|
   s.authors          = { 'Stefan Sedlak' => 'stefan.sedlak@wirecard.com', 'Jozef Vrana' => 'jozef.vrana@wirecard.com' }
   s.source           = { :git => 'https://github.com/wirecard/paymentSDK-iOS.git', :tag => s.version }
   s.platform         = :ios
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
-  s.dependency       'AFNetworking', '~> 3.2.1'
-  s.dependency       'CardIO', '~> 5.4.1'
-  s.dependency       'CMPopTipView', '~> 2.3.2'
-  s.dependency       'CocoaLumberjack', '~> 3.4.2'
-  s.ios.dependency   'Lockbox', '~> 3.0.6'
-  s.dependency       'Mantle', '~> 2.1.0'
-  s.ios.dependency   'MBProgressHUD', '~> 1.1.0'
-  s.ios.dependency   'TPKeyboardAvoiding', '~> 1.3.2'
-  s.dependency       'libextobjc/EXTScope', '~> 0.4.1'
-  s.dependency       'ZappMerchantLib', '~> 1.1.2'
+   s.subspec 'All' do |ss|
+      ss.dependency            'paymentSDK/Core'
+      ss.dependency            'paymentSDK/CoreCard'
+      ss.dependency            'paymentSDK/Alipay'
+      ss.dependency            'paymentSDK/ApplePay'
+      ss.dependency            'paymentSDK/Card'
+      ss.dependency            'paymentSDK/CardScanner'
+      ss.dependency            'paymentSDK/PayPal'
+      ss.dependency            'paymentSDK/SEPA'
+      ss.dependency            'paymentSDK/IBANScanner'
+      ss.dependency            'paymentSDK/ZAPP'
+    end
 
-  s.requires_arc     = true
-  s.frameworks       = 'Foundation', 'UIKit', 'PassKit', 'AddressBook', 'Security'
-  s.libraries        = 'xml2'
-  s.vendored_frameworks = 'PaymentSDK.framework'
-  s.resource            = 'PaymentSDKResources.bundle'
+    s.subspec 'Core' do |ss|
+      ss.vendored_frameworks = 'WDeCom.framework'
+      ss.resource            = 'WDeCom.framework/WDeCom.bundle'
+
+      ss.dependency            'AFNetworking', '~> 3.2.1'
+      ss.dependency            'CMPopTipView', '~> 2.3.2'
+      ss.dependency            'CocoaLumberjack', '~> 3.4.2'
+      ss.ios.dependency        'Lockbox', '~> 3.0.6'
+      ss.dependency            'Mantle', '~> 2.1.0'
+      ss.ios.dependency        'MBProgressHUD', '~> 1.1.0'
+      ss.dependency            'libextobjc/EXTScope', '~> 0.4.1'
+      ss.ios.dependency        'TPKeyboardAvoiding', '~> 1.3.2'
+
+      ss.ios.frameworks      = 'Foundation', 'UIKit', 'Security'
+      ss.libraries           = 'xml2'
+    end
+
+    s.subspec 'Alipay' do |ss|
+      ss.vendored_frameworks = 'WDeComAlipay.framework'
+
+      ss.dependency            'paymentSDK/Core'
+    end
+
+    s.subspec 'ApplePay' do |ss|
+      ss.vendored_frameworks = 'WDeComApplePay.framework'
+
+      ss.dependency            'paymentSDK/CoreCard'
+
+      ss.ios.frameworks       = 'AddressBook', 'PassKit'
+    end
+
+    s.subspec 'CoreCard' do |ss|
+      ss.vendored_frameworks = 'WDeComCoreCard.framework'
+    
+      ss.dependency            'paymentSDK/Core'
+    end
+    
+    s.subspec 'Card' do |ss|
+      ss.vendored_frameworks = 'WDeComCard.framework'
+      ss.resource            = 'WDeComCard.framework/WDeComCard.bundle'
+
+      ss.dependency            'paymentSDK/Core'
+
+    end
+    s.subspec 'CardScanner' do |ss|
+      ss.vendored_frameworks = 'WDeComCardScanner.framework'
+      ss.resource            = 'WDeComCardScanner.framework/WDeComCardScanner.bundle'
+      
+      ss.dependency            'paymentSDK/Card'      
+      ss.dependency            'GoogleMobileVision/TextDetector', '~> 1.5.0'
+    end
+
+    s.subspec 'PayPal' do |ss|
+      ss.vendored_frameworks = 'WDeComPayPal.framework'
+
+      ss.dependency            'paymentSDK/Core'
+    end 
+
+    s.subspec 'SEPA' do |ss|
+      ss.vendored_frameworks = 'WDeComSEPA.framework'
+      ss.resource            = 'WDeComSEPA.framework/WDeComSEPA.bundle'
+
+      ss.dependency            'paymentSDK/Core'
+      ss.dependency            'IBAN', '~> 1.0.0'
+
+    end
+
+    s.subspec 'IBANScanner' do |ss|
+      ss.vendored_frameworks = 'WDeComIBANScanner.framework'
+      ss.resource            = 'WDeComIBANScanner.framework/WDeComIBANScanner.bundle'
+      
+      ss.dependency            'paymentSDK/SEPA'      
+      ss.dependency            'GoogleMobileVision/TextDetector', '~> 1.5.0'
+    end
+
+    s.subspec 'ZAPP' do |ss|
+      ss.vendored_frameworks = 'WDeComZAPP.framework'
+
+      ss.dependency            'paymentSDK/Core'
+      ss.dependency            'ZappMerchantLib', '~> 1.1.2'
+    end
 end

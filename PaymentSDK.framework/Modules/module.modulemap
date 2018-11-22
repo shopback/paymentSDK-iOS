@@ -1,6 +1,0 @@
-framework module PaymentSDK {
-  umbrella header "PaymentSDK.h"
-
-  export *
-  module * { export * }
-}
