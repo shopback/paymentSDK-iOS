@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'paymentSDK'
-  s.version          = '2.17.6'
+  s.version          = '2.17.7'
   s.summary          = 'Wirecard paymentSDK - online payments'
   s.description      = <<-DESC
                        The library allows online payments processing.
@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
   s.dependency       'Mantle', '~> 2.1.0'
   s.ios.dependency   'MBProgressHUD', '~> 1.1.0'
   s.ios.dependency   'TPKeyboardAvoiding', '~> 1.3.2'
-  s.dependency       'libextobjc/EXTScope', '~> 0.4.1'
+  s.dependency       'libextobjc/EXTScope', '~> 0.6'
   s.dependency       'ZappMerchantLib', '~> 1.1.2'
 
   s.requires_arc     = true
