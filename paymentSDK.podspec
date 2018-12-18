@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'paymentSDK'
-  s.version          = '3.0.0'
+  s.version          = '3.0.1'
   s.summary          = 'Wirecard paymentSDK - online payments'
   s.description      = <<-DESC
                        The library allows online payments processing.
@@ -42,7 +42,7 @@ Pod::Spec.new do |s|
       ss.ios.dependency        'Lockbox', '~> 3.0.6'
       ss.dependency            'Mantle', '~> 2.1.0'
       ss.ios.dependency        'MBProgressHUD', '~> 1.1.0'
-      ss.dependency            'libextobjc/EXTScope', '~> 0.4.1'
+      ss.dependency            'libextobjc/EXTScope', '~> 0.6'
       ss.ios.dependency        'TPKeyboardAvoiding', '~> 1.3.2'
 
       ss.ios.frameworks      = 'Foundation', 'UIKit', 'Security'

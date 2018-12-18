@@ -19,3 +19,4 @@ FOUNDATION_EXPORT const unsigned char WDeComCardVersionString[];
 #import <WDeComCard/WDECCardPayment.h>
 #import <WDeComCard/WDECCardPaymentResponse.h>
 #import <WDeComCard/WDECCardPlaceholders.h>
+#import <WDeComCard/WDECCardholderAuthenticationStatus.h>

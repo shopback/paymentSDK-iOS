@@ -24,7 +24,7 @@
 
 /**
  *  @brief Base class of all Payment Methods.
- *  @details Initialization WDPayment object is useful only for [WDECClient checkPayment] method.
+ *  @details Initialization WDECPayment object is useful only for [WDECClient checkPayment:] method.
  */
 @interface WDECPayment : NSObject
 
@@ -167,7 +167,7 @@
  @param requestID Unique identifier associated with the transaction, which is created by the merchant
  @param signature 2nd generation signature. Authorize client to process the transaction
  
- @details It is useful for [WDECClient checkPayment].
+ @details It is useful for [WDECClient checkPayment:].
  
  @return Returns payment object for WDECClient.
  */

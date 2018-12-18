@@ -19,9 +19,9 @@
  *  @{
  */
 
-/** WDCardField states emitted during user interacion */
+/** WDECCardField states emitted during user interacion */
 typedef NS_ENUM(NSUInteger, WDECCardFieldState) {
-    /** Initial state and state after [-[WDCardField clear]](@ref WDCardField.clear) */
+    /** Initial state and state after [-[WDECCardField clear]](@ref WDECCardField.clear) */
     WDECCardFieldStateCardInitial = 0,
     
     /** User's device is jailbroken */
@@ -72,7 +72,7 @@ typedef NS_ENUM(NSUInteger, WDECCardFieldState) {
 
 /**
  *  @brief Called when either the card number, expiration month/year or security code changes.
- *  @details At this point, one can call WDCardField.valid on the text field to determine, for example, whether or not to enable a button to submit WDCardPayment.
+ *  @details At this point, one can call WDECCardField.valid on the text field to determine, for example, whether or not to enable a button to submit WDECCardPayment.
  *
  *  @param cardField the field that has changed
  *  @param state the cardField state
@@ -84,7 +84,7 @@ typedef NS_ENUM(NSUInteger, WDECCardFieldState) {
 
 /**
  *  @brief Field for collecting card data
- *  @details WDCardField is a field with similar properties to UITextField, but specialized for collecting card data. It manages multiple UITextFields under the hood to collect this data. It's designed to fit on a single line, and from a design perspective can be used anywhere a UITextField would be appropriate.
+ *  @details WDECCardField is a field with similar properties to UITextField, but specialized for collecting card data. It manages multiple UITextFields under the hood to collect this data. It's designed to fit on a single line, and from a design perspective can be used anywhere a UITextField would be appropriate.
  */
 IB_DESIGNABLE
 @interface WDECCardField : UIControl
@@ -97,7 +97,7 @@ IB_DESIGNABLE
 
 /**
  *  @brief Non-sensitive card data.
- *  @details It is convenient to set the data if you collect security code only. According [WDCard brand] security code is validated.
+ *  @details It is convenient to set the data if you collect security code only. According [WDECCard brand] security code is validated.
  */
 @property (nonatomic, copy, null_resettable) WDECCard *card;
 
@@ -109,7 +109,7 @@ IB_DESIGNABLE
 
 /**
  *  @brief Payment object where card data are appended.
- *  @details If [WDCardPayment token] is set WDCardField collects only security code. It clears user input.
+ *  @details If [WDECCardPayment token] is set WDECCardField collects only security code. It clears user input.
  */
 @property (nonatomic, strong, nonnull) WDECCardPayment *cardPayment;
 
@@ -133,10 +133,10 @@ IB_DESIGNABLE
 
 /**
  *  @brief WDECLocale enum used to localize
- *  @details Localization of WDCardField happens in following order:
+ *  @details Localization of WDECCardField happens in following order:
  
- - overriden WDCardField value (e.g. [WDCardField numberPlaceholder], etc.)
- - localized default value by [WDCardField locale]
+ - overriden WDECCardField value (e.g. [WDECCardField numberPlaceholder], etc.)
+ - localized default value by [WDECCardField locale]
  - localized default value by [NSLocale preferredLanguages]
  - if locale is not set or localization files are missing default english value is used.
  
