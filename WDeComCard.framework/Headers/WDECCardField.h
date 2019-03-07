@@ -185,6 +185,7 @@ IB_DESIGNABLE
  */
 @property(nonatomic, copy, null_resettable) IBInspectable NSString *securityCodePlaceholder;
 
+@property (assign, nonatomic, getter=isManualCardBrandSelectionRequired) BOOL manualCardBrandSelectionRequired;
 /**
  *  @brief Set of supported card brands.
  *  @details If supportedCardBrands is set and does not contain recognized card brand of user card number the state changes to ::WDECCardFieldStateCardUnsupported. Set can contain NSNumbers with ::WDECCardBrand values. Example:

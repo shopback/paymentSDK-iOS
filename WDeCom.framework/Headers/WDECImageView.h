@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *
+ */
+
 @interface WDECImageView : UIImageView
 @property (nonatomic) UIColor *imageColor UI_APPEARANCE_SELECTOR;
 @end
+

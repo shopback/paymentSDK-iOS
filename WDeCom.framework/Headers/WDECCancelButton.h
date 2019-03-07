@@ -8,6 +8,11 @@
 
 #import <WDeCom/WDeCom.h>
 
-@interface WDECCancelButton : WDECButton
+/**
+ *
+ */
 
+@interface WDECCancelButton : WDECButton
 @end
+
+

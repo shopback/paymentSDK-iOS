@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "WDECLocalize.h"
 
+/**
+ *
+ */
+
 @interface WDECTextView : UITextView<WDECLocalizable>
 @end
+
+

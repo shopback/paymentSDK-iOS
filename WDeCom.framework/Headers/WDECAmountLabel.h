@@ -9,5 +9,11 @@
 #import <WDeCom/WDeCom.h>
 #import "WDECLabel.h"
 
+/**
+ *
+ */
+
 @interface WDECAmountLabel : WDECLabel
 @end
+
+

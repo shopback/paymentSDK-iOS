@@ -8,5 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *
+ */
+
 @interface WDECView : UIView
 @end
+
+

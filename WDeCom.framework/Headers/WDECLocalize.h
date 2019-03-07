@@ -15,6 +15,12 @@
 
 @end
 
+/**
+ *
+ */
+
 @interface WDECLocalize : UILabel
 @property (nonatomic) WDECLocale locale UI_APPEARANCE_SELECTOR;
 @end
+
+

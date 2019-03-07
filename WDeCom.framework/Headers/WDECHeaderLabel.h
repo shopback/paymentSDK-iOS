@@ -8,5 +8,9 @@
 
 #import <WDeCom/WDeCom.h>
 
+/**
+ *
+ */
+ 
 @interface WDECHeaderLabel : WDECLabel
 @end

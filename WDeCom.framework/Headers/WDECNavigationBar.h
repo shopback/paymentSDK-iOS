@@ -14,7 +14,13 @@ typedef NS_ENUM(NSUInteger, WDECNavigationBarStyle) {
     WDECNavigationBarStyleSmall,
 };
 
+/**
+ *
+ */
+
 @interface WDECNavigationBar : WDECView
 
 @property (nonatomic) WDECNavigationBarStyle barStyle UI_APPEARANCE_SELECTOR;
 @end
+
+

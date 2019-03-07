@@ -8,5 +8,10 @@
 
 #import <WDeCom/WDeCom.h>
 
+/**
+ *
+ */
+
 @interface WDECSubmitButton : WDECButton
 @end
+

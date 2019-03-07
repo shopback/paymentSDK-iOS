@@ -34,4 +34,6 @@ typedef NS_ENUM(NSUInteger, WDECCardStyleLayout) {
  */
 @property (strong, nonatomic) NSSet<NSNumber *> *supportedCardBrands UI_APPEARANCE_SELECTOR;
 
+@property (assign, nonatomic) BOOL manualCardBrandSelectionRequired;
+
 @end

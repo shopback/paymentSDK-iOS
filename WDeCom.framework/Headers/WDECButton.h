@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "WDECLocalize.h"
 
+/**
+ *
+ */
+
 @interface WDECButton : UIButton<WDECLocalizable>
 @end
+
+

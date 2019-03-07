@@ -15,3 +15,4 @@ FOUNDATION_EXPORT double WDeComCardScannerVersionNumber;
 FOUNDATION_EXPORT const unsigned char WDeComCardScannerVersionString[];
 
 #import <WDeComCardScanner/WDECCardFieldScanner.h>
+#import <WDeComCardScanner/WDECAnimatedCardFieldScanner.h>

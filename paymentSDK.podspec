@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'paymentSDK'
-  s.version          = '3.1.0'
+  s.version          = '3.2.0'
   s.summary          = 'Wirecard paymentSDK - online payments'
   s.description      = <<-DESC
                        The library allows online payments processing.
@@ -26,9 +26,11 @@ Pod::Spec.new do |s|
       ss.dependency            'paymentSDK/ApplePay'
       ss.dependency            'paymentSDK/Card'
       ss.dependency            'paymentSDK/CardScanner'
+      ss.dependency            'paymentSDK/CardScannerGallery'
       ss.dependency            'paymentSDK/PayPal'
       ss.dependency            'paymentSDK/SEPA'
       ss.dependency            'paymentSDK/IBANScanner'
+      ss.dependency            'paymentSDK/IBANScannerGallery'
       ss.dependency            'paymentSDK/ZAPP'
     end
 
@@ -84,6 +86,13 @@ Pod::Spec.new do |s|
       ss.dependency            'GoogleMobileVision/TextDetector', '~> 1.5.0'
     end
 
+    s.subspec 'CardScannerGallery' do |ss|
+      ss.vendored_frameworks = 'WDeComCardScannerGallery.framework'
+      ss.resource            = 'WDeComCardScannerGallery.framework/WDeComCardScannerGallery.bundle'
+
+      ss.dependency            'paymentSDK/CardScanner'
+    end
+
     s.subspec 'PayPal' do |ss|
       ss.vendored_frameworks = 'WDeComPayPal.framework'
 
@@ -105,6 +114,13 @@ Pod::Spec.new do |s|
       
       ss.dependency            'paymentSDK/SEPA'      
       ss.dependency            'GoogleMobileVision/TextDetector', '~> 1.5.0'
+    end
+
+    s.subspec 'IBANScannerGallery' do |ss|
+      ss.vendored_frameworks = 'WDeComIBANScannerGallery.framework'
+      ss.resource            = 'WDeComIBANScannerGallery.framework/WDeComIBANScannerGallery.bundle'
+
+      ss.dependency            'paymentSDK/IBANScanner'
     end
 
     s.subspec 'ZAPP' do |ss|

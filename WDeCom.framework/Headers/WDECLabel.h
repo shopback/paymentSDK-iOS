@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "WDECLocalize.h"
 
+/**
+ *
+ */
+
 @interface WDECLabel : UILabel<WDECLocalizable>
 @end

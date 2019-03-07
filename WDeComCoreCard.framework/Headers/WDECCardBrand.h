@@ -19,6 +19,7 @@ typedef NS_ENUM(NSUInteger, WDECCardBrand) {
     
     WDECCardBrandAmex,
     WDECCardBrandArCa,
+    WDECCardBrandCB,
     WDECCardBrandCUP,
     WDECCardBrandDiners,
     WDECCardBrandDiscover,

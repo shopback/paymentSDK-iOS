@@ -34,6 +34,7 @@ FOUNDATION_EXPORT const unsigned char WDeComVersionString[];
 #import <WDeCom/WDECLabel.h>
 #import <WDeCom/WDECSubmitButton.h>
 #import <WDeCom/WDECCancelButton.h>
+#import <WDeCom/WDECCancelButtonImage.h>
 #import <WDeCom/WDECImageView.h>
 #import <WDeCom/WDECNavigationBar.h>
 #import <WDeCom/WDECHeaderLabel.h>

@@ -8,5 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *
+ */
+
 @interface WDECSwitch : UISwitch 
 @end
+
+

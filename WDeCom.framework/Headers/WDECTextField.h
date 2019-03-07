@@ -22,6 +22,10 @@ typedef NS_ENUM(NSUInteger, WDECCardIconsStyle) {
 
 @end
 
+/**
+ *
+ */
+
 @interface WDECTextField : UITextField<WDECLocalizable, WDECVerifiable>
 
 @property (nonatomic, copy, nullable) NSArray<NSNumber *> *format;
@@ -42,3 +46,4 @@ typedef NS_ENUM(NSUInteger, WDECCardIconsStyle) {
 - (void)showText;
 
 @end
+
