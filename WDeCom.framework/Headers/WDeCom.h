@@ -30,6 +30,7 @@ FOUNDATION_EXPORT const unsigned char WDeComVersionString[];
 
 // UIAppearance elements
 #import <WDeCom/WDECAmountLabel.h>
+#import <WDeCom/WDECAnimatedCardView.h>
 #import <WDeCom/WDECButton.h>
 #import <WDeCom/WDECLabel.h>
 #import <WDeCom/WDECSubmitButton.h>

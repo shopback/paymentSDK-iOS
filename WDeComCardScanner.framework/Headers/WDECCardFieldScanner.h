@@ -9,4 +9,7 @@
 #import <WDeComCard/WDECCardField.h>
 
 @interface WDECCardFieldScanner : WDECCardField
+
+@property (nonatomic, strong, nullable) UIImage *scanImage;
+
 @end
