@@ -212,13 +212,13 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Embedded/Pods-Embedded-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleMobileVision/GoogleMVTextDetectorResources.bundle",
-				"${PODS_ROOT}/../../../Projects/paymentSDK-iOS/WDeCom/output/eCom/WDeComCard.framework/WDeComCard.bundle",
-				"${PODS_ROOT}/../../../Projects/paymentSDK-iOS/WDeCom/output/eCom/WDeComCardScanner.framework/WDeComCardScanner.bundle",
-				"${PODS_ROOT}/../../../Projects/paymentSDK-iOS/WDeCom/output/eCom/WDeComCardScannerGallery.framework/WDeComCardScannerGallery.bundle",
-				"${PODS_ROOT}/../../../Projects/paymentSDK-iOS/WDeCom/output/eCom/WDeCom.framework/WDeCom.bundle",
-				"${PODS_ROOT}/../../../Projects/paymentSDK-iOS/WDeCom/output/eCom/WDeComIBANScanner.framework/WDeComIBANScanner.bundle",
-				"${PODS_ROOT}/../../../Projects/paymentSDK-iOS/WDeCom/output/eCom/WDeComIBANScannerGallery.framework/WDeComIBANScannerGallery.bundle",
-				"${PODS_ROOT}/../../../Projects/paymentSDK-iOS/WDeCom/output/eCom/WDeComSEPA.framework/WDeComSEPA.bundle",
+				"${PODS_ROOT}/../../WDeComCard.framework/WDeComCard.bundle",
+				"${PODS_ROOT}/../../WDeComCardScanner.framework/WDeComCardScanner.bundle",
+				"${PODS_ROOT}/../../WDeComCardScannerGallery.framework/WDeComCardScannerGallery.bundle",
+				"${PODS_ROOT}/../../WDeCom.framework/WDeCom.bundle",
+				"${PODS_ROOT}/../../WDeComIBANScanner.framework/WDeComIBANScanner.bundle",
+				"${PODS_ROOT}/../../WDeComIBANScannerGallery.framework/WDeComIBANScannerGallery.bundle",
+				"${PODS_ROOT}/../../WDeComSEPA.framework/WDeComSEPA.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (

@@ -7,14 +7,12 @@ workspace 'Example'
 
 target 'Embedded' do
     project 'Embedded.xcodeproj'
-    #pod 'paymentSDK/All', :path => '..'    
-    pod 'paymentSDK/All', :path => '~/Projects/paymentSDK-iOS/WDeCom/output' 
+    pod 'paymentSDK/All', :path => '..'
 end
 
 target 'Simple' do
     project 'Simple.xcodeproj'
-    #pod 'paymentSDK/All', :path => '..'    
-    pod 'paymentSDK/All', :path => '~/Projects/paymentSDK-iOS/WDeCom/output' 
+    pod 'paymentSDK/All', :path => '..'     
 end
 
 
