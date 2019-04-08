@@ -18,10 +18,11 @@ let AMOUNT = NSDecimalNumber.init(mantissa: 199, exponent: -2, isNegative: false
 
 let PMTitleApplePay = "ApplePay"
 let PMTitleCard     = "Card"
+let PMTitleCardManualBrandSelection = "Card manual brand selection"
 let PMTitlePayPal   = "PayPal"
 let PMTitleSEPA     = "SEPA"
 
-class ViewController: PaymemtVC, UIActionSheetDelegate {
+class ViewController: PaymemtVC, UIActionSheetDelegate, UIPopoverPresentationControllerDelegate {
     
     @IBOutlet weak var payButton: UIButton!
     
@@ -52,7 +53,9 @@ class ViewController: PaymemtVC, UIActionSheetDelegate {
                 let alertTitle = error != nil ? "Error" : "Success"
                 let alertMessage = error != nil ? error!.localizedDescription : "Item(s) has been purchased."
                 let ac = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .actionSheet)
-                
+                ac.popoverPresentationController?.sourceView = self.view
+                ac.popoverPresentationController?.sourceRect = CGRect(x: self.view.bounds.width / 2.0,y: self.view.bounds.height,width: 1.0,height: 1.0)
+
                 ac.addAction(UIAlertAction(title:"OK", style:.default, handler:nil));
                 self.present(ac, animated:true, completion:nil)
             })
@@ -62,11 +65,18 @@ class ViewController: PaymemtVC, UIActionSheetDelegate {
             actionSheetController.addAction(UIAlertAction(title: PMTitleApplePay, style: .default, handler: handler))
         }
         actionSheetController.addAction(UIAlertAction(title: PMTitleCard, style: .default, handler: handler))
+        actionSheetController.addAction(UIAlertAction(title: PMTitleCardManualBrandSelection, style: .default, handler: handler))
         actionSheetController.addAction(UIAlertAction(title: PMTitlePayPal, style: .default, handler: handler))
         actionSheetController.addAction(UIAlertAction(title: PMTitleSEPA, style: .default, handler: handler))
         actionSheetController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: handler))
-
+        actionSheetController.popoverPresentationController?.sourceView = self.view
+        actionSheetController.popoverPresentationController?.sourceRect = CGRect(x: self.view.bounds.width / 2.0,y: self.view.bounds.height,width: 1.0,height: 1.0)
+        
         self.present(actionSheetController, animated: true, completion: nil)
+    }
+    
+    func prepareForPopoverPresentation(_ popoverPresentationController: UIPopoverPresentationController) {
+        
     }
     
     func canMakeApplePayPayment() -> Bool {
@@ -77,10 +87,15 @@ class ViewController: PaymemtVC, UIActionSheetDelegate {
     
     func createPayment(title:String) -> WDECPayment {
         var result : WDECPayment
-        
         switch title {
         case PMTitleApplePay : result = self.createPaymentApplePay()
         case PMTitleCard : result = self.createPaymentCard()
+        let cardLayout =  WDECCardLayout.appearance()
+        cardLayout.manualCardBrandSelectionRequired = false
+        case PMTitleCardManualBrandSelection :
+            result = self.createPaymentCard()
+            let cardLayout =  WDECCardLayout.appearance()
+            cardLayout.manualCardBrandSelectionRequired = true
         case PMTitlePayPal : result = self.createPaymentPayPal()
         case PMTitleSEPA : result = self.createPaymentSEPA()
         default : result = WDECPayment()

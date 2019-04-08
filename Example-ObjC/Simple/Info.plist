@@ -58,5 +58,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow camera usage for card recognition</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow photo library access for card recognition</string>
 </dict>
 </plist>

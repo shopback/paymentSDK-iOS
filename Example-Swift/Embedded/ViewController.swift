@@ -2,91 +2,60 @@
 //  ViewController.swift
 //  Embedded
 //
-//  Created by Vrana, Jozef on 3/6/17.
-//  Copyright © 2017 Vrana, Jozef. All rights reserved.
+//  Created by Vrana, Jozef on 28/02/2019.
+//  Copyright © 2019 Vrana, Jozef. All rights reserved.
 //
 
-import UIKit
 import WDeComCard
+import WDeComCardScannerGallery
 
-let AMOUNT = NSDecimalNumber.init(mantissa: 199, exponent: -2, isNegative: false)
+let PMTitleCard                     = "Card"
+let PMTitleAnimatedCardfield        = "Animated cardfield"
+let PMTitleCardManualBrandSelection = "Card manual brand selection"
+let PMTitleCardManualBrandSelectionAnimated = "Animated card manual brand selection"
 
-class ViewController: PaymemtVC, UIActionSheetDelegate, WDECCardFieldDelegate {
-    
-    @IBOutlet weak var cardField: WDECCardField!
-    @IBOutlet weak var cardFieldStateLabel: UILabel!
-    @IBOutlet weak var payBtn: UIButton!
+class ViewController: PaymemtVC, UIActionSheetDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.cardField.becomeFirstResponder()
     }
     
-    @IBAction func onClearAction(_ sender: UIButton) {
-        self.cardField.clear()
-    }
-    
-    @IBAction func onPayAction(_ sender: UIButton) {
-        // if you create payment object just before calling makePayment you are sure that timestamp is correct
-        var payment = self.createCardPayment()
-        self.cardField.cardPayment = payment // append card data
+    @IBAction func onPay(_ sender: UIButton) {
+        let actionSheetController = UIAlertController(title: "Payment", message: nil, preferredStyle: .actionSheet)
         
-        payment = self.cardField.cardPayment
-        self.client?.make(payment, withCompletion:{(response: WDECPaymentResponse?,error: Error?) in
-            let alertTitle = error != nil ? "Error" : "Success"
-            let alertMessage = error != nil ? error!.localizedDescription : "Item(s) has been purchased."
-            let ac = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .actionSheet)
+        func handler(actionTarget: UIAlertAction){
             
-            ac.addAction(UIAlertAction(title:"OK", style:.default, handler:nil));
-            self.present(ac, animated:true, completion:nil)
             
-            // each request shall have unique ID, once it is used create new one
-            self.cardField.cardPayment = self.createCardPayment()
-        })
-    }
-    
-    func cardField(_ cardField: WDECCardField, didChange state: WDECCardFieldState) {
-        self.payBtn.isEnabled = cardField.isValid
-        
-        var text : String?
-        
-        switch state {
-        case WDECCardFieldState.cardInitial: text = "card initial"
-        case WDECCardFieldState.jailbrokenDevice: text = "jailbroken device"
-        case WDECCardFieldState.cardValid: text = "card valid"
-        case WDECCardFieldState.cardUnsupported: text = "card unsupported"
-        case WDECCardFieldState.numberEditting: text = "number editting"
-        case WDECCardFieldState.numberIncomplete: text = "number incomplete"
-        case WDECCardFieldState.numberInvalid: text = "number invalid"
-        case WDECCardFieldState.numberValid: text = "number valid"
-        case WDECCardFieldState.monthEditting: text = "month editting"
-        case WDECCardFieldState.yearEditting: text = "year editting"
-        case WDECCardFieldState.expirationDateIncomplete: text = "expiration date incomplete"
-        case WDECCardFieldState.expirationDateInvalid: text = "expiration date invalid"
-        case WDECCardFieldState.expirationDateValid: text = "expiration date valid"
-        case WDECCardFieldState.securityCodeEditting: text = "security code editting"
-        case WDECCardFieldState.securityCodeIncomplete: text = "security code incomplete"
-        case WDECCardFieldState.securityCodeInvalid: text = "security code invalid"
-        case WDECCardFieldState.securityCodeValid: text = "security code valid"
+            if actionTarget.style == .cancel {
+                self.dismiss(animated: true, completion: nil)
+                return
+            }
+            
+            let paymentTitle = actionTarget.title
+            if paymentTitle == PMTitleCard || paymentTitle == PMTitleCardManualBrandSelection {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "CardfieldVC")
+                self.navigationController?.pushViewController(vc, animated: true)
+                let manualCardbrandSelection = paymentTitle == PMTitleCardManualBrandSelection ? true : false
+                let cardLayout = WDECCardLayout.appearance()
+                cardLayout.manualCardBrandSelectionRequired = manualCardbrandSelection
+            }
+            if paymentTitle == PMTitleAnimatedCardfield || paymentTitle == PMTitleCardManualBrandSelectionAnimated {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "AnimatedCardfieldVC")
+                self.navigationController?.pushViewController(vc, animated: true)
+                let manualCardbrandSelection = paymentTitle == PMTitleCardManualBrandSelectionAnimated ? true : false
+                let cardLayout = WDECCardLayout.appearance()
+                cardLayout.manualCardBrandSelectionRequired = manualCardbrandSelection
+            }
         }
         
-        self.cardFieldStateLabel.text = text
-    }
-    
-    func createCardPayment() -> WDECCardPayment {
-        let payment = WDECCardPayment()
-        payment.amount = AMOUNT
-        payment.currency = "USD"
-        payment.transactionType = .purchase
-        let WD_MERCHANT_ACCOUNT_ID = "33f6d473-3036-4ca5-acb5-8c64dac862d1"
-        let WD_MERCHANT_SECRET_KEY = "9e0130f6-2e1e-4185-b0d5-dc69079c75cc"
-        self.merchantSignedPaymentByMerchantSecretKey(merchantAccountID: WD_MERCHANT_ACCOUNT_ID, payment: payment, merchantSecretKey: WD_MERCHANT_SECRET_KEY)
-        let accountHolder = WDECCustomerData()
-        accountHolder.firstName = "John"
-        accountHolder.lastName = "Doe"
-        payment.accountHolder = accountHolder
+        actionSheetController.addAction(UIAlertAction(title: PMTitleCard, style: .default, handler: handler))
+        actionSheetController.addAction(UIAlertAction(title: PMTitleAnimatedCardfield, style: .default, handler: handler))
+        actionSheetController.addAction(UIAlertAction(title: PMTitleCardManualBrandSelection, style: .default, handler: handler))
+        actionSheetController.addAction(UIAlertAction(title: PMTitleCardManualBrandSelectionAnimated, style: .default, handler: handler))
+        actionSheetController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: handler))
         
-        return payment
+        self.present(actionSheetController, animated: true, completion: nil)
     }
 }
-

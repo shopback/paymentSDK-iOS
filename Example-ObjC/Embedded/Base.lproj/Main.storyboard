@@ -1,35 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="m9k-I1-jBg">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller Embedded-->
+        <scene sceneID="pBv-j0-wN3">
+            <objects>
+                <viewController id="cKN-dl-ccq" customClass="ViewControllerEmbedded" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kev-5f-e5F"/>
+                        <viewControllerLayoutGuide type="bottom" id="fLM-a0-3S6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eJY-uI-met">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7s-kl-Lpg">
+                                <rect key="frame" x="172.5" y="318.5" width="30" height="30"/>
+                                <state key="normal" title="Pay"/>
+                                <connections>
+                                    <action selector="onPay:" destination="cKN-dl-ccq" eventType="touchUpInside" id="3hO-BB-3SC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="i7s-kl-Lpg" firstAttribute="centerX" secondItem="eJY-uI-met" secondAttribute="centerX" id="0tA-Sm-Zn7"/>
+                            <constraint firstItem="i7s-kl-Lpg" firstAttribute="centerY" secondItem="eJY-uI-met" secondAttribute="centerY" id="XX5-8c-D58"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="SIA-8R-HsO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zsD-5k-8d7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="429.60000000000002" y="372.86356821589209"/>
+        </scene>
+        <!--Delegate-->
+        <scene sceneID="bPY-1I-ogU">
+            <objects>
+                <viewController storyboardIdentifier="AnimatedCardfieldVC" id="dlK-v8-v8e" customClass="AnimatedCardfieldVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JSs-ye-Zdi"/>
+                        <viewControllerLayoutGuide type="bottom" id="A37-GP-x8N"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Swc-Ge-UM2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c0R-Xb-jFl" customClass="WDECAnimatedCardFieldScannerGallery">
+                                <rect key="frame" x="20" y="20" width="335" height="254"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="delegate" destination="dlK-v8-v8e" id="Lhh-Ao-0EE"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQd-lS-30b">
+                                <rect key="frame" x="24" y="282" width="30" height="30"/>
+                                <state key="normal" title="Pay"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3Xi-tg-HMX">
+                                <rect key="frame" x="20" y="320" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybj-YF-4G6">
+                                <rect key="frame" x="319" y="282" width="36" height="30"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="onClear:" destination="dlK-v8-v8e" eventType="touchUpInside" id="kq7-UP-yH2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fQd-lS-30b" firstAttribute="top" secondItem="c0R-Xb-jFl" secondAttribute="bottom" constant="8" id="5VT-ms-ceU"/>
+                            <constraint firstItem="ybj-YF-4G6" firstAttribute="centerY" secondItem="fQd-lS-30b" secondAttribute="centerY" id="79Z-qI-SFb"/>
+                            <constraint firstAttribute="trailing" secondItem="c0R-Xb-jFl" secondAttribute="trailing" constant="20" id="UKy-dc-QOW"/>
+                            <constraint firstItem="3Xi-tg-HMX" firstAttribute="width" secondItem="c0R-Xb-jFl" secondAttribute="width" id="dUk-h5-m5L"/>
+                            <constraint firstItem="3Xi-tg-HMX" firstAttribute="top" secondItem="fQd-lS-30b" secondAttribute="bottom" constant="8" id="g5y-bm-wHP"/>
+                            <constraint firstItem="c0R-Xb-jFl" firstAttribute="leading" secondItem="Swc-Ge-UM2" secondAttribute="leading" constant="20" id="hDU-ip-e2o"/>
+                            <constraint firstItem="fQd-lS-30b" firstAttribute="leading" secondItem="Swc-Ge-UM2" secondAttribute="leadingMargin" constant="8" id="lO9-tO-4k2"/>
+                            <constraint firstItem="c0R-Xb-jFl" firstAttribute="top" secondItem="JSs-ye-Zdi" secondAttribute="bottom" constant="8" id="msi-Oz-Ije"/>
+                            <constraint firstItem="3Xi-tg-HMX" firstAttribute="centerX" secondItem="Swc-Ge-UM2" secondAttribute="centerX" id="rHs-DW-yws"/>
+                            <constraint firstItem="ybj-YF-4G6" firstAttribute="trailing" secondItem="c0R-Xb-jFl" secondAttribute="trailing" id="rgA-8z-YeP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="animatedCardField" destination="c0R-Xb-jFl" id="rQW-Hi-9WI"/>
+                        <outlet property="animatedCardFieldStateLabel" destination="3Xi-tg-HMX" id="0qi-4k-w6g"/>
+                        <outlet property="animatedPayBtn" destination="fQd-lS-30b" id="08v-Mx-Chf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MMM-mL-GLe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1221.5999999999999" y="684.10794602698661"/>
+        </scene>
         <!--ViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="ViewController" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CardfieldVC" id="BYZ-38-t0r" userLabel="ViewController" customClass="CardfieldVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2jY-eQ-BFg" customClass="WDECCardField">
-                                <rect key="frame" x="20" y="28" width="560" height="30"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2jY-eQ-BFg" customClass="WDECCardFieldScannerGallery">
+                                <rect key="frame" x="16" y="28" width="343" height="70"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="RCz-Zo-DXR"/>
+                                    <constraint firstAttribute="height" constant="70" id="RCz-Zo-DXR"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="5Uq-TY-xou"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Zsh-XU-MFX"/>
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUX-9W-CAb" userLabel="Card Field State">
-                                <rect key="frame" x="20" y="66" width="560" height="21"/>
+                                <rect key="frame" x="16" y="106" width="343" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="KxU-PD-xY7"/>
                                 </constraints>
@@ -38,14 +134,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WLa-2A-Ywc">
-                                <rect key="frame" x="285" y="285" width="30" height="30"/>
+                                <rect key="frame" x="172.5" y="318.5" width="30" height="30"/>
                                 <state key="normal" title="Pay"/>
-                                <connections>
-                                    <action selector="onPay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kxN-To-Jty"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jT9-po-E9o">
-                                <rect key="frame" x="282" y="95" width="36" height="30"/>
+                                <rect key="frame" x="169.5" y="135" width="36" height="30"/>
                                 <state key="normal" title="Clear"/>
                                 <connections>
                                     <action selector="onClear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x0d-el-QZC"/>
@@ -74,7 +167,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="285" y="387"/>
+            <point key="canvasLocation" x="1232.8" y="-7.6461769115442282"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PKg-Mq-crh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="m9k-I1-jBg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CvL-sw-2FX">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cKN-dl-ccq" kind="relationship" relationship="rootViewController" id="Ou5-6n-DOx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ay7-FU-Oom" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-509.60000000000002" y="372.86356821589209"/>
         </scene>
     </scenes>
 </document>

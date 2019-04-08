@@ -6,8 +6,8 @@
 //  Copyright © 2016 Wirecard Technologies GmbH. All rights reserved.
 //
 
-#import "PaymentVC.h"
+#import "ViewControllerEmbedded.h"
 
-@interface ViewController : PaymentVC
+@interface CardfieldVC : ViewControllerEmbedded
 @end
 

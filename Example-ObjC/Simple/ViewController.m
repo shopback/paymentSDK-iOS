@@ -20,10 +20,11 @@
 
 #define AMOUNT [NSDecimalNumber decimalNumberWithMantissa:199 exponent:-2 isNegative:NO]
 
-NSString *const PMTitleApplePay = @"ApplePay";
-NSString *const PMTitleCard     = @"Card";
-NSString *const PMTitlePayPal   = @"PayPal";
-NSString *const PMTitleSEPA     = @"SEPA";
+NSString *const PMTitleApplePay                 = @"ApplePay";
+NSString *const PMTitleCard                     = @"Card";
+NSString *const PMTitleCardManualBrandSelection = @"Card manual brand selection";
+NSString *const PMTitlePayPal                   = @"PayPal";
+NSString *const PMTitleSEPA                     = @"SEPA";
 
 @interface ViewController ()
 
@@ -71,14 +72,16 @@ NSString *const PMTitleSEPA     = @"SEPA";
             [self presentViewController:ac animated:YES completion:nil];
         }];
     };
+    
     BOOL canMakeApplePayPayment = [self canMakeApplePayPayment];
     if (canMakeApplePayPayment) {
         [ac addAction:[UIAlertAction actionWithTitle:PMTitleApplePay style:UIAlertActionStyleDefault handler:handler]];
     }
-    [ac addAction:[UIAlertAction actionWithTitle:PMTitleCard         style:UIAlertActionStyleDefault handler:handler]];
-    [ac addAction:[UIAlertAction actionWithTitle:PMTitlePayPal       style:UIAlertActionStyleDefault handler:handler]];
-    [ac addAction:[UIAlertAction actionWithTitle:PMTitleSEPA         style:UIAlertActionStyleDefault handler:handler]];
-    [ac addAction:[UIAlertAction actionWithTitle:@"Cancel"           style:UIAlertActionStyleCancel handler:handler]];
+    [ac addAction:[UIAlertAction actionWithTitle:PMTitleCard                        style:UIAlertActionStyleDefault handler:handler]];
+    [ac addAction:[UIAlertAction actionWithTitle:PMTitleCardManualBrandSelection    style:UIAlertActionStyleDefault handler:handler]];
+    [ac addAction:[UIAlertAction actionWithTitle:PMTitlePayPal                      style:UIAlertActionStyleDefault handler:handler]];
+    [ac addAction:[UIAlertAction actionWithTitle:PMTitleSEPA                        style:UIAlertActionStyleDefault handler:handler]];
+    [ac addAction:[UIAlertAction actionWithTitle:@"Cancel"                          style:UIAlertActionStyleCancel handler:handler]];
     
     [self presentViewController:ac animated:YES completion:nil];
 }
@@ -99,6 +102,10 @@ NSString *const PMTitleSEPA     = @"SEPA";
         result = [self createPaymentApplePay];
     } else if ([title isEqualToString:PMTitleCard]) {
         result = [self createPaymentCard];
+        [[WDECCardLayout appearance] setManualCardBrandSelectionRequired:NO];
+    } else if ([title isEqualToString:PMTitleCardManualBrandSelection]) {
+        result = [self createPaymentCard];
+        [[WDECCardLayout appearance] setManualCardBrandSelectionRequired:YES];
     } else if ([title isEqualToString:PMTitlePayPal]) {
         result = [self createPaymentPayPal];
     } else if ([title isEqualToString:PMTitleSEPA]) {

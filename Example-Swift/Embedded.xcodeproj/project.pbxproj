@@ -11,8 +11,10 @@
 		AC2CA1921E6DA4B00034E765 /* NSDateFormatter+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2CA18F1E6DA4B00034E765 /* NSDateFormatter+Utils.swift */; };
 		AC2CA1931E6DA4B00034E765 /* NSString+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2CA1901E6DA4B00034E765 /* NSString+Utils.swift */; };
 		AC2CA1941E6DA4B00034E765 /* PaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2CA1911E6DA4B00034E765 /* PaymentVC.swift */; };
+		AC66591222282F6600FD6870 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC66591122282F6600FD6870 /* ViewController.swift */; };
+		AC6659142228319700FD6870 /* AnimatedCardfieldVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6659132228319700FD6870 /* AnimatedCardfieldVC.swift */; };
 		ACADC1391E6D884200DB078F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACADC1381E6D884200DB078F /* AppDelegate.swift */; };
-		ACADC13B1E6D884200DB078F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACADC13A1E6D884200DB078F /* ViewController.swift */; };
+		ACADC13B1E6D884200DB078F /* CardfieldVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACADC13A1E6D884200DB078F /* CardfieldVC.swift */; };
 		ACADC13E1E6D884200DB078F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACADC13C1E6D884200DB078F /* Main.storyboard */; };
 		ACADC1401E6D884200DB078F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACADC13F1E6D884200DB078F /* Assets.xcassets */; };
 		ACADC1431E6D884200DB078F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACADC1411E6D884200DB078F /* LaunchScreen.storyboard */; };
@@ -25,9 +27,11 @@
 		AC2CA1901E6DA4B00034E765 /* NSString+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSString+Utils.swift"; path = "Common/NSString+Utils.swift"; sourceTree = "<group>"; };
 		AC2CA1911E6DA4B00034E765 /* PaymentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaymentVC.swift; path = Common/PaymentVC.swift; sourceTree = "<group>"; };
 		AC2CA1951E6DA53B0034E765 /* CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonCrypto.h; path = Common/CommonCrypto.h; sourceTree = "<group>"; };
+		AC66591122282F6600FD6870 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AC6659132228319700FD6870 /* AnimatedCardfieldVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedCardfieldVC.swift; sourceTree = "<group>"; };
 		ACADC1351E6D884200DB078F /* Embedded.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Embedded.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACADC1381E6D884200DB078F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ACADC13A1E6D884200DB078F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ACADC13A1E6D884200DB078F /* CardfieldVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardfieldVC.swift; sourceTree = "<group>"; };
 		ACADC13D1E6D884200DB078F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACADC13F1E6D884200DB078F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACADC1421E6D884200DB078F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -90,7 +94,9 @@
 			isa = PBXGroup;
 			children = (
 				ACADC1381E6D884200DB078F /* AppDelegate.swift */,
-				ACADC13A1E6D884200DB078F /* ViewController.swift */,
+				AC6659132228319700FD6870 /* AnimatedCardfieldVC.swift */,
+				ACADC13A1E6D884200DB078F /* CardfieldVC.swift */,
+				AC66591122282F6600FD6870 /* ViewController.swift */,
 				ACADC13C1E6D884200DB078F /* Main.storyboard */,
 				ACADC13F1E6D884200DB078F /* Assets.xcassets */,
 				ACADC1411E6D884200DB078F /* LaunchScreen.storyboard */,
@@ -204,26 +210,30 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Embedded/Pods-Embedded-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Embedded/Pods-Embedded-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleMobileVision/GoogleMVTextDetectorResources.bundle",
-				"${PODS_ROOT}/../../WDeComCard.framework/WDeComCard.bundle",
-				"${PODS_ROOT}/../../WDeComCardScanner.framework/WDeComCardScanner.bundle",
-				"${PODS_ROOT}/../../WDeCom.framework/WDeCom.bundle",
-				"${PODS_ROOT}/../../WDeComIBANScanner.framework/WDeComIBANScanner.bundle",
-				"${PODS_ROOT}/../../WDeComSEPA.framework/WDeComSEPA.bundle",
+				"${PODS_ROOT}/../../../Projects/paymentSDK-iOS/WDeCom/output/eCom/WDeComCard.framework/WDeComCard.bundle",
+				"${PODS_ROOT}/../../../Projects/paymentSDK-iOS/WDeCom/output/eCom/WDeComCardScanner.framework/WDeComCardScanner.bundle",
+				"${PODS_ROOT}/../../../Projects/paymentSDK-iOS/WDeCom/output/eCom/WDeComCardScannerGallery.framework/WDeComCardScannerGallery.bundle",
+				"${PODS_ROOT}/../../../Projects/paymentSDK-iOS/WDeCom/output/eCom/WDeCom.framework/WDeCom.bundle",
+				"${PODS_ROOT}/../../../Projects/paymentSDK-iOS/WDeCom/output/eCom/WDeComIBANScanner.framework/WDeComIBANScanner.bundle",
+				"${PODS_ROOT}/../../../Projects/paymentSDK-iOS/WDeCom/output/eCom/WDeComIBANScannerGallery.framework/WDeComIBANScannerGallery.bundle",
+				"${PODS_ROOT}/../../../Projects/paymentSDK-iOS/WDeCom/output/eCom/WDeComSEPA.framework/WDeComSEPA.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMVTextDetectorResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WDeComCard.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WDeComCardScanner.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WDeComCardScannerGallery.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WDeCom.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WDeComIBANScanner.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WDeComIBANScannerGallery.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WDeComSEPA.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Embedded/Pods-Embedded-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Embedded/Pods-Embedded-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD6911E1E753A5B05126926A /* [CP] Embed Pods Frameworks */ = {
@@ -232,7 +242,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Embedded/Pods-Embedded-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Embedded/Pods-Embedded-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/CMPopTipView/CMPopTipView.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
@@ -265,7 +275,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Embedded/Pods-Embedded-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Embedded/Pods-Embedded-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -275,10 +285,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACADC13B1E6D884200DB078F /* ViewController.swift in Sources */,
+				AC66591222282F6600FD6870 /* ViewController.swift in Sources */,
+				ACADC13B1E6D884200DB078F /* CardfieldVC.swift in Sources */,
 				AC2CA1921E6DA4B00034E765 /* NSDateFormatter+Utils.swift in Sources */,
 				ACADC1391E6D884200DB078F /* AppDelegate.swift in Sources */,
 				AC2CA1941E6DA4B00034E765 /* PaymentVC.swift in Sources */,
+				AC6659142228319700FD6870 /* AnimatedCardfieldVC.swift in Sources */,
 				AC2CA1931E6DA4B00034E765 /* NSString+Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

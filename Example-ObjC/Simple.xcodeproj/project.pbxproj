@@ -159,8 +159,8 @@
 				TargetAttributes = {
 					47E47C681D415DE60032890F = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = Y9GYNDA2G3;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = G947PFP5Z6;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -169,6 +169,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -220,14 +221,16 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Simple/Pods-Simple-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Simple/Pods-Simple-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleMobileVision/GoogleMVTextDetectorResources.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ZappMerchantLib/ZappMerchantLibResources.bundle",
-				"${PODS_ROOT}/../../WDeComCard.framework/WDeComCard.bundle",
-				"${PODS_ROOT}/../../WDeComCardScanner.framework/WDeComCardScanner.bundle",
-				"${PODS_ROOT}/../../WDeCom.framework/WDeCom.bundle",
-				"${PODS_ROOT}/../../WDeComIBANScanner.framework/WDeComIBANScanner.bundle",
-				"${PODS_ROOT}/../../WDeComSEPA.framework/WDeComSEPA.bundle",
+				"${PODS_ROOT}/../../../Projects/paymentSDK-iOS/WDeCom/output/eCom/WDeComCard.framework/WDeComCard.bundle",
+				"${PODS_ROOT}/../../../Projects/paymentSDK-iOS/WDeCom/output/eCom/WDeComCardScanner.framework/WDeComCardScanner.bundle",
+				"${PODS_ROOT}/../../../Projects/paymentSDK-iOS/WDeCom/output/eCom/WDeComCardScannerGallery.framework/WDeComCardScannerGallery.bundle",
+				"${PODS_ROOT}/../../../Projects/paymentSDK-iOS/WDeCom/output/eCom/WDeCom.framework/WDeCom.bundle",
+				"${PODS_ROOT}/../../../Projects/paymentSDK-iOS/WDeCom/output/eCom/WDeComIBANScanner.framework/WDeComIBANScanner.bundle",
+				"${PODS_ROOT}/../../../Projects/paymentSDK-iOS/WDeCom/output/eCom/WDeComIBANScannerGallery.framework/WDeComIBANScannerGallery.bundle",
+				"${PODS_ROOT}/../../../Projects/paymentSDK-iOS/WDeCom/output/eCom/WDeComSEPA.framework/WDeComSEPA.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -235,13 +238,15 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZappMerchantLibResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WDeComCard.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WDeComCardScanner.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WDeComCardScannerGallery.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WDeCom.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WDeComIBANScanner.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WDeComIBANScannerGallery.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WDeComSEPA.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Simple/Pods-Simple-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Simple/Pods-Simple-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -371,15 +376,16 @@
 			baseConfigurationReference = E31AD3C736E753908E1F2BB1 /* Pods-Simple.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = Y9GYNDA2G3;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G947PFP5Z6;
 				INFOPLIST_FILE = Simple/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wirecard.paymentsdk.example.Simple;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "72ec000c-96f9-4ebc-a830-c855d95da85c";
-				PROVISIONING_PROFILE_SPECIFIER = "WhiteLabel wildcard";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -388,15 +394,16 @@
 			baseConfigurationReference = 8A75D7435857D9659C81D336 /* Pods-Simple.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = Y9GYNDA2G3;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G947PFP5Z6;
 				INFOPLIST_FILE = Simple/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wirecard.paymentsdk.example.Simple;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "72ec000c-96f9-4ebc-a830-c855d95da85c";
-				PROVISIONING_PROFILE_SPECIFIER = "WhiteLabel wildcard";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

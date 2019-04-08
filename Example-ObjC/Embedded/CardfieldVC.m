@@ -6,29 +6,32 @@
 //  Copyright © 2016 Wirecard Technologies GmbH. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "CardfieldVC.h"
 
 #import <libextobjc/EXTScope.h>
 #import <WDeComCard/WDeComCard.h>
+#import <WDeComCardScannerGallery/WDECCardFieldScannerGallery.h>
 
 #define NSStringize_helper(x) #x
 #define NSStringize(x) @NSStringize_helper(x)
 
 #define AMOUNT [NSDecimalNumber decimalNumberWithMantissa:199 exponent:-2 isNegative:NO]
 
-@interface ViewController () <WDECCardFieldDelegate>
+@interface CardfieldVC () <WDECCardFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet WDECCardField *cardField;
+@property (weak, nonatomic) IBOutlet WDECCardFieldScannerGallery *cardField;
 @property (weak, nonatomic) IBOutlet UILabel *cardFieldStateLabel;
 @property (weak, nonatomic) IBOutlet UIButton *payBtn;
 
 @end
 
-@implementation ViewController
+@implementation CardfieldVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.cardField becomeFirstResponder];
+    self.cardField.manualCardBrandSelectionRequired = [[WDECCardLayout appearance] manualCardBrandSelectionRequired];
+    self.cardField.scanImage = [UIImage imageNamed:@"scan_cf"];
 }
 
 - (IBAction)onClear:(UIButton *)sender {
@@ -39,7 +42,6 @@
     // if you create payment object just before calling makePayment you are sure that timestamp is correct
     WDECCardPayment *payment = [self createCardPayment];
     self.cardField.cardPayment = payment; // append card data
-
     payment = self.cardField.cardPayment;
     
     if (!self.client) {
