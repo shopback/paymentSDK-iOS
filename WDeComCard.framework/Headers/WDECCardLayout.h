@@ -26,13 +26,13 @@ typedef NS_ENUM(NSUInteger, WDECCardStyleLayout) {
 @property (nonatomic) WDECCardStyleLayout layout UI_APPEARANCE_SELECTOR;
 
 /**
- *  @brief Array of supported card brands.
+ *  @brief Set of supported card brands.
  *  @details If supportedCardBrands is set and does not contain recognized card brand of user card number the state changes to ::WDECCardFieldStateCardUnsupported. Set can contain NSNumbers with ::WDECCardBrand values. Example:
  
- [WDECCardLayout appearance] setSupportedCardBrands = @[@(WDECCardBrandAmex), @(WDECCardBrandMasterCard), @(WDECCardBrandVisa)];
+ style.supportedCardBrands = [NSSet setWithObjects:@(WDECCardBrandAmex), @(WDECCardBrandMasterCard), @(WDECCardBrandVisa), nil];
  
  */
-@property (strong, nonatomic) NSArray<NSNumber *> *supportedCardBrands UI_APPEARANCE_SELECTOR;
+@property (strong, nonatomic) NSSet<NSNumber *> *supportedCardBrands UI_APPEARANCE_SELECTOR;
 
 @property (assign, nonatomic) BOOL manualCardBrandSelectionRequired;
 

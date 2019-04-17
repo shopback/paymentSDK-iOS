@@ -106,14 +106,6 @@ typedef NS_ENUM(NSUInteger, WDECAnimatedCardFieldState) {
  */
 @property (nonatomic) WDECLocale locale;
 
-@property (assign, nonatomic, getter=isManualCardBrandSelectionRequired) BOOL manualCardBrandSelectionRequired;
-
-/**
- *
- *
- */
-@property(nonatomic, copy, null_resettable) UIColor *cardImageColor;
-
 /**
  *  @brief The text placeholder color used in each child field.
  *  @details Default is [UIColor lightGrayColor]. Set this property to nil to reset to the default.
@@ -170,7 +162,7 @@ typedef NS_ENUM(NSUInteger, WDECAnimatedCardFieldState) {
  cardField.supportedCardBrands = [NSSet setWithObjects:@(WDECCardBrandAmex), @(WDECCardBrandMasterCard), @(WDECCardBrandVisa), nil];
  
  */
-@property(nonatomic, copy, nullable) NSArray<NSNumber *> *supportedCardBrands;
+@property(nonatomic, copy, nullable) NSSet<NSNumber *> *supportedCardBrands;
 
 /**
  *  @brief Whether or not should card number field focus after component is visible.

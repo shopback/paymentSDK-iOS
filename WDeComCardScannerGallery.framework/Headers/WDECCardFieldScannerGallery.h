@@ -10,8 +10,6 @@
 
 @interface WDECCardFieldScannerGallery : WDECCardFieldScanner
 
-@property (nonatomic, strong, nullable) UIImage *scanImage;
-
 @end
 
 

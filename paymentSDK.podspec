@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'paymentSDK'
-  s.version          = '3.3.0'
+  s.version          = '3.2.1'
   s.summary          = 'Wirecard paymentSDK - online payments'
   s.description      = <<-DESC
                        The library allows online payments processing.
@@ -38,7 +38,7 @@ Pod::Spec.new do |s|
       ss.vendored_frameworks = 'WDeCom.framework'
       ss.resource            = 'WDeCom.framework/WDeCom.bundle'
 
-      ss.dependency            'AFNetworking', '~> 3.2.1'
+      ss.dependency            'AFNetworking', '~> 3.1.0'
       ss.dependency            'CMPopTipView', '~> 2.3.2'
       ss.dependency            'CocoaLumberjack', '~> 3.4.2'
       ss.ios.dependency        'Lockbox', '~> 3.0.6'

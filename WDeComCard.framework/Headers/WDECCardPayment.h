@@ -47,6 +47,7 @@
  */
 @property (assign, nonatomic, getter=isCardholderRequired) BOOL requireCardholder;
 
+@property (strong, nonatomic) NSArray<NSString *> *supportedCardBrands;
 /**
  *  @brief Tokenized card data gathered by previous transaction [WDECCardPaymentResponse cardToken].
  *  @details set [WDECCardToken tokenID] if you want to use the same card as in previous transaction. In case of transaction referenced by parentTransactionID and security code is required set [WDECCardToken maskedAccountNumber] to help user with security code typing

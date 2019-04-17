@@ -193,7 +193,7 @@ IB_DESIGNABLE
  cardField.supportedCardBrands = [NSSet setWithObjects:@(WDECCardBrandAmex), @(WDECCardBrandMasterCard), @(WDECCardBrandVisa), nil];
  
  */
-@property(nonatomic, copy, nullable) NSArray<NSNumber *> *supportedCardBrands;
+@property(nonatomic, copy, nullable) NSSet<NSNumber *> *supportedCardBrands;
 
 /**
  *  @brief Whether or not the field currently contains a valid card number, expiration date and security code.
