@@ -1,6 +1,0 @@
-framework module WDeComSEPA {
-  umbrella header "WDeComSEPA.h"
-
-  export *
-  module * { export * }
-}

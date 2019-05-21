@@ -1,0 +1,6 @@
+framework module WDeComIBANScanner {
+  umbrella header "WDeComIBANScanner.h"
+
+  export *
+  module * { export * }
+}

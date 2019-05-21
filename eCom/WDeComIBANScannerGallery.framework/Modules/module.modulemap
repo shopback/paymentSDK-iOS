@@ -1,0 +1,6 @@
+framework module WDeComIBANScannerGallery {
+  umbrella header "WDeComIBANScannerGallery.h"
+
+  export *
+  module * { export * }
+}

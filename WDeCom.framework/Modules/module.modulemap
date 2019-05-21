@@ -1,6 +1,0 @@
-framework module WDeCom {
-  umbrella header "WDeCom.h"
-
-  export *
-  module * { export * }
-}

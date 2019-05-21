@@ -1,0 +1,6 @@
+framework module WDeComAlipay {
+  umbrella header "WDeComAlipay.h"
+
+  export *
+  module * { export * }
+}

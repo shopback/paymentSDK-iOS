@@ -1,6 +1,0 @@
-framework module WDeComApplePay {
-  umbrella header "WDeComApplePay.h"
-
-  export *
-  module * { export * }
-}

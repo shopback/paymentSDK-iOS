@@ -1,6 +1,0 @@
-framework module WDeComPayPal {
-  umbrella header "WDeComPayPal.h"
-
-  export *
-  module * { export * }
-}

@@ -1,6 +1,0 @@
-framework module WDeComCardScannerGallery {
-  umbrella header "WDeComCardScannerGallery.h"
-
-  export *
-  module * { export * }
-}
