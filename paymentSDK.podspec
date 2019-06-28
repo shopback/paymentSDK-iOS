@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'paymentSDK'
-    s.version          = '3.4.1'
+    s.version          = '3.5.0'
     s.summary          = 'Wirecard paymentSDK - online payments'
 
     s.description      = <<-DESC
@@ -36,6 +36,8 @@ DESC
         ss.dependency            'paymentSDK/IBANScanner'
         ss.dependency            'paymentSDK/IBANScannerGallery'
         ss.dependency            'paymentSDK/ZAPP'
+        ss.dependency            'paymentSDK/Scanner'
+        ss.dependency            'paymentSDK/PhotoGallery'
     end
 
     s.subspec 'Core' do |ss|
@@ -48,7 +50,7 @@ DESC
         ss.ios.dependency        'Lockbox', '~> 3.0.6'
         ss.dependency            'Mantle', '~> 2.1.0'
         ss.ios.dependency        'MBProgressHUD', '~> 1.1.0'
-        ss.dependency            'libextobjc/EXTScope', '~> 0.4.1'
+        ss.dependency            'libextobjc/EXTScope', '~> 0.6.0'
         ss.ios.dependency        'TPKeyboardAvoiding', '~> 1.3.2'
 
         ss.ios.frameworks      = 'Foundation', 'UIKit', 'Security'
@@ -82,12 +84,26 @@ DESC
         ss.dependency            'paymentSDK/CoreCard'
     end
 
+    s.subspec 'PhotoGallery' do |ss|
+        ss.vendored_frameworks = 'eCom/WDeComPhotoGallery.framework'
+
+        ss.dependency            'paymentSDK/Core'
+    end
+
+    s.subspec 'Scanner' do |ss|
+        ss.vendored_frameworks = 'eCom/WDeComScanner.framework'
+        ss.resource            = 'eCom/WDeComScanner.framework/WDeComScanner.bundle'
+
+        ss.dependency            'paymentSDK/CoreCard'
+        ss.dependency            'GoogleMobileVision/TextDetector', '~> 1.6.0'
+    end
+
     s.subspec 'CardScanner' do |ss|
         ss.vendored_frameworks = 'eCom/WDeComCardScanner.framework'
         ss.resource            = 'eCom/WDeComCardScanner.framework/WDeComCardScanner.bundle'
 
         ss.dependency            'paymentSDK/Card'
-        ss.dependency            'GoogleMobileVision/TextDetector', '~> 1.6.0'
+        ss.dependency            'paymentSDK/Scanner'
     end
 
     s.subspec 'CardScannerGallery' do |ss|
@@ -95,6 +111,7 @@ DESC
         ss.resource            = 'eCom/WDeComCardScannerGallery.framework/WDeComCardScannerGallery.bundle'
 
         ss.dependency            'paymentSDK/CardScanner'
+        ss.dependency            'paymentSDK/PhotoGallery'
     end
 
     s.subspec 'PayPal' do |ss|
@@ -116,7 +133,7 @@ DESC
         ss.resource            = 'eCom/WDeComIBANScanner.framework/WDeComIBANScanner.bundle'
 
         ss.dependency            'paymentSDK/SEPA'
-        ss.dependency            'GoogleMobileVision/TextDetector', '~> 1.6.0'
+        ss.dependency            'paymentSDK/Scanner'
     end
 
     s.subspec 'IBANScannerGallery' do |ss|
@@ -124,6 +141,7 @@ DESC
         ss.resource            = 'eCom/WDeComIBANScannerGallery.framework/WDeComIBANScannerGallery.bundle'
 
         ss.dependency            'paymentSDK/IBANScanner'
+        ss.dependency            'paymentSDK/PhotoGallery'
     end
 
     s.subspec 'ZAPP' do |ss|

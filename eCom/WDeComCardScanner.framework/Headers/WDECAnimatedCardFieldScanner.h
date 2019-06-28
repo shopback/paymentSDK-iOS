@@ -10,5 +10,16 @@
 
 @interface WDECAnimatedCardFieldScanner : WDECAnimatedCardField
 
+/**
+ *  @brief The scanToolbarButton title.
+ *  @details Title customization option. The default is nil, the toolbar button shows the default "Scan" title. If set custom title the toolbar button replace the title.
+ */
+@property (nonatomic, strong, nullable) NSString *scanToolbarButtonTitle UI_APPEARANCE_SELECTOR;
+/**
+ *  @brief The scanToolbarButton visibility option.
+ *  @details Default is YES when the scanner is available. If set to NO the scanToolbar button is hidden.
+ */
+@property (nonatomic, assign) BOOL enableScanToolbarButton UI_APPEARANCE_SELECTOR;
+
 @end
 

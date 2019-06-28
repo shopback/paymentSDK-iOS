@@ -1,0 +1,6 @@
+framework module WDeComPhotoGallery {
+  umbrella header "WDeComPhotoGallery.h"
+
+  export *
+  module * { export * }
+}
