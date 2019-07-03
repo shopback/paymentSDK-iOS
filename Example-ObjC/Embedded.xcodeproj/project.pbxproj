@@ -216,25 +216,11 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Embedded/Pods-Embedded-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleMobileVision/GoogleMVTextDetectorResources.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ZappMerchantLib/ZappMerchantLibResources.bundle",
-				"${PODS_ROOT}/../../WDeComCard.framework/WDeComCard.bundle",
-				"${PODS_ROOT}/../../WDeComCardScanner.framework/WDeComCardScanner.bundle",
-				"${PODS_ROOT}/../../WDeComCardScannerGallery.framework/WDeComCardScannerGallery.bundle",
-				"${PODS_ROOT}/../../WDeCom.framework/WDeCom.bundle",
-				"${PODS_ROOT}/../../WDeComIBANScanner.framework/WDeComIBANScanner.bundle",
-				"${PODS_ROOT}/../../WDeComIBANScannerGallery.framework/WDeComIBANScannerGallery.bundle",
-				"${PODS_ROOT}/../../WDeComSEPA.framework/WDeComSEPA.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMVTextDetectorResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZappMerchantLibResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WDeComCard.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WDeComCardScanner.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WDeComCardScannerGallery.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WDeCom.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WDeComIBANScanner.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WDeComIBANScannerGallery.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WDeComSEPA.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

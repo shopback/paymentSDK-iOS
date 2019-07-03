@@ -22,7 +22,20 @@ class CardfieldVC: PaymemtVC, UIActionSheetDelegate, WDECCardFieldDelegate {
         self.cardField.becomeFirstResponder()
         let cardLayout = WDECCardLayout.appearance()
         self.cardField.isManualCardBrandSelectionRequired = cardLayout.manualCardBrandSelectionRequired
-        self.cardField.scanImage = UIImage(named: "scan_cf")
+        self.cardField.scanImage = UIImage(named: "scan_cf2")
+        self.cardField.scanImageTintColor = UIColor.blue
+        self.cardField.enableScanImageButton = true
+
+        self.cardField.scanToolbarButtonTitle = "Scan Card"
+        self.cardField.enableScanToolbarButton = true
+
+        // Appearance posibility
+        //WDECCardFieldScannerGallery.appearance().scanImage = UIImage(named: "scan_cf2")
+        //WDECCardFieldScannerGallery.appearance().scanImageTintColor = UIColor.blue
+        //WDECCardFieldScannerGallery.appearance().enableScanImageButton = true
+
+        //WDECCardFieldScannerGallery.appearance().scanToolbarButtonTitle = "Scan Card"
+        //WDECCardFieldScannerGallery.appearance().enableScanToolbarButton = true
     }
     
     @IBAction func onClearAction(_ sender: UIButton) {

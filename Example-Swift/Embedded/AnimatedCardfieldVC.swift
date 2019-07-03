@@ -17,8 +17,15 @@ class AnimatedCardfieldVC: PaymemtVC, WDECAnimatedCardFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let cardLayout = WDECCardLayout.appearance()
         self.animatedCardfield.isManualCardBrandSelectionRequired = cardLayout.manualCardBrandSelectionRequired
+        self.animatedCardfield.scanToolbarButtonTitle = "Scan Card"
+        self.animatedCardfield.enableScanToolbarButton = true
+        
+        // Appearance posibility
+        //WDECAnimatedCardFieldScannerGallery.appearance().scanToolbarButtonTitle = "Scan Card"
+        //WDECAnimatedCardFieldScannerGallery.appearance().enableScanToolbarButton = true
     }
     
     @IBAction func onClearAction(_ sender: UIButton!) {

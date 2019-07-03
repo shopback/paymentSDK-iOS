@@ -28,7 +28,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     self.animatedCardField.manualCardBrandSelectionRequired = [[WDECCardLayout appearance] manualCardBrandSelectionRequired];
+    [[WDECAnimatedCardFieldScannerGallery appearance] setScanToolbarButtonTitle:@"Scan Card"];
+    [[WDECAnimatedCardFieldScannerGallery appearance] setEnableScanToolbarButton:YES];
+
+    //self.animatedCardField.scanToolbarTitle = @"Scan Card";
+    //self.animatedCardField.enableScanToolbarButton = YES;
 }
 
 - (IBAction)onClear:(UIButton *)sender {

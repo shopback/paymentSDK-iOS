@@ -31,7 +31,20 @@
     [super viewDidLoad];
     [self.cardField becomeFirstResponder];
     self.cardField.manualCardBrandSelectionRequired = [[WDECCardLayout appearance] manualCardBrandSelectionRequired];
-    self.cardField.scanImage = [UIImage imageNamed:@"scan_cf"];
+    [[WDECCardFieldScannerGallery appearance] setScanImage: [UIImage imageNamed:@"scan_bf2"]];
+    [[WDECCardFieldScannerGallery appearance] setScanImageTintColor:[UIColor blueColor]];
+    [[WDECCardFieldScannerGallery appearance] setEnableScanImageButton:YES];
+
+    [[WDECCardFieldScannerGallery appearance] setScanToolbarButtonTitle:@"Scan Card"];
+    [[WDECCardFieldScannerGallery appearance] setEnableScanToolbarButton:YES];
+    
+    //Local customization
+    //self.cardField.scanImageTintColor = [UIColor blueColor];
+    //self.cardField.scanImage = [UIImage imageNamed:@"scan_bf2"];
+    //self.cardField.enableScanImageButton = YES;
+
+    //self.cardField.scanToolbarButtonTitle = @"Scan Card";
+    //self.cardField.enableScanToolbarButton = YES;
 }
 
 - (IBAction)onClear:(UIButton *)sender {
