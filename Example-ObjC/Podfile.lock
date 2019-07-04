@@ -105,7 +105,7 @@ PODS:
   - ZappMerchantLib (1.1.2)
 
 DEPENDENCIES:
-  - paymentSDK/All (from `../WDeCom/output`)
+  - paymentSDK/All (from `..`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -126,7 +126,7 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   paymentSDK:
-    :path: "../WDeCom/output"
+    :path: ".."
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -145,6 +145,6 @@ SPEC CHECKSUMS:
   TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
   ZappMerchantLib: 92ea0dde1a253f36211a7b7a655335ba19a4da74
 
-PODFILE CHECKSUM: 45b7ccb8b398edd125b7c32d29a5acbba1d5bbdf
+PODFILE CHECKSUM: 5afd67d450d6766b0fa4a8e18f59a7d7003b6abc
 
-COCOAPODS: 1.7.2
+COCOAPODS: 1.7.3
