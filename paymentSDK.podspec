@@ -94,7 +94,7 @@ DESC
         ss.vendored_frameworks = 'eCom/WDeComScanner.framework'
         ss.resource            = 'eCom/WDeComScanner.framework/WDeComScanner.bundle'
 
-        ss.dependency            'paymentSDK/CoreCard'
+        ss.dependency            'paymentSDK/Card'
         ss.dependency            'GoogleMobileVision/TextDetector', '~> 1.6.0'
     end
 
@@ -102,7 +102,6 @@ DESC
         ss.vendored_frameworks = 'eCom/WDeComCardScanner.framework'
         ss.resource            = 'eCom/WDeComCardScanner.framework/WDeComCardScanner.bundle'
 
-        ss.dependency            'paymentSDK/Card'
         ss.dependency            'paymentSDK/Scanner'
     end
 
