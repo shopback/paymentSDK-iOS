@@ -15,6 +15,8 @@
 #import <WDeCom/WDECOrder.h>
 #import <WDeCom/WDECTransactionType.h>
 #import <WDeCom/WDECAirlineIndustry.h>
+#import <WDeCom/WDECIsoTransactionType.h>
+#import <WDeCom/WDECMerchantRiskIndicator.h>
 
 @class WDECPaymentMethod;
 
@@ -127,7 +129,21 @@
  */
 @property (assign, nonatomic ) WDECLocale locale;
 
+/**
+ * Airline industry
+ */
 @property (strong, nonatomic, nullable) WDECAirlineIndustry *airlineIndustry;
+
+/**
+ * Merchant's assessment of the level of fraud risk for the specific authentication for both the cardholder and   the authentication being conducted.
+ */
+@property (strong, nonatomic, nullable) WDECMerchantRiskIndicator *merchantRiskIndicator;
+
+/**
+ * Identifies the type of transaction being authenticated. The values are derived from ISO 8583.
+ */
+@property (assign, nonatomic) WDECIsoTransactionType isoTransactionType;
+
 /**
  @brief transaction identifier of previous transaction gathered by [WDECPaymentResponse transactionIdentifier]
  @details It is used with referenced transactions: WDECTransactionTypeCaptureAuthorization, WDECTransactionTypeReferencedAuthorization, WDECTransactionTypeReferencedPurchase, WDECTransactionTypeRefundCapture, WDECTransactionTypeRefundPurchase and WDECTransactionTypeVoidAuthorization

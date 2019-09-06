@@ -34,6 +34,15 @@
 /** Indicates the sequence of the recurring transaction */
 @property (assign, nonatomic) WDECSequenceType sequenceType;
 
+/**
+ * Date after which no further authorizations shall be performed. This field is limited to 8 characters, and the accepted format is YYYYMMDD. This field is required for 01-PA and for 02-NPA, if 3DS Requestor Authentication Indicator = 02 or 03.
+ */
+@property (strong, nonatomic, nullable) NSDate *periodicExpiryDate;
+/**
+ * Indicates the minimum number of   days between authorizations. The field is limited to maximum 4 characters. This field is required if 3DS Requestor Authentication Indicator = 02 or 03.
+ */
+@property (strong, nonatomic, nullable) NSString *recurringFrequency;
+
 @end
 
 /** @} */
