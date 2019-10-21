@@ -12,11 +12,14 @@
 #import <WDeCom/WDECCustomerData.h>
 #import <WDeCom/WDECLocale.h>
 #import <WDeCom/WDECNotification.h>
+#import <WDeCom/WDECNotificationFormat.h>
 #import <WDeCom/WDECOrder.h>
 #import <WDeCom/WDECTransactionType.h>
 #import <WDeCom/WDECAirlineIndustry.h>
 #import <WDeCom/WDECIsoTransactionType.h>
 #import <WDeCom/WDECMerchantRiskIndicator.h>
+#import <WDeCom/WDECLoyaltyCard.h>
+#import <WDeCom/WDECCardData.h>
 
 @class WDECPaymentMethod;
 
@@ -84,7 +87,7 @@
  @brief Currency in which the transaction is processed.
  @details It is mandatory. Exaples: "EUR", "GBP", "USD", ...
  */
-@property (strong, nonatomic, nonnull) NSString *currency;
+@property (strong, nonatomic, nullable) NSString *currency;
 
 /**
  @brief Determines transaction processing behaviour.
@@ -116,6 +119,7 @@
  */
 @property (strong, nonatomic, nullable) NSArray<WDECNotification *> *notifications;
 
+@property (assign, nonatomic) WDECNotificationFormat notificationsFormat;
 /**
  @brief The IP Address of the Customer as recorded by the entity receiving the Transaction Attempt from the Customer
  @details It is optional.
@@ -156,6 +160,29 @@
 @property (strong, nonatomic, nonnull) NSString *appScheme;
 
 /**
+ * @brief Loyalty card information
+ * @details Typically used by card for WDECTransactionTypeEnrollment transaction
+ */
+@property (strong, nonatomic, nullable) WDECLoyaltyCard *loyaltyCard;
+
+/**
+ * @brief Extre card data informations
+ * @details Typically used by card for WDECTransactionTypeEnrollment transaction
+ */
+@property (strong, nonatomic, nullable) WDECCardData *cardData;
+
+/**
+ * @brief Instrument Country
+ */
+@property (assign, nonatomic) WDECCountry instrumentCountry;
+
+/**
+ * @brief Consumer ID
+ * @details Typically used by card for WDECTransactionTypeEnrollment transaction. It's required field for transaction without acount holder identification data (email, phone)
+ */
+@property (strong, nonatomic, nullable) NSString *consumerID;
+
+/**
  @brief initialize payment with mandatory parameters
 
  @param merchantAccountID Unique identifier assigned for every Merchant Account
@@ -169,12 +196,12 @@
  
  @return Returns payment object for WDECClient.
  */
-- (instancetype)initWithMerchantAccountID:(nonnull NSString *)merchantAccountID
-                                requestID:(nonnull NSString *)requestID
-                          transactionType:(WDECTransactionType)transactionType
-                                   amount:(nullable NSDecimalNumber *)amount
-                                 currency:(nullable NSString *)currency
-                                signature:(nonnull NSString *)signature;
+- (nullable instancetype)initWithMerchantAccountID:(nonnull NSString *)merchantAccountID
+                                         requestID:(nonnull NSString *)requestID
+                                   transactionType:(WDECTransactionType)transactionType
+                                            amount:(nullable NSDecimalNumber *)amount
+                                          currency:(nullable NSString *)currency
+                                         signature:(nonnull NSString *)signature;
 
 /**
  @brief initialize payment with mandatory parameters for checkPayment
@@ -187,9 +214,9 @@
  
  @return Returns payment object for WDECClient.
  */
-- (instancetype)initWithMerchantAccountID:(nonnull NSString *)merchantAccountID
-                                requestID:(nonnull NSString *)requestID
-                                signature:(nonnull NSString *)signature;
+- (nullable instancetype)initWithMerchantAccountID:(nonnull NSString *)merchantAccountID
+                                         requestID:(nonnull NSString *)requestID
+                                         signature:(nonnull NSString *)signature;
 
 /**
  @brief Returns the notification for transaction state.

@@ -41,6 +41,10 @@
  @details Max. length 32. It is optional.
  */
 @property (strong, nonatomic, nullable) NSString *phone;
+/** Phone country code
+ @details Max. length 16
+ */
+@property (strong, nonatomic, nullable) NSString *phoneCountryCode;
 /** Consumer's gender
  @details It is optional.
  */
@@ -53,6 +57,10 @@
  @details It is optional.
  */
 @property (strong, nonatomic, nullable) WDECAddress *address;
+/** Tax number
+ @details It is optional.
+ */
+@property (strong, nonatomic, nullable) NSString *taxNumber;
 
 /**
  * Indicates shipping method chosen for the transaction. Merchants must choose the Shipping Indicator code that most accurately describes the cardholder's specific transaction. If   one or more items are included in the sale, use the Shipping Indicator code   for the physical goods, or if all dugutak goods, use the code that   describes the most expensive item.
