@@ -30,4 +30,6 @@ typedef NS_ENUM(NSUInteger, WDECTransactionState) {
     WDECTransactionStateTotalNumber
 };
 
+WDECTransactionState WDECTransactionStateFromCode(NSString *code);
+NSString *WDECTransactionStateGetCode(WDECTransactionState transactionState);
 /** @} */

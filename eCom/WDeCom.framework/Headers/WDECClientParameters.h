@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "WDECEnvironment.h"
-#import "WDECTracker.h"
 
 @interface WDECClientParameters : NSObject
 
@@ -17,11 +16,5 @@
  *  @details Default value is 60 seconds.
  */
 @property (assign, nonatomic) NSTimeInterval timeoutInterval;
-
-/**
- *  @brief Tracker for sending app analytics to a server.
- *  @details It is optional.
- */
-@property (strong, nonatomic) WDECTracker *tracker;
 
 @end

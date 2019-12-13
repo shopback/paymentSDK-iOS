@@ -41,6 +41,13 @@ typedef NS_ENUM(NSUInteger, WDECTransactionType) {
      */
     WDECTransactionTypeDebit,
     
+    //ToDo: Description
+    /** Loyality support
+     
+     String representation: enrollment
+     */
+    WDECTransactionTypeEnrollment,
+
     /** Represents the request for a debit. If the transaction state is success, then the outcome of the debit is not yet known.
      
      String representation: pending-debit

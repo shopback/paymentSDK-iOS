@@ -20,6 +20,7 @@ FOUNDATION_EXPORT const unsigned char WDeComVersionString[];
 #import <WDeCom/WDECClient.h>
 #import <WDeCom/WDECClientParameters.h>
 #import <WDeCom/WDECLocale.h>
+#import <WDeCom/WDECNotificationFormat.h>
 #import <WDeCom/WDECPayment.h>
 #import <WDeCom/WDECPaymentResponse.h>
 #import <WDeCom/WDECPaymentMethodName.h>
@@ -27,6 +28,8 @@ FOUNDATION_EXPORT const unsigned char WDeComVersionString[];
 #import <WDeCom/WDECSubMerchantInfo.h>
 #import <WDeCom/WDECTransactionState.h>
 #import <WDeCom/WDECTransactionType.h>
+#import <WDeCom/WDECLoyaltyCard.h>
+#import <WDeCom/WDECCardData.h>
 
 // UIAppearance elements
 #import <WDeCom/WDECAmountLabel.h>
@@ -42,6 +45,14 @@ FOUNDATION_EXPORT const unsigned char WDeComVersionString[];
 #import <WDeCom/WDECHeaderLabel.h>
 #import <WDeCom/WDECLocalize.h>
 #import <WDeCom/WDECOrderTotalLabel.h>
+#import <WDeCom/WDECScannerBrackets.h>
+#import <WDeCom/WDECScannerCancelButton.h>
+#import <WDeCom/WDECScannerFlashlightButton.h>
+#import "WDeCom/WDECCardScannerHelpLabel.h"
+#import <WDeCom/WDECScannerGalleryButton.h>
+#import <WDeCom/WDECCardScannerTitleLabel.h>
+#import <WDeCom/WDECIBANScannerTitleLabel.h>
+#import <WDeCom/WDeCIBANScannerHelpLabel.h>
 #import <WDeCom/WDECSwitch.h>
 #import <WDeCom/WDECTextView.h>
 #import <WDeCom/WDECTextfield.h>
